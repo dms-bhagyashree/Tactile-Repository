@@ -38,6 +38,7 @@
                 <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Patient" collection="false" name="Patient"/>
                 <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Valid$NotValid" collection="false" name="Diagnosis Validity"/>
                 <rule defaultRule="false" href="node_9/Diagnosis%20Validity.dmt" kind="DecisionTable" name="Diagnosis Validity"/>
+                <rule defaultRule="true" href="node_9/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
             </ruleset>
         </extensionElements>
         <variable id="node_9_ii" name="Diagnosis Validity" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Valid$NotValid"/>
