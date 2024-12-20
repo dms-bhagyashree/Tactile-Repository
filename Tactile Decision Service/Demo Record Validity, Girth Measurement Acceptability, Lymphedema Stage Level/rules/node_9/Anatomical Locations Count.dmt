@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
-  <name>Demo Location Acceptable</name>
-  <uuid>687753b6-45aa-4f23-92b0-a4f5132f2413</uuid>
+  <name>Anatomical Locations Count</name>
+  <uuid>42b1fd42-3c4a-439c-a77c-9b4ef4b8046b</uuid>
   <locale>en_US</locale>
   <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
     <Body>
@@ -17,19 +17,19 @@
                         <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
                     </Properties>
                     <ExpressionDefinition>
-                        <Text><![CDATA[the payer classification of Payer is <a Payer Classification> ]]></Text>
+                        <Text><![CDATA[the location of swelling of CIF is <a string>]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
                 <ConditionDefinition Id="C1">
                     <ExpressionDefinition>
-                        <Text><![CDATA[the demo location of Demo is <a string>]]></Text>
+                        <Text><![CDATA[the anatomical locations measurement of Demo is <a string>]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
             </ConditionDefinitions>
             <ActionDefinitions>
                 <ActionDefinition Id="A0">
                     <ExpressionDefinition>
-                        <Text><![CDATA[set decision to <an Acceptable/Not Acceptable>]]></Text>
+                        <Text><![CDATA[add 1 to decision]]></Text>
                     </ExpressionDefinition>
                 </ActionDefinition>
             </ActionDefinitions>
@@ -38,18 +38,18 @@
             <Partition DefId="C0">
                 <Condition>
                     <Expression>
-                        <Param><![CDATA[Standard + Review]]></Param>
+                        <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                        <Param><![CDATA[{ "Left ARM", "Right Arm" }]]></Param>
                     </Expression>
                     <Partition DefId="C1">
                         <Condition>
                             <Expression>
-                                <Param><![CDATA["Clinic"]]></Param>
+                                <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                                <Param><![CDATA[{ "Hips", "Chest", "Biceps", "Wrist" }]]></Param>
                             </Expression>
                             <ActionSet>
                                 <Action DefId="A0">
-                                    <Expression>
-                                        <Param><![CDATA[Acceptable]]></Param>
-                                    </Expression>
+                                    <Expression/>
                                 </Action>
                             </ActionSet>
                         </Condition>
@@ -57,19 +57,18 @@
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Param><![CDATA[Standard + Review]]></Param>
+                        <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                        <Param><![CDATA[{ "Left Leg", "Right Leg" }]]></Param>
                     </Expression>
                     <Partition DefId="C1">
                         <Condition>
                             <Expression>
-                                <Text><![CDATA[<an object> is not <an object>]]></Text>
-                                <Param><![CDATA["Clinic"]]></Param>
+                                <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                                <Param><![CDATA[{ "Hips", "Thigh", "Knee", "Calf", "Ankle" }]]></Param>
                             </Expression>
                             <ActionSet>
                                 <Action DefId="A0">
-                                    <Expression>
-                                        <Param><![CDATA[Not Acceptable]]></Param>
-                                    </Expression>
+                                    <Expression/>
                                 </Action>
                             </ActionSet>
                         </Condition>
@@ -77,26 +76,31 @@
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Text><![CDATA[<an object> is not <an object>]]></Text>
-                        <Param><![CDATA[Standard + Review]]></Param>
+                        <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                        <Param><![CDATA[{ "Head And Neck" }]]></Param>
                     </Expression>
-                    <ActionSet>
-                        <Action DefId="A0">
+                    <Partition DefId="C1">
+                        <Condition>
                             <Expression>
-                                <Param><![CDATA[Acceptable]]></Param>
+                                <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                                <Param><![CDATA[{ "Crown of Head Circumference", "Measurement Around Back of Head from Eye to Eye", "Chest" }]]></Param>
                             </Expression>
-                        </Action>
-                    </ActionSet>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression/>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
                 </Condition>
             </Partition>
         </Contents>
     </Body>
     <Resources DefaultLocale="en_US">
         <ResourceSet Locale="en_US">
-            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Payer Classification]]></Data>
-            <Data Name="Definitions(C1)#HeaderText"><![CDATA[Demo Location]]></Data>
-            <Data Name="Definitions(C0)[0]#HeaderText"><![CDATA[a string]]></Data>
-            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Demo Location Acceptable]]></Data>
+            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Location Of Swelling]]></Data>
+            <Data Name="Definitions(C1)#HeaderText"><![CDATA[Anatomical Locations Measurement]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Anatomical Locations Count]]></Data>
         </ResourceSet>
     </Resources>
 </DT>

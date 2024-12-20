@@ -36,6 +36,10 @@ class Cif
     string diagnosis
                 property ads.attributeId "5"
                 #update;
+    string locationOfSwelling
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "locationOfSwelling"
+                #update;
     string treatment
                 property ads.attributeId "6"
                 #update;
@@ -50,6 +54,7 @@ class Cif
         string basicPumpTrialAndFailReasons, 
         string compressionGarmentsBandagingElsticTaping, 
         string diagnosis, 
+        string locationOfSwelling, 
         string treatment, 
         boolean triedAndFailedHomeTreatment, 
         string triedAndFailedMedicallySupervisedConservativeTreatments)
@@ -214,7 +219,7 @@ class MedicalRecord
     string progressNotes
                 property ads.attributeId "11"
                 #update;
-    string stageLevel
+    double stageLevel
                 property ads.attributeId "12"
                 #update;
     string termsOfSeverity
@@ -236,7 +241,7 @@ class MedicalRecord
         string icd10Code, 
         string lymphedemiaCause, 
         string progressNotes, 
-        string stageLevel, 
+        double stageLevel, 
         string termsOfSeverity, 
         string visitNotes)
                 #autoExpand
@@ -245,27 +250,6 @@ class MedicalRecord
                 #prototype;
     MedicalRecord()
                 #dataio.default;
-}
-
-class NewEnum
-        extends java.lang.Enum
-        property ads.typeId "18"
-        property com.fasterxml.jackson.annotation.JsonTypeName "newEnum"
-        #de.generated
-{
-    domain {static SMNChronicVenousUlcers$CVU$, static SMNLymphedema, static medicalRecordsChronicVenousUlcers$CVU$, static medicalRecordsLymphedema}
-    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.NewEnum SMNChronicVenousUlcers$CVU$
-                property ads.attributeId "1"
-                property com.fasterxml.jackson.annotation.JsonProperty "SMNChronicVenousUlcers(CVU)";
-    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.NewEnum SMNLymphedema
-                property ads.attributeId "4"
-                property com.fasterxml.jackson.annotation.JsonProperty "SMNLymphedema";
-    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.NewEnum medicalRecordsChronicVenousUlcers$CVU$
-                property ads.attributeId "2"
-                property com.fasterxml.jackson.annotation.JsonProperty "MedicalRecordsChronicVenousUlcers(CVU)";
-    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.NewEnum medicalRecordsLymphedema
-                property ads.attributeId "3"
-                property com.fasterxml.jackson.annotation.JsonProperty "MedicalRecordsLymphedema";
 }
 
 class Order
@@ -599,7 +583,7 @@ class Payer
     java.util.List patient domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Patient
                 property ads.attributeId "8"
                 #update;
-    string payerClassification
+    bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification payerClassification
                 property ads.attributeId "9"
                 #update;
     string payerName
@@ -616,7 +600,7 @@ class Payer
         bhagyashree.tactile_medical.tactile_decision_service.data.FileMaker fileMaker, 
         string insNumber, 
         java.util.List patient domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Patient, 
-        string payerClassification, 
+        bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification payerClassification, 
         string payerName, 
         string policy)
                 #autoExpand
@@ -637,6 +621,24 @@ class Payer
     void set_patient(java.util.Collection patient domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Patient)
                 property collectionAttribute "patient"
                 #update;
+}
+
+class PayerClassification
+        extends java.lang.Enum
+        property ads.typeId "22"
+        property com.fasterxml.jackson.annotation.JsonTypeName "PayerClassification"
+        #de.generated
+{
+    domain {static standard, static standard$Review, static standard1}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification standard
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Standard";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification standard$Review
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Standard+Review";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification standard1
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Standard1";
 }
 
 class PayerRequirements
@@ -767,7 +769,7 @@ class SMNLMN
                 property ads.attributeId "8"
                 property com.fasterxml.jackson.annotation.JsonProperty "notes"
                 #update;
-    string stageLevel
+    double stageLevel
                 property ads.attributeId "6"
                 #update;
     string termsOfSeverity
@@ -779,13 +781,31 @@ class SMNLMN
         string dietAndMedicationEvaluation, 
         string lymphedemiaCause, 
         string notes, 
-        string stageLevel, 
+        double stageLevel, 
         string termsOfSeverity)
                 #autoExpand
                 #beanConstructor
                 property groups "BALA"
                 #prototype;
     SMNLMN()
+                #dataio.default;
+}
+
+class System
+        property ads.typeId "21"
+        property com.fasterxml.jackson.annotation.JsonTypeName "system"
+        #de.generated
+{
+    java.time.LocalDate runDate
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "runDate"
+                #update;
+    System(java.time.LocalDate runDate)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    System()
                 #dataio.default;
 }
 

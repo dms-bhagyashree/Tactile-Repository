@@ -9,6 +9,7 @@
   </paths>
   <paths xsi:type="ilog.rules.studio.model.bom:BOMPath" pathID="BOM">
     <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="bhagyashree.tactile_medical.tactile_decision_service:tectileDataModel#LATEST-SNAPSHOT" packageId="bhagyashree.tactile_medical.tactile_decision_service:tectileDataModel" version="LATEST-SNAPSHOT"/>
+    <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="bhagyashree.tactile_medical.tactile_decision_service:payerRequirements#LATEST-SNAPSHOT" packageId="bhagyashree.tactile_medical.tactile_decision_service:payerRequirements" version="LATEST-SNAPSHOT"/>
   </paths>
   <modelFolders xsi:type="ilog.rules.studio.model.base:SourceFolder">
     <name>rules</name>

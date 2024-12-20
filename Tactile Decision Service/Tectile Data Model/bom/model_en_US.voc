@@ -6,7 +6,7 @@ bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptab
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.Cif
 bhagyashree.tactile_medical.tactile_decision_service.data.Cif#concept.label = cif
-bhagyashree.tactile_medical.tactile_decision_service.data.Cif.Cif(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,java.lang.String)#phrase.navigation = a new {cif} where {0, additional therapies tried and failed elevation while sleeping} {1, additional therapies tried and failed exercises} {2, basic pump trial and fail reasons} {3, compression garments bandaging elstic taping} {4, diagnosis} {5, treatment} {6, tried and failed home treatment} {7, tried and failed medically supervised conservative treatments}
+bhagyashree.tactile_medical.tactile_decision_service.data.Cif.Cif(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,java.lang.String)#phrase.navigation = a new {cif} where {0, additional therapies tried and failed elevation while sleeping} {1, additional therapies tried and failed exercises} {2, basic pump trial and fail reasons} {3, compression garments bandaging elstic taping} {4, diagnosis} {5, location of swelling} {6, treatment} {7, tried and failed home treatment} {8, tried and failed medically supervised conservative treatments}
 bhagyashree.tactile_medical.tactile_decision_service.data.Cif.additionalTherapiesTriedAndFailedElevationWhileSleeping#phrase.action = set the additional therapies tried and failed elevation while sleeping of {this} to {additional therapies tried and failed elevation while sleeping}
 bhagyashree.tactile_medical.tactile_decision_service.data.Cif.additionalTherapiesTriedAndFailedElevationWhileSleeping#phrase.navigation = {additional therapies tried and failed elevation while sleeping} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Cif.additionalTherapiesTriedAndFailedExercises#phrase.action = set the additional therapies tried and failed exercises of {this} to {additional therapies tried and failed exercises}
@@ -17,6 +17,8 @@ bhagyashree.tactile_medical.tactile_decision_service.data.Cif.compressionGarment
 bhagyashree.tactile_medical.tactile_decision_service.data.Cif.compressionGarmentsBandagingElsticTaping#phrase.navigation = {compression garments bandaging elstic taping} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Cif.diagnosis#phrase.action = set the diagnosis of {this} to {diagnosis}
 bhagyashree.tactile_medical.tactile_decision_service.data.Cif.diagnosis#phrase.navigation = {diagnosis} of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.Cif.locationOfSwelling#phrase.action = set the location of swelling of {this} to {location of swelling}
+bhagyashree.tactile_medical.tactile_decision_service.data.Cif.locationOfSwelling#phrase.navigation = {location of swelling} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Cif.treatment#phrase.action = set the treatment of {this} to {treatment}
 bhagyashree.tactile_medical.tactile_decision_service.data.Cif.treatment#phrase.navigation = {treatment} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Cif.triedAndFailedHomeTreatment#phrase.action[0] = {this} gets tried and failed home treatment only if {tried and failed home treatment}
@@ -103,7 +105,7 @@ bhagyashree.tactile_medical.tactile_decision_service.data.FileMaker.seekAuthoriz
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord#concept.label = medical record
-bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.MedicalRecord(java.lang.String,java.lang.String,java.lang.String,boolean,boolean,java.lang.String,java.lang.String,java.time.LocalDate,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)#phrase.navigation = a new {medical record} where {0, advanced pump recommended} {1, basic pump trial and fail reasons} {2, basic pump trial requirement} {3, contraindications} {4, contraindications clearance form} {5, diagnosis} {6, diet and medication evaluation} {7, face to face examination date} {8, face to face examination reason} {9, icd10 code} {10, lymphedemia cause} {11, progress notes} {12, stage level} {13, terms of severity} {14, visit notes}
+bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.MedicalRecord(java.lang.String,java.lang.String,java.lang.String,boolean,boolean,java.lang.String,java.lang.String,java.time.LocalDate,java.lang.String,java.lang.String,java.lang.String,java.lang.String,double,java.lang.String,java.lang.String)#phrase.navigation = a new {medical record} where {0, advanced pump recommended} {1, basic pump trial and fail reasons} {2, basic pump trial requirement} {3, contraindications} {4, contraindications clearance form} {5, diagnosis} {6, diet and medication evaluation} {7, face to face examination date} {8, face to face examination reason} {9, icd10 code} {10, lymphedemia cause} {11, progress notes} {12, stage level} {13, terms of severity} {14, visit notes}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.advancedPumpRecommended#phrase.action = set the advanced pump recommended of {this} to {advanced pump recommended}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.advancedPumpRecommended#phrase.navigation = {advanced pump recommended} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.basicPumpTrialAndFailReasons#phrase.action = set the basic pump trial and fail reasons of {this} to {basic pump trial and fail reasons}
@@ -139,19 +141,13 @@ bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.lymphede
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.progressNotes#phrase.action = set the progress notes of {this} to {progress notes}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.progressNotes#phrase.navigation = {progress notes} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.stageLevel#phrase.action = set the stage level of {this} to {stage level}
+bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.stageLevel#phrase.addition_setter = add {stage level} to the stage level of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.stageLevel#phrase.navigation = {stage level} of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.stageLevel#phrase.subtraction_setter = subtract {stage level} from the stage level of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.termsOfSeverity#phrase.action = set the terms of severity of {this} to {terms of severity}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.termsOfSeverity#phrase.navigation = {terms of severity} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.visitNotes#phrase.action = set the visit notes of {this} to {visit notes}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.visitNotes#phrase.navigation = {visit notes} of {this}
-
-# bhagyashree.tactile_medical.tactile_decision_service.data.NewEnum
-bhagyashree.tactile_medical.tactile_decision_service.data.NewEnum#concept.documentation = Primary Coverage Diagnosis
-bhagyashree.tactile_medical.tactile_decision_service.data.NewEnum#concept.label = new enum
-bhagyashree.tactile_medical.tactile_decision_service.data.NewEnum.SMNChronicVenousUlcers$CVU$#instance.label = SMN Chronic Venous Ulcers (CVU)
-bhagyashree.tactile_medical.tactile_decision_service.data.NewEnum.SMNLymphedema#instance.label = SMN Lymphedema
-bhagyashree.tactile_medical.tactile_decision_service.data.NewEnum.medicalRecordsChronicVenousUlcers$CVU$#instance.label = Medical Records Chronic Venous Ulcers (CVU)
-bhagyashree.tactile_medical.tactile_decision_service.data.NewEnum.medicalRecordsLymphedema#instance.label = Medical Records Lymphedema
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.Order
 bhagyashree.tactile_medical.tactile_decision_service.data.Order#concept.label = order
@@ -310,7 +306,7 @@ bhagyashree.tactile_medical.tactile_decision_service.data.PatientTreatmentArea.u
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.Payer
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer#concept.label = payer
-bhagyashree.tactile_medical.tactile_decision_service.data.Payer.Payer(boolean,java.lang.String,java.math.BigDecimal,java.time.LocalDate,java.lang.String,bhagyashree.tactile_medical.tactile_decision_service.data.FileMaker,java.lang.String,java.util.List,java.lang.String,java.lang.String,java.lang.String)#phrase.navigation = a new {payer} where {0, approval} {1, approval type} {2, authorization number} {3, date of service} {4, fee schedule} {5, file maker} {6, ins number} {7, patient} {8, payer classification} {9, payer name} {10, policy}
+bhagyashree.tactile_medical.tactile_decision_service.data.Payer.Payer(boolean,java.lang.String,java.math.BigDecimal,java.time.LocalDate,java.lang.String,bhagyashree.tactile_medical.tactile_decision_service.data.FileMaker,java.lang.String,java.util.List,bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification,java.lang.String,java.lang.String)#phrase.navigation = a new {payer} where {0, approval} {1, approval type} {2, authorization number} {3, date of service} {4, fee schedule} {5, file maker} {6, ins number} {7, patient} {8, payer classification} {9, payer name} {10, policy}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.addTo_patient(bhagyashree.tactile_medical.tactile_decision_service.data.Patient)#phrase.action = add {0} to the patients of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.approval#phrase.action[0] = {this} gets approval only if {approval}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.approval#phrase.action[1] = make it {approval} that {this} is approval
@@ -338,12 +334,19 @@ bhagyashree.tactile_medical.tactile_decision_service.data.Payer.insNumber#phrase
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.patient#phrase.action = set the patients of {this} to {patient}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.patient#phrase.navigation = {patient} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.payerClassification#phrase.action = set the payer classification of {this} to {payer classification}
+bhagyashree.tactile_medical.tactile_decision_service.data.Payer.payerClassification#phrase.clearer = clear the payer classification of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.payerClassification#phrase.navigation = {payer classification} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.payerName#phrase.action = set the payer name of {this} to {payer name}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.payerName#phrase.navigation = {payer name} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.policy#phrase.action = set the policy of {this} to {policy}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.policy#phrase.navigation = {policy} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.removeFrom_patient(bhagyashree.tactile_medical.tactile_decision_service.data.Patient)#phrase.action = remove {0} from the patients of {this}
+
+# bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification
+bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification#concept.label = Payer Classification
+bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification.standard#instance.label = Standard
+bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification.standard$Review#instance.label = Standard + Review
+bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification.standard1#instance.label = Standard +
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.PayerRequirements
 bhagyashree.tactile_medical.tactile_decision_service.data.PayerRequirements#concept.label = payer requirements
@@ -399,7 +402,7 @@ bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired.r
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN#concept.label = SMNLMN
-bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.SMNLMN(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)#phrase.navigation = a new {SMNLMN} where {0, advanced pump recommended} {1, basic pump trial requirement} {2, diagnosis} {3, diet and medication evaluation} {4, lymphedemia cause} {5, notes} {6, stage level} {7, terms of severity}
+bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.SMNLMN(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,double,java.lang.String)#phrase.navigation = a new {SMNLMN} where {0, advanced pump recommended} {1, basic pump trial requirement} {2, diagnosis} {3, diet and medication evaluation} {4, lymphedemia cause} {5, notes} {6, stage level} {7, terms of severity}
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.advancedPumpRecommended#phrase.action = set the advanced pump recommended of {this} to {advanced pump recommended}
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.advancedPumpRecommended#phrase.navigation = {advanced pump recommended} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.basicPumpTrialRequirement#phrase.action = set the basic pump trial requirement of {this} to {basic pump trial requirement}
@@ -413,9 +416,18 @@ bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.lymphedemiaCaus
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.notes#phrase.action = set the notes of {this} to {notes}
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.notes#phrase.navigation = {notes} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.stageLevel#phrase.action = set the stage level of {this} to {stage level}
+bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.stageLevel#phrase.addition_setter = add {stage level} to the stage level of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.stageLevel#phrase.navigation = {stage level} of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.stageLevel#phrase.subtraction_setter = subtract {stage level} from the stage level of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.termsOfSeverity#phrase.action = set the terms of severity of {this} to {terms of severity}
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.termsOfSeverity#phrase.navigation = {terms of severity} of {this}
+
+# bhagyashree.tactile_medical.tactile_decision_service.data.System
+bhagyashree.tactile_medical.tactile_decision_service.data.System#concept.documentation = 
+bhagyashree.tactile_medical.tactile_decision_service.data.System#concept.label = system
+bhagyashree.tactile_medical.tactile_decision_service.data.System.System(java.time.LocalDate)#phrase.navigation = a new {system} where {0, run date}
+bhagyashree.tactile_medical.tactile_decision_service.data.System.runDate#phrase.action = set the run date of {this} to {run date}
+bhagyashree.tactile_medical.tactile_decision_service.data.System.runDate#phrase.navigation = {run date} of {this}
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.Valid$NotValid
 bhagyashree.tactile_medical.tactile_decision_service.data.Valid$NotValid#concept.label = Valid/Not Valid

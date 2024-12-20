@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
-  <name>Demo Location Acceptable</name>
-  <uuid>687753b6-45aa-4f23-92b0-a4f5132f2413</uuid>
+  <name>Contraindicator Acceptability</name>
+  <uuid>bb06d613-ea3a-4445-88a8-9bd2d1165066</uuid>
   <locale>en_US</locale>
   <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
     <Body>
@@ -17,12 +17,16 @@
                         <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
                     </Properties>
                     <ExpressionDefinition>
-                        <Text><![CDATA[the payer classification of Payer is <a Payer Classification> ]]></Text>
+                        <Text><![CDATA['Medical Record' is contraindications is <a boolean>]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
                 <ConditionDefinition Id="C1">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
+                    </Properties>
                     <ExpressionDefinition>
-                        <Text><![CDATA[the demo location of Demo is <a string>]]></Text>
+                        <Text><![CDATA['Medical Record' is contraindications clearance form is <a boolean>]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
             </ConditionDefinitions>
@@ -38,12 +42,12 @@
             <Partition DefId="C0">
                 <Condition>
                     <Expression>
-                        <Param><![CDATA[Standard + Review]]></Param>
+                        <Param><![CDATA[true]]></Param>
                     </Expression>
                     <Partition DefId="C1">
                         <Condition>
                             <Expression>
-                                <Param><![CDATA["Clinic"]]></Param>
+                                <Param><![CDATA[true]]></Param>
                             </Expression>
                             <ActionSet>
                                 <Action DefId="A0">
@@ -57,13 +61,12 @@
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Param><![CDATA[Standard + Review]]></Param>
+                        <Param><![CDATA[true]]></Param>
                     </Expression>
                     <Partition DefId="C1">
                         <Condition>
                             <Expression>
-                                <Text><![CDATA[<an object> is not <an object>]]></Text>
-                                <Param><![CDATA["Clinic"]]></Param>
+                                <Param><![CDATA[false]]></Param>
                             </Expression>
                             <ActionSet>
                                 <Action DefId="A0">
@@ -77,13 +80,12 @@
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Text><![CDATA[<an object> is not <an object>]]></Text>
-                        <Param><![CDATA[Standard + Review]]></Param>
+                        <Param><![CDATA[false]]></Param>
                     </Expression>
                     <ActionSet>
                         <Action DefId="A0">
                             <Expression>
-                                <Param><![CDATA[Acceptable]]></Param>
+                                <Param><![CDATA[Not Acceptable]]></Param>
                             </Expression>
                         </Action>
                     </ActionSet>
@@ -93,10 +95,9 @@
     </Body>
     <Resources DefaultLocale="en_US">
         <ResourceSet Locale="en_US">
-            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Payer Classification]]></Data>
-            <Data Name="Definitions(C1)#HeaderText"><![CDATA[Demo Location]]></Data>
-            <Data Name="Definitions(C0)[0]#HeaderText"><![CDATA[a string]]></Data>
-            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Demo Location Acceptable]]></Data>
+            <Data Name="Definitions(C0)#HeaderText"><![CDATA[contraindications]]></Data>
+            <Data Name="Definitions(C1)#HeaderText"><![CDATA[contraindications clearance form]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Contraindicator Acceptability]]></Data>
         </ResourceSet>
     </Resources>
 </DT>
