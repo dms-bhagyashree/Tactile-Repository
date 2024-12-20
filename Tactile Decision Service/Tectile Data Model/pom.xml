@@ -8,7 +8,7 @@
     </parent>
 
     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
-    <artifactId>data</artifactId>
+    <artifactId>tectileDataModel</artifactId>
     <version>LATEST-SNAPSHOT</version>
 
     <build>
@@ -26,7 +26,7 @@
                 <configuration>
                     <deployments>
                         <deployment>
-                            <name>Data</name>
+                            <name>Tectile_Data_Model</name>
                         </deployment>
                     </deployments>
                 <packageName>bhagyashree.tactile_medical.tactile_decision_service.data</packageName>

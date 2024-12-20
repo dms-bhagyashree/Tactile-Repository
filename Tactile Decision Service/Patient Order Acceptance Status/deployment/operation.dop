@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Patient Order Acceptance Status">
+  <name>Patient_Order_Acceptance_Status</name>
+  <uuid>08063b41-c0ae-4258-8ab8-1f1142e3303b</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#afb036b1-b35d-4df7-af48-b279fb0e7c19"/>
+  <targetRuleProject href="../../Patient%20Order%20Acceptance%20Status#293ae306-b002-40d5-8dfe-69b12890c955"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

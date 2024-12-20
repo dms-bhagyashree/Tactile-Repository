@@ -65,10 +65,11 @@
     <modules>
         <module>.decisionservice</module>
         <module>Advanced Pump Acceptability, Diet and Medication Evaluation Acceptability</module>
-        <module>Data</module>
         <module>Demo Record Validity, Girth Measurement Acceptability, Lymphedema Stage Level</module>
         <module>Diagnosis Validity</module>
+        <module>Patient Order Acceptance Status</module>
         <module>Payer Requirements</module>
+        <module>Tectile Data Model</module>
     </modules>
 
     <build>
