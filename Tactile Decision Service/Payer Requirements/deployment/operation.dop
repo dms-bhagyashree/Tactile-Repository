@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Payer Requirements">
+  <name>Payer_Requirements</name>
+  <uuid>1aafd32a-bd4d-490c-ad82-08f391f1b1bd</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#06f8ee4c-a733-4c52-808a-07aa07ab3f21"/>
+  <targetRuleProject href="../../Payer%20Requirements#b48f9066-3394-492c-b28f-292d85fbd380"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

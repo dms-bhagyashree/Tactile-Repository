@@ -1,0 +1,867 @@
+
+package bhagyashree.tactile_medical.tactile_decision_service.data;
+
+
+class Acceptable$NotAcceptable
+        extends java.lang.Enum
+        property ads.typeId "17"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Acceptable/NotAcceptable"
+        #de.generated
+{
+    domain {static acceptable, static notAcceptable}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable acceptable
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Acceptable";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable notAcceptable
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "NotAcceptable";
+}
+
+class Cif
+        property ads.typeId "7"
+        #de.generated
+{
+    string additionalTherapiesTriedAndFailedElevationWhileSleeping
+                property ads.attributeId "1"
+                #update;
+    string additionalTherapiesTriedAndFailedExercises
+                property ads.attributeId "2"
+                #update;
+    string basicPumpTrialAndFailReasons
+                property ads.attributeId "3"
+                #update;
+    string compressionGarmentsBandagingElsticTaping
+                property ads.attributeId "4"
+                #update;
+    string diagnosis
+                property ads.attributeId "5"
+                #update;
+    string treatment
+                property ads.attributeId "6"
+                #update;
+    boolean triedAndFailedHomeTreatment
+                property ads.attributeId "7"
+                #update;
+    string triedAndFailedMedicallySupervisedConservativeTreatments
+                property ads.attributeId "8"
+                #update;
+    Cif(string additionalTherapiesTriedAndFailedElevationWhileSleeping, 
+        string additionalTherapiesTriedAndFailedExercises, 
+        string basicPumpTrialAndFailReasons, 
+        string compressionGarmentsBandagingElsticTaping, 
+        string diagnosis, 
+        string treatment, 
+        boolean triedAndFailedHomeTreatment, 
+        string triedAndFailedMedicallySupervisedConservativeTreatments)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    Cif()
+                #dataio.default;
+}
+
+class Demo
+        property ads.typeId "9"
+        #de.generated
+{
+    string anatomicalLocationsMeasurement
+                property ads.attributeId "1"
+                #update;
+    string demoLocation
+                property ads.attributeId "2"
+                #update;
+    boolean donningDoffingCapability
+                property ads.attributeId "3"
+                #update;
+    java.time.LocalDate girthMeasurementDate
+                property ads.attributeId "4"
+                #update;
+    boolean treatmentSessionTolerated
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "treatmentSessionTolerated"
+                #update;
+    Demo(string anatomicalLocationsMeasurement, 
+        string demoLocation, 
+        boolean donningDoffingCapability, 
+        java.time.LocalDate girthMeasurementDate, 
+        boolean treatmentSessionTolerated)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    Demo()
+                #dataio.default;
+}
+
+class Document
+        property ads.typeId "5"
+        #de.generated
+{
+    bhagyashree.tactile_medical.tactile_decision_service.data.Cif CIF
+                property ads.attributeId "1"
+                #update;
+    bhagyashree.tactile_medical.tactile_decision_service.data.Demo demo
+                property ads.attributeId "2"
+                #update;
+    java.util.List medicalRecords domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord
+                property ads.attributeId "3"
+                #update;
+    boolean pcfNotification
+                property ads.attributeId "4"
+                #update;
+    java.util.List prescriptions domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Prescription
+                property ads.attributeId "5"
+                #update;
+    bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN smnLMN
+                property ads.attributeId "6"
+                #update;
+    Document(bhagyashree.tactile_medical.tactile_decision_service.data.Cif CIF, 
+        bhagyashree.tactile_medical.tactile_decision_service.data.Demo demo, 
+        java.util.List medicalRecords domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord, 
+        boolean pcfNotification, 
+        java.util.List prescriptions domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Prescription, 
+        bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN smnLMN)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    Document()
+                #dataio.default;
+    void addTo_medicalRecords(bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord medicalRecords)
+                property collectionAttribute "medicalRecords"
+                #update;
+    void addTo_prescriptions(bhagyashree.tactile_medical.tactile_decision_service.data.Prescription prescriptions)
+                property collectionAttribute "prescriptions"
+                #update;
+    void clear_medicalRecords()
+                property collectionAttribute "medicalRecords"
+                #update;
+    void clear_prescriptions()
+                property collectionAttribute "prescriptions"
+                #update;
+    void removeFrom_medicalRecords(bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord medicalRecords)
+                property collectionAttribute "medicalRecords"
+                #update;
+    void removeFrom_prescriptions(bhagyashree.tactile_medical.tactile_decision_service.data.Prescription prescriptions)
+                property collectionAttribute "prescriptions"
+                #update;
+    void set_medicalRecords(java.util.Collection medicalRecords domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord)
+                property collectionAttribute "medicalRecords"
+                #update;
+    void set_prescriptions(java.util.Collection prescriptions domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Prescription)
+                property collectionAttribute "prescriptions"
+                #update;
+}
+
+class FileMaker
+        property ads.typeId "4"
+        #de.generated
+{
+    boolean authorizationReviewNumberReceived
+                property ads.attributeId "1"
+                #update;
+    boolean seekAuthorizationReview
+                property ads.attributeId "2"
+                #update;
+    FileMaker(boolean authorizationReviewNumberReceived, boolean seekAuthorizationReview)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    FileMaker()
+                #dataio.default;
+}
+
+class MedicalRecord
+        property ads.typeId "3"
+        #de.generated
+{
+    string advancedPumpRecommended
+                property ads.attributeId "1"
+                #update;
+    string basicPumpTrialAndFailReasons
+                property ads.attributeId "2"
+                #update;
+    string basicPumpTrialRequirement
+                property ads.attributeId "3"
+                #update;
+    boolean contraindications
+                property ads.attributeId "4"
+                #update;
+    boolean contraindicationsClearanceForm
+                property ads.attributeId "5"
+                #update;
+    string diagnosis
+                property ads.attributeId "6"
+                #update;
+    string dietAndMedicationEvaluation
+                property ads.attributeId "7"
+                #update;
+    java.time.LocalDate faceToFaceExaminationDate
+                property ads.attributeId "8"
+                #update;
+    string faceToFaceExaminationReason
+                property ads.attributeId "9"
+                #update;
+    string icd10Code
+                property ads.attributeId "15"
+                property com.fasterxml.jackson.annotation.JsonProperty "icd10Code"
+                #update;
+    string lymphedemiaCause
+                property ads.attributeId "10"
+                #update;
+    string progressNotes
+                property ads.attributeId "11"
+                #update;
+    string stageLevel
+                property ads.attributeId "12"
+                #update;
+    string termsOfSeverity
+                property ads.attributeId "13"
+                #update;
+    string visitNotes
+                property ads.attributeId "14"
+                property com.fasterxml.jackson.annotation.JsonProperty "visitNotes"
+                #update;
+    MedicalRecord(string advancedPumpRecommended, 
+        string basicPumpTrialAndFailReasons, 
+        string basicPumpTrialRequirement, 
+        boolean contraindications, 
+        boolean contraindicationsClearanceForm, 
+        string diagnosis, 
+        string dietAndMedicationEvaluation, 
+        java.time.LocalDate faceToFaceExaminationDate, 
+        string faceToFaceExaminationReason, 
+        string icd10Code, 
+        string lymphedemiaCause, 
+        string progressNotes, 
+        string stageLevel, 
+        string termsOfSeverity, 
+        string visitNotes)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    MedicalRecord()
+                #dataio.default;
+}
+
+class NewEnum
+        extends java.lang.Enum
+        property ads.typeId "18"
+        property com.fasterxml.jackson.annotation.JsonTypeName "newEnum"
+        #de.generated
+{
+    domain {static SMNChronicVenousUlcers$CVU$, static SMNLymphedema, static medicalRecordsChronicVenousUlcers$CVU$, static medicalRecordsLymphedema}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.NewEnum SMNChronicVenousUlcers$CVU$
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "SMNChronicVenousUlcers(CVU)";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.NewEnum SMNLymphedema
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "SMNLymphedema";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.NewEnum medicalRecordsChronicVenousUlcers$CVU$
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "MedicalRecordsChronicVenousUlcers(CVU)";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.NewEnum medicalRecordsLymphedema
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "MedicalRecordsLymphedema";
+}
+
+class Order
+        property ads.typeId "10"
+        #de.generated
+{
+    java.util.List documents domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Document
+                property ads.attributeId "1"
+                #update;
+    java.math.BigDecimal downpaymentAmountReceived
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "downpaymentAmountReceived"
+                #update;
+    string garment
+                property ads.attributeId "3"
+                #update;
+    string orderType
+                property ads.attributeId "4"
+                #update;
+    boolean patientAcceptance
+                property ads.attributeId "5"
+                #update;
+    string picSignature
+                property ads.attributeId "6"
+                #update;
+    string placeOfServiceCode
+                property ads.attributeId "7"
+                #update;
+    string product
+                property ads.attributeId "8"
+                #update;
+    boolean representativeNotification
+                property ads.attributeId "9"
+                #update;
+    java.time.LocalDate rxDate
+                property ads.attributeId "10"
+                #update;
+    string rxFullName
+                property ads.attributeId "11"
+                #update;
+    string rxNPI
+                property ads.attributeId "12"
+                #update;
+    boolean selfPayClaimIndicator
+                property ads.attributeId "13"
+                #update;
+    string thirdPartySource
+                property ads.attributeId "14"
+                #update;
+    Order(java.util.List documents domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Document, 
+        java.math.BigDecimal downpaymentAmountReceived, 
+        string garment, 
+        string orderType, 
+        boolean patientAcceptance, 
+        string picSignature, 
+        string placeOfServiceCode, 
+        string product, 
+        boolean representativeNotification, 
+        java.time.LocalDate rxDate, 
+        string rxFullName, 
+        string rxNPI, 
+        boolean selfPayClaimIndicator, 
+        string thirdPartySource)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    Order()
+                #dataio.default;
+    void addTo_documents(bhagyashree.tactile_medical.tactile_decision_service.data.Document documents)
+                property collectionAttribute "documents"
+                #update;
+    void clear_documents()
+                property collectionAttribute "documents"
+                #update;
+    void removeFrom_documents(bhagyashree.tactile_medical.tactile_decision_service.data.Document documents)
+                property collectionAttribute "documents"
+                #update;
+    void set_documents(java.util.Collection documents domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Document)
+                property collectionAttribute "documents"
+                #update;
+}
+
+class Patient
+        property ads.typeId "12"
+        #de.generated
+{
+    boolean "3rdPartyFlag"
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "3rdPartyFlag"
+                #update;
+    java.time.LocalDate dateOdPatientConsent
+                property ads.attributeId "3"
+                #update;
+    java.time.LocalDate dateOfBirth
+                property ads.attributeId "4"
+                #update;
+    string email
+                property ads.attributeId "5"
+                #update;
+    string fullName
+                property ads.attributeId "6"
+                #update;
+    string gender
+                property ads.attributeId "7"
+                #update;
+    string healthcareProvider
+                property ads.attributeId "8"
+                #update;
+    string heights
+                property ads.attributeId "9"
+                #update;
+    string insuranceNumber
+                property ads.attributeId "10"
+                #update;
+    string measurements
+                property ads.attributeId "11"
+                #update;
+    string memberID
+                property ads.attributeId "12"
+                #update;
+    bhagyashree.tactile_medical.tactile_decision_service.data.Order oder
+                property ads.attributeId "13"
+                #update;
+    string patientAssisstanceConsiderations
+                property ads.attributeId "14"
+                #update;
+    string patientConsentSignature
+                property ads.attributeId "15"
+                #update;
+    java.util.List patientMedicalHistory domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.PatientMedicalHistory
+                property ads.attributeId "16"
+                #update;
+    string payerName
+                property ads.attributeId "17"
+                #update;
+    string policyHolderAddress
+                property ads.attributeId "18"
+                #update;
+    string policyHolderName
+                property ads.attributeId "19"
+                #update;
+    string policyNumber
+                property ads.attributeId "20"
+                #update;
+    string primaryDiagnosis
+                property ads.attributeId "21"
+                #update;
+    java.time.LocalDate primaryInsuredDateOfBirth
+                property ads.attributeId "22"
+                #update;
+    string primaryInsuredName
+                property ads.attributeId "23"
+                #update;
+    string primaryPhone
+                property ads.attributeId "24"
+                #update;
+    string relationshipToPolicyHolder
+                property ads.attributeId "25"
+                #update;
+    string shippingConfirmation
+                property ads.attributeId "26"
+                #update;
+    string state
+                property ads.attributeId "27"
+                #update;
+    string streetAddress
+                property ads.attributeId "28"
+                #update;
+    java.util.List verificationBenefits domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit
+                property ads.attributeId "29"
+                #update;
+    string weight
+                property ads.attributeId "30"
+                #update;
+    string zipcode
+                property ads.attributeId "31"
+                #update;
+    Patient(boolean "3rdPartyFlag", 
+        java.time.LocalDate dateOdPatientConsent, 
+        java.time.LocalDate dateOfBirth, 
+        string email, 
+        string fullName, 
+        string gender, 
+        string healthcareProvider, 
+        string heights, 
+        string insuranceNumber, 
+        string measurements, 
+        string memberID, 
+        bhagyashree.tactile_medical.tactile_decision_service.data.Order oder, 
+        string patientAssisstanceConsiderations, 
+        string patientConsentSignature, 
+        java.util.List patientMedicalHistory domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.PatientMedicalHistory, 
+        string payerName, 
+        string policyHolderAddress, 
+        string policyHolderName, 
+        string policyNumber, 
+        string primaryDiagnosis, 
+        java.time.LocalDate primaryInsuredDateOfBirth, 
+        string primaryInsuredName, 
+        string primaryPhone, 
+        string relationshipToPolicyHolder, 
+        string shippingConfirmation, 
+        string state, 
+        string streetAddress, 
+        java.util.List verificationBenefits domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit, 
+        string weight, 
+        string zipcode)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    Patient()
+                #dataio.default;
+    void addTo_patientMedicalHistory(bhagyashree.tactile_medical.tactile_decision_service.data.PatientMedicalHistory patientMedicalHistory)
+                property collectionAttribute "patientMedicalHistory"
+                #update;
+    void addTo_verificationBenefits(bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit verificationBenefits)
+                property collectionAttribute "verificationBenefits"
+                #update;
+    void clear_patientMedicalHistory()
+                property collectionAttribute "patientMedicalHistory"
+                #update;
+    void clear_verificationBenefits()
+                property collectionAttribute "verificationBenefits"
+                #update;
+    void removeFrom_patientMedicalHistory(bhagyashree.tactile_medical.tactile_decision_service.data.PatientMedicalHistory patientMedicalHistory)
+                property collectionAttribute "patientMedicalHistory"
+                #update;
+    void removeFrom_verificationBenefits(bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit verificationBenefits)
+                property collectionAttribute "verificationBenefits"
+                #update;
+    void set_patientMedicalHistory(java.util.Collection patientMedicalHistory domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.PatientMedicalHistory)
+                property collectionAttribute "patientMedicalHistory"
+                #update;
+    void set_verificationBenefits(java.util.Collection verificationBenefits domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit)
+                property collectionAttribute "verificationBenefits"
+                #update;
+}
+
+class PatientMedicalHistory
+        property ads.typeId "11"
+        #de.generated
+{
+    string clinicName
+                property ads.attributeId "1"
+                #update;
+    string dietAndMedicalEvaluation
+                property ads.attributeId "2"
+                #update;
+    string etiology
+                property ads.attributeId "3"
+                #update;
+    string healthcareProviderName
+                property ads.attributeId "4"
+                #update;
+    string locationOfEdema
+                property ads.attributeId "5"
+                #update;
+    string prescriberName
+                property ads.attributeId "6"
+                #update;
+    string primaryDiagnosis
+                property ads.attributeId "7"
+                #update;
+    string therapistName
+                property ads.attributeId "8"
+                #update;
+    PatientMedicalHistory(string clinicName, 
+        string dietAndMedicalEvaluation, 
+        string etiology, 
+        string healthcareProviderName, 
+        string locationOfEdema, 
+        string prescriberName, 
+        string primaryDiagnosis, 
+        string therapistName)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    PatientMedicalHistory()
+                #dataio.default;
+}
+
+class PatientTreatmentArea
+        extends java.lang.Enum
+        property ads.typeId "14"
+        property com.fasterxml.jackson.annotation.JsonTypeName "patientTreatmentArea"
+        #de.generated
+{
+    domain {static headAndNeck, static lowerExtremities, static trunk$ChestOnly, static upperExtremities}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PatientTreatmentArea headAndNeck
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "HeadAndNeck";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PatientTreatmentArea lowerExtremities
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "LowerExtremities";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PatientTreatmentArea trunk$ChestOnly
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Trunk/ChestOnly";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PatientTreatmentArea upperExtremities
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "UpperExtremities";
+}
+
+class Payer
+        property ads.typeId "13"
+        #de.generated
+{
+    boolean approval
+                property ads.attributeId "1"
+                #update;
+    string approvalType
+                property ads.attributeId "2"
+                #update;
+    java.math.BigDecimal authorizationNumber
+                property ads.attributeId "3"
+                #update;
+    java.time.LocalDate dateOfService
+                property ads.attributeId "4"
+                #update;
+    string feeSchedule
+                property ads.attributeId "5"
+                #update;
+    bhagyashree.tactile_medical.tactile_decision_service.data.FileMaker fileMaker
+                property ads.attributeId "6"
+                #update;
+    string insNumber
+                property ads.attributeId "7"
+                #update;
+    java.util.List patient domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Patient
+                property ads.attributeId "8"
+                #update;
+    string payerClassification
+                property ads.attributeId "9"
+                #update;
+    string payerName
+                property ads.attributeId "10"
+                #update;
+    string policy
+                property ads.attributeId "11"
+                #update;
+    Payer(boolean approval, 
+        string approvalType, 
+        java.math.BigDecimal authorizationNumber, 
+        java.time.LocalDate dateOfService, 
+        string feeSchedule, 
+        bhagyashree.tactile_medical.tactile_decision_service.data.FileMaker fileMaker, 
+        string insNumber, 
+        java.util.List patient domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Patient, 
+        string payerClassification, 
+        string payerName, 
+        string policy)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    Payer()
+                #dataio.default;
+    void addTo_patient(bhagyashree.tactile_medical.tactile_decision_service.data.Patient patient)
+                property collectionAttribute "patient"
+                #update;
+    void clear_patient()
+                property collectionAttribute "patient"
+                #update;
+    void removeFrom_patient(bhagyashree.tactile_medical.tactile_decision_service.data.Patient patient)
+                property collectionAttribute "patient"
+                #update;
+    void set_patient(java.util.Collection patient domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Patient)
+                property collectionAttribute "patient"
+                #update;
+}
+
+class PayerRequirements
+        property ads.typeId "15"
+        property com.fasterxml.jackson.annotation.JsonTypeName "payerRequirements"
+        #de.generated
+{
+    bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired SMN$LMNOnFileRequired
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "SMN/LMNOnFileRequired"
+                #update;
+    bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired advancedPumpRequired
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "advancedPumpRequired"
+                #update;
+    string diagnosisAcceptabilityList
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "diagnosisAcceptabilityList"
+                #update;
+    bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired dietAndMedicationEvaluationRequired
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "dietAndMedicationEvaluationRequired"
+                #update;
+    bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired medicalRecordsOnFileRequired
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "medicalRecordsOnFileRequired"
+                #update;
+    PayerRequirements(bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired SMN$LMNOnFileRequired, 
+        bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired advancedPumpRequired, 
+        string diagnosisAcceptabilityList, 
+        bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired dietAndMedicationEvaluationRequired, 
+        bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired medicalRecordsOnFileRequired)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    PayerRequirements()
+                #dataio.default;
+}
+
+class Prescription
+        property ads.typeId "1"
+        #de.generated
+{
+    java.time.LocalDate dateOfBirth
+                property ads.attributeId "1"
+                #update;
+    string diagnosis
+                property ads.attributeId "2"
+                #update;
+    string frequency
+                property ads.attributeId "3"
+                #update;
+    string fullName
+                property ads.attributeId "4"
+                #update;
+    string locationOfEdema
+                property ads.attributeId "5"
+                #update;
+    string lymphedemiaCause
+                property ads.attributeId "6"
+                #update;
+    string npi
+                property ads.attributeId "7"
+                #update;
+    string product
+                property ads.attributeId "8"
+                #update;
+    string signature
+                property ads.attributeId "9"
+                #update;
+    boolean signatureStamp
+                property ads.attributeId "10"
+                #update;
+    Prescription(java.time.LocalDate dateOfBirth, 
+        string diagnosis, 
+        string frequency, 
+        string fullName, 
+        string locationOfEdema, 
+        string lymphedemiaCause, 
+        string npi, 
+        string product, 
+        string signature, 
+        boolean signatureStamp)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    Prescription()
+                #dataio.default;
+}
+
+class Required$NotRequired
+        extends java.lang.Enum
+        property ads.typeId "16"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Required/NotRequired"
+        #de.generated
+{
+    domain {static notRequired, static required}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired notRequired
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "NotRequired";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired required
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Required";
+}
+
+class SMNLMN
+        property ads.typeId "6"
+        #de.generated
+{
+    string advancedPumpRecommended
+                property ads.attributeId "1"
+                #update;
+    string basicPumpTrialRequirement
+                property ads.attributeId "2"
+                #update;
+    string diagnosis
+                property ads.attributeId "3"
+                #update;
+    string dietAndMedicationEvaluation
+                property ads.attributeId "4"
+                #update;
+    string lymphedemiaCause
+                property ads.attributeId "5"
+                #update;
+    string notes
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "notes"
+                #update;
+    string stageLevel
+                property ads.attributeId "6"
+                #update;
+    string termsOfSeverity
+                property ads.attributeId "7"
+                #update;
+    SMNLMN(string advancedPumpRecommended, 
+        string basicPumpTrialRequirement, 
+        string diagnosis, 
+        string dietAndMedicationEvaluation, 
+        string lymphedemiaCause, 
+        string notes, 
+        string stageLevel, 
+        string termsOfSeverity)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    SMNLMN()
+                #dataio.default;
+}
+
+class Valid$NotValid
+        extends java.lang.Enum
+        property ads.typeId "20"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Valid/NotValid"
+        #de.generated
+{
+    domain {static notValid, static valid}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Valid$NotValid notValid
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "NotValid";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Valid$NotValid valid
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Valid";
+}
+
+class VerificationOfBenefit
+        property ads.typeId "8"
+        #de.generated
+{
+    string distributor
+                property ads.attributeId "1"
+                #update;
+    string distributorName
+                property ads.attributeId "2"
+                #update;
+    java.time.LocalDate effectiveDate
+                property ads.attributeId "3"
+                #update;
+    string network
+                property ads.attributeId "4"
+                #update;
+    string paProcess
+                property ads.attributeId "5"
+                #update;
+    java.math.BigDecimal paidPercentINN$OON
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "paidPercentINN/OON"
+                #update;
+    java.math.BigDecimal patientResponsibilityAmount
+                property ads.attributeId "7"
+                #update;
+    string planDesignator
+                property ads.attributeId "8"
+                #update;
+    string planType
+                property ads.attributeId "9"
+                #update;
+    string policyNumber
+                property ads.attributeId "10"
+                #update;
+    java.time.LocalDate renewalDate
+                property ads.attributeId "11"
+                #update;
+    java.time.LocalDate termDate
+                property ads.attributeId "12"
+                #update;
+    VerificationOfBenefit(string distributor, 
+        string distributorName, 
+        java.time.LocalDate effectiveDate, 
+        string network, 
+        string paProcess, 
+        java.math.BigDecimal paidPercentINN$OON, 
+        java.math.BigDecimal patientResponsibilityAmount, 
+        string planDesignator, 
+        string planType, 
+        string policyNumber, 
+        java.time.LocalDate renewalDate, 
+        java.time.LocalDate termDate)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    VerificationOfBenefit()
+                #dataio.default;
+}
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Advanced Pump Acceptability, Diet and Medication Evaluation Acceptability">
+  <name>Advanced_Pump_Acceptability_Diet_and_Medication_Evaluation_Acceptability</name>
+  <uuid>a7ef4a2d-58e3-4d12-a6f1-1e0190b70e8c</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#f042d20f-e37e-4a78-a87e-5b1e616dd388"/>
+  <targetRuleProject href="../../Advanced%20Pump%20Acceptability,%20Diet%20and%20Medication%20Evaluation%20Acceptability#0ef199b4-a7dc-455a-af83-b693fe2454c0"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Demo Record Validity, Girth Measurement Acceptability, Lymphedema Stage Level">
+  <name>Demo_Record_Validity_Girth_Measurement_Acceptability_Lymphedema_Stage_Level</name>
+  <uuid>b7b01b29-7625-4389-a207-6808daeb09cd</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#083d452e-7150-4f7a-a651-02a2bf59164d"/>
+  <targetRuleProject href="../../Demo%20Record%20Validity,%20Girth%20Measurement%20Acceptability,%20Lymphedema%20Stage%20Level#a44dbcd1-ec98-4d4e-bd01-20fe81a1826f"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

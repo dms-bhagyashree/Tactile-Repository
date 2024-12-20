@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>60a85582-dfeb-4f15-ad9c-e768a76f28bc</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <decision id="node_1" name="Primary Coverage Diagnosis">
+        <description>What is the primary diagnosis for this patient?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Patient" collection="false" name="Patient"/>
+                <output bomType="java.lang.String" collection="false" name="Primary Coverage Diagnosis"/>
+                <rule defaultRule="false" href="node_1/Primary%20Coverage%20Diagnosis.dmt" kind="DecisionTable" name="Primary Coverage Diagnosis"/>
+                <rule defaultRule="true" href="node_1/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Primary Coverage Diagnosis" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_5" name="Payer">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Payer" collection="false" name="Payer"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_5_ii" name="Payer" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Payer"/>
+    </inputData>
+    <decision id="node_9" name="Diagnosis Validity">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="Primary Coverage Diagnosis"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Payer" collection="false" name="Payer"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Patient" collection="false" name="Patient"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Valid$NotValid" collection="false" name="Diagnosis Validity"/>
+                <rule defaultRule="false" href="node_9/Diagnosis%20Validity.dmt" kind="DecisionTable" name="Diagnosis Validity"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_9_ii" name="Diagnosis Validity" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Valid$NotValid"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_11"/>
+        </knowledgeRequirement>
+    </decision>
+    <inputData id="node_10" name="Patient">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Patient" collection="false" name="Patient"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_10_ii" name="Patient" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Patient"/>
+    </inputData>
+    <businessKnowledgeModel id="node_11" name="Payer Requirements">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="Payer Requirements" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.PayerRequirements"/>
+        <encapsulatedLogic typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.PayerRequirements">
+            <formalParameter name="payer" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Payer"/>
+            <formalParameter name="patient" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Patient"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"bhagyashree.tactile_medical.tactile_decision_service.payerrequirements.Payer_Requirements"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(bhagyashree.tactile_medical.tactile_decision_service.data.Payer,bhagyashree.tactile_medical.tactile_decision_service.data.Patient)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

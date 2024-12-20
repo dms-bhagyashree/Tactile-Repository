@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>083d452e-7150-4f7a-a651-02a2bf59164d</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Demo">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Demo" collection="false" name="Demo"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Demo" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Demo"/>
+    </inputData>
+    <decision id="node_1" name="Clinical Response to Treatment Acceptability">
+        <description>Is the clinical response to treatment acceptable for this order?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Demo" collection="false" name="Demo"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Clinical Response to Treatment Acceptability"/>
+                <rule defaultRule="false" href="node_1/Clinical%20Response%20to%20Treatment%20Acceptability.dmt" kind="DecisionTable" name="Clinical Response to Treatment Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Clinical Response to Treatment Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_2" name="Payer">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Payer" collection="false" name="Payer"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Payer" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Payer"/>
+    </inputData>
+    <decision id="node_3" name="Demo Location Acceptable">
+        <description>Is the location of the demo acceptable for this order?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Demo" collection="false" name="Demo"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Payer" collection="false" name="Payer"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Demo Location Acceptable"/>
+                <rule defaultRule="false" href="node_3/Demo%20Location%20Acceptable.dmt" kind="DecisionTable" name="Demo Location Acceptable"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_3_ii" name="Demo Location Acceptable" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

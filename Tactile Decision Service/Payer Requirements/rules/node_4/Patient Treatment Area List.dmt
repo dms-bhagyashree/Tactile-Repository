@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>Patient Treatment Area List</name>
+  <uuid>7ae40637-c837-4fd2-9774-c9a2e5608297</uuid>
+  <locale>en_US</locale>
+  <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
+    <Body>
+        <Properties>
+            <Property Name="UI.MediaType"><![CDATA[Web]]></Property>
+            <Property Name="UI.RenderBoolean" Type="xs:boolean"><![CDATA[true]]></Property>
+        </Properties>
+        <Preconditions>
+            <Text><![CDATA[for each document called 'patient document', in the documents of the oder of Patient
+definitions 
+	set 'cifObj' to the CIF of 'patient document';
+
+]]></Text>
+        </Preconditions>
+        <Structure>
+            <ConditionDefinitions>
+                <ConditionDefinition Id="C0">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the treatment of cifObj is <a string> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+            </ConditionDefinitions>
+            <ActionDefinitions>
+                <ActionDefinition Id="A0">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[--add <a patient treatment area> to decision
+set decision to decision + <a string>]]></Text>
+                    </ExpressionDefinition>
+                </ActionDefinition>
+            </ActionDefinitions>
+        </Structure>
+        <Contents>
+            <Partition DefId="C0">
+                <Condition>
+                    <Expression>
+                        <Text><![CDATA[<a string> contains <a string>]]></Text>
+                        <Param><![CDATA["Left Arm, Right Arm"]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA["Upper Extremities"]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Text><![CDATA[<a string> contains <a string>]]></Text>
+                        <Param><![CDATA["Left Leg, Right Leg"]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA["Lower Extremities"]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Text><![CDATA[<a string> contains <a string>]]></Text>
+                        <Param><![CDATA["Trunk/Chest Only"]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA["Trunk/Chest Only"]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Text><![CDATA[<a string> contains <a string>]]></Text>
+                        <Param><![CDATA["Head and Neck"]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA["Head and Neck"]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <ActionSet/>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <ActionSet/>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <ActionSet/>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <ActionSet/>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <ActionSet/>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <ActionSet/>
+                </Condition>
+            </Partition>
+        </Contents>
+    </Body>
+    <Resources DefaultLocale="en_US">
+        <ResourceSet Locale="en_US">
+            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Treatment]]></Data>
+            <Data Name="Definitions(A0)[0]#HeaderText"><![CDATA[a patient treatment area]]></Data>
+            <Data Name="Definitions(C0)[0]#HeaderText"><![CDATA[a number]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Patient Treatment Area List]]></Data>
+        </ResourceSet>
+    </Resources>
+</DT>
+</definition>
+</ilog.rules.studio.model.dt:DecisionTable>

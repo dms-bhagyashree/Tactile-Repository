@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Diagnosis Validity">
+  <name>Diagnosis_Validity</name>
+  <uuid>73558d47-c532-43a9-b735-fedaa59fc030</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#60a85582-dfeb-4f15-ad9c-e768a76f28bc"/>
+  <targetRuleProject href="../../Diagnosis%20Validity#1013e50f-851d-44a2-9440-45e58ae6f114"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>
