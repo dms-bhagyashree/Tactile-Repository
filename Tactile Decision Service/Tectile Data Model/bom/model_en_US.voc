@@ -360,8 +360,8 @@ bhagyashree.tactile_medical.tactile_decision_service.data.Payer.removeFrom_patie
 # bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification
 bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification#concept.label = Payer Classification
 bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification.standard#instance.label = Standard
+bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification.standard$#instance.label = Standard +
 bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification.standard$Review#instance.label = Standard + Review
-bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification.standard1#instance.label = Standard +
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.PayerRequirements
 bhagyashree.tactile_medical.tactile_decision_service.data.PayerRequirements#concept.label = payer requirements

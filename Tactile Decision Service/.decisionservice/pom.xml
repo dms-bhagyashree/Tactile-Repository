@@ -28,6 +28,11 @@
         </dependency>
         <dependency>
             <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+            <artifactId>etiologyAcceptability</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
             <artifactId>patientOrderAcceptanceStatus</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
@@ -124,6 +129,10 @@
 
 
 
+
+
+
+
 <build>
         <resources>
             <resource>
@@ -169,6 +178,15 @@
                                 <artifactItem>
                                     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
                                     <artifactId>diagnosisValidity</artifactId>
+                                    <version>LATEST-SNAPSHOT</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <includes>**/*.class</includes>
+                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+                                    <artifactId>etiologyAcceptability</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>

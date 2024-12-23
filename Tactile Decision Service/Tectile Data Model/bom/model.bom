@@ -29,7 +29,7 @@ class Acceptable$NotAcceptable
                 property com.fasterxml.jackson.annotation.JsonProperty "Acceptable";
     static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable notAcceptable
                 property ads.attributeId "3"
-                property com.fasterxml.jackson.annotation.JsonProperty "NotAcceptable";
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Acceptable";
 }
 
 class Approved$NotApproved
@@ -588,16 +588,16 @@ class PatientTreatmentArea
     domain {static headAndNeck, static lowerExtremities, static trunk$ChestOnly, static upperExtremities}
     static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PatientTreatmentArea headAndNeck
                 property ads.attributeId "4"
-                property com.fasterxml.jackson.annotation.JsonProperty "HeadAndNeck";
+                property com.fasterxml.jackson.annotation.JsonProperty "Head And Neck";
     static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PatientTreatmentArea lowerExtremities
                 property ads.attributeId "2"
-                property com.fasterxml.jackson.annotation.JsonProperty "LowerExtremities";
+                property com.fasterxml.jackson.annotation.JsonProperty "Lower Extremities";
     static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PatientTreatmentArea trunk$ChestOnly
                 property ads.attributeId "3"
-                property com.fasterxml.jackson.annotation.JsonProperty "Trunk/ChestOnly";
+                property com.fasterxml.jackson.annotation.JsonProperty "Trunk/Chest Only";
     static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PatientTreatmentArea upperExtremities
                 property ads.attributeId "1"
-                property com.fasterxml.jackson.annotation.JsonProperty "UpperExtremities";
+                property com.fasterxml.jackson.annotation.JsonProperty "Upper Extremities";
 }
 
 class Payer
@@ -674,16 +674,16 @@ class PayerClassification
         property com.fasterxml.jackson.annotation.JsonTypeName "PayerClassification"
         #de.generated
 {
-    domain {static standard, static standard$Review, static standard1}
+    domain {static standard, static standard$, static standard$Review}
     static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification standard
                 property ads.attributeId "1"
                 property com.fasterxml.jackson.annotation.JsonProperty "Standard";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification standard$
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Standard +";
     static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification standard$Review
                 property ads.attributeId "3"
-                property com.fasterxml.jackson.annotation.JsonProperty "Standard+Review";
-    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification standard1
-                property ads.attributeId "2"
-                property com.fasterxml.jackson.annotation.JsonProperty "Standard1";
+                property com.fasterxml.jackson.annotation.JsonProperty "Standard + Review";
 }
 
 class PayerRequirements
@@ -818,7 +818,7 @@ class Required$NotRequired
     domain {static notRequired, static required}
     static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired notRequired
                 property ads.attributeId "1"
-                property com.fasterxml.jackson.annotation.JsonProperty "NotRequired";
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Required";
     static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired required
                 property ads.attributeId "2"
                 property com.fasterxml.jackson.annotation.JsonProperty "Required";
@@ -896,7 +896,7 @@ class Valid$NotValid
     domain {static notValid, static valid}
     static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Valid$NotValid notValid
                 property ads.attributeId "2"
-                property com.fasterxml.jackson.annotation.JsonProperty "NotValid";
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Valid";
     static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Valid$NotValid valid
                 property ads.attributeId "1"
                 property com.fasterxml.jackson.annotation.JsonProperty "Valid";
