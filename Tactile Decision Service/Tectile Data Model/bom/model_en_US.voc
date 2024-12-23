@@ -1,8 +1,18 @@
 
+# bhagyashree.tactile_medical.tactile_decision_service.data.Accept$NotAccept
+bhagyashree.tactile_medical.tactile_decision_service.data.Accept$NotAccept#concept.label = Accept/Not Accept
+bhagyashree.tactile_medical.tactile_decision_service.data.Accept$NotAccept.accept#instance.label = Accept
+bhagyashree.tactile_medical.tactile_decision_service.data.Accept$NotAccept.notAccept#instance.label = Not Accept
+
 # bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable
 bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable#concept.label = Acceptable/Not Acceptable
 bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable.acceptable#instance.label = Acceptable
 bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable.notAcceptable#instance.label = Not Acceptable
+
+# bhagyashree.tactile_medical.tactile_decision_service.data.Approved$NotApproved
+bhagyashree.tactile_medical.tactile_decision_service.data.Approved$NotApproved#concept.label = Approved/Not Approved
+bhagyashree.tactile_medical.tactile_decision_service.data.Approved$NotApproved.approved#instance.label = Approved
+bhagyashree.tactile_medical.tactile_decision_service.data.Approved$NotApproved.notApproved#instance.label = Not Approved
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.Cif
 bhagyashree.tactile_medical.tactile_decision_service.data.Cif#concept.label = cif
@@ -102,6 +112,11 @@ bhagyashree.tactile_medical.tactile_decision_service.data.FileMaker.seekAuthoriz
 bhagyashree.tactile_medical.tactile_decision_service.data.FileMaker.seekAuthorizationReview#phrase.negative_predicate = {this} is not seek authorization review
 bhagyashree.tactile_medical.tactile_decision_service.data.FileMaker.seekAuthorizationReview#phrase.negative_predicate_setter = {this} does not get seek authorization review
 bhagyashree.tactile_medical.tactile_decision_service.data.FileMaker.seekAuthorizationReview#phrase.positive_predicate_setter = {this} gets seek authorization review
+
+# bhagyashree.tactile_medical.tactile_decision_service.data.High$NotHigh
+bhagyashree.tactile_medical.tactile_decision_service.data.High$NotHigh#concept.label = High/Not High
+bhagyashree.tactile_medical.tactile_decision_service.data.High$NotHigh.high#instance.label = High
+bhagyashree.tactile_medical.tactile_decision_service.data.High$NotHigh.notHigh#instance.label = Not High
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord#concept.label = medical record
@@ -366,6 +381,11 @@ bhagyashree.tactile_medical.tactile_decision_service.data.PayerRequirements.medi
 bhagyashree.tactile_medical.tactile_decision_service.data.PayerRequirements.medicalRecordsOnFileRequired#phrase.clearer = clear the medical records on file required of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.PayerRequirements.medicalRecordsOnFileRequired#phrase.navigation = {medical records on file required} of {this}
 
+# bhagyashree.tactile_medical.tactile_decision_service.data.PayerType
+bhagyashree.tactile_medical.tactile_decision_service.data.PayerType#concept.label = Payer Type
+bhagyashree.tactile_medical.tactile_decision_service.data.PayerType.billInsurance#instance.label = Bill Insurance
+bhagyashree.tactile_medical.tactile_decision_service.data.PayerType.selfPay#instance.label = Self Pay
+
 # bhagyashree.tactile_medical.tactile_decision_service.data.Prescription
 bhagyashree.tactile_medical.tactile_decision_service.data.Prescription#concept.label = prescription
 bhagyashree.tactile_medical.tactile_decision_service.data.Prescription.Prescription(java.time.LocalDate,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean)#phrase.navigation = a new {prescription} where {0, date of birth} {1, diagnosis} {2, frequency} {3, full name} {4, location of edema} {5, lymphedemia cause} {6, npi} {7, product} {8, signature} {9, signature stamp}
@@ -394,6 +414,12 @@ bhagyashree.tactile_medical.tactile_decision_service.data.Prescription.signature
 bhagyashree.tactile_medical.tactile_decision_service.data.Prescription.signatureStamp#phrase.negative_predicate = {this} is not signature stamp
 bhagyashree.tactile_medical.tactile_decision_service.data.Prescription.signatureStamp#phrase.negative_predicate_setter = {this} does not get signature stamp
 bhagyashree.tactile_medical.tactile_decision_service.data.Prescription.signatureStamp#phrase.positive_predicate_setter = {this} gets signature stamp
+
+# bhagyashree.tactile_medical.tactile_decision_service.data.ReferralProductType
+bhagyashree.tactile_medical.tactile_decision_service.data.ReferralProductType#concept.label = Referral Product Type
+bhagyashree.tactile_medical.tactile_decision_service.data.ReferralProductType.entre#instance.label = Entre
+bhagyashree.tactile_medical.tactile_decision_service.data.ReferralProductType.flexitouch#instance.label = Flexitouch
+bhagyashree.tactile_medical.tactile_decision_service.data.ReferralProductType.portableEntre#instance.label = Portable Entre
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired
 bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired#concept.label = Required/Not Required

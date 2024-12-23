@@ -7,24 +7,186 @@
     <extensionElements>
         <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
     </extensionElements>
-    <inputData id="node_0" name="Input">
+    <inputData id="node_0" name="Verification of Benefits">
         <extensionElements>
             <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
-                <output bomType="java.lang.String" collection="false" name="Input"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit" collection="false" name="Verification of Benefits"/>
             </initialization>
         </extensionElements>
-        <variable id="node_0_ii" name="Input" typeRef="java.lang.String"/>
+        <variable id="node_0_ii" name="Verification of Benefits" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit"/>
     </inputData>
-    <decision id="node_1" name="Decision">
+    <decision id="node_1" name="Referral Product Type">
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
-                <input bomType="java.lang.String" collection="false" name="Input"/>
-                <output bomType="java.lang.String" collection="false" name="Decision"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit" collection="false" name="Verification of Benefits"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.ReferralProductType" collection="false" name="Referral Product Type"/>
+                <rule defaultRule="true" href="node_1/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
             </ruleset>
         </extensionElements>
-        <variable id="node_1_ii" name="Decision" typeRef="java.lang.String"/>
+        <variable id="node_1_ii" name="Referral Product Type" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.ReferralProductType"/>
         <informationRequirement>
             <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_2" name="Payer Type">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Order" collection="false" name="Order"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.PayerType" collection="false" name="Payer Type"/>
+                <rule defaultRule="false" href="node_2/Payer%20Type.dmt" kind="DecisionTable" name="Payer Type"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_2_ii" name="Payer Type" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.PayerType"/>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_3" name="Patient Assistance Consideration Approval">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit" collection="false" name="Verification of Benefits"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Approved$NotApproved" collection="false" name="Patient Assistance Consideration Approval"/>
+                <rule defaultRule="true" href="node_3/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_3_ii" name="Patient Assistance Consideration Approval" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Approved$NotApproved"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_4" name="Order">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Order" collection="false" name="Order"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_4_ii" name="Order" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Order"/>
+    </inputData>
+    <decision id="node_5" name="Self Pay Downpayment Amount Required">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.ReferralProductType" collection="false" name="Referral Product Type"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.PayerType" collection="false" name="Payer Type"/>
+                <output bomType="java.lang.Double" collection="false" name="Self Pay Downpayment Amount Required"/>
+                <rule defaultRule="false" href="node_5/Self%20Pay%20Downpayment%20Amount%20Required.dmt" kind="DecisionTable" name="Self Pay Downpayment Amount Required"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_5_ii" name="Self Pay Downpayment Amount Required" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_6" name="Downpayment Acceptability">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.PayerType" collection="false" name="Payer Type"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Order" collection="false" name="Order"/>
+                <input bomType="java.lang.Double" collection="false" name="Self Pay Downpayment Amount Required"/>
+                <input bomType="java.lang.Double" collection="false" name="High Estimated Downpayment Amount Required"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Downpayment Acceptability"/>
+                <rule defaultRule="false" href="node_6/Downpayment%20Acceptability.dmt" kind="DecisionTable" name="Downpayment Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_6_ii" name="Downpayment Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_9"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_7" name="Estimated Financial Responsibility">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit" collection="false" name="Verification of Benefits"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Approved$NotApproved" collection="false" name="Patient Assistance Consideration Approval"/>
+                <output bomType="java.lang.Double" collection="false" name="Estimated Financial Responsibility"/>
+                <rule defaultRule="true" href="node_7/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_7_ii" name="Estimated Financial Responsibility" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_8" name="High Estimated Financial Responsibility Indicator">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.ReferralProductType" collection="false" name="Referral Product Type"/>
+                <input bomType="java.lang.Double" collection="false" name="Estimated Financial Responsibility"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.High$NotHigh" collection="false" name="High Estimated Financial Responsibility Indicator"/>
+                <rule defaultRule="false" href="node_8/High%20Estimated%20Financial%20Responsibility%20Indicator.dmt" kind="DecisionTable" name="High Estimated Financial Responsibility Indicator"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_8_ii" name="High Estimated Financial Responsibility Indicator" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.High$NotHigh"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_9" name="High Estimated Downpayment Amount Required">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Estimated Financial Responsibility"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.High$NotHigh" collection="false" name="High Estimated Financial Responsibility Indicator"/>
+                <output bomType="java.lang.Double" collection="false" name="High Estimated Downpayment Amount Required"/>
+                <rule defaultRule="false" href="node_9/High%20Estimated%20Downpayment%20Amount%20Required.dmt" kind="DecisionTable" name="High Estimated Downpayment Amount Required"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_9_ii" name="High Estimated Downpayment Amount Required" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_8"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_10" name="Downpayment Required">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="High Estimated Downpayment Amount Required"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired" collection="false" name="Downpayment Required"/>
+                <rule defaultRule="false" href="node_10/Downpayment%20Required.dmt" kind="DecisionTable" name="Downpayment Required"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_10_ii" name="Downpayment Required" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired"/>
+        <informationRequirement>
+            <requiredInput href="#node_9"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_11" name="Patient Order Acceptance">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Order" collection="false" name="Order"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Downpayment Acceptability"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired" collection="false" name="Downpayment Required"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Accept$NotAccept" collection="false" name="Patient Order Acceptance"/>
+                <rule defaultRule="false" href="node_11/Patient%20Order%20Acceptance.dmt" kind="DecisionTable" name="Patient Order Acceptance"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_11_ii" name="Patient Order Acceptance" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Accept$NotAccept"/>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
         </informationRequirement>
     </decision>
 </definitions>

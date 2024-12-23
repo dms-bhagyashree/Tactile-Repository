@@ -2,6 +2,21 @@
 package bhagyashree.tactile_medical.tactile_decision_service.data;
 
 
+class Accept$NotAccept
+        extends java.lang.Enum
+        property ads.typeId "26"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Accept/Not Accept"
+        #de.generated
+{
+    domain {static accept, static notAccept}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Accept$NotAccept accept
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Accept";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Accept$NotAccept notAccept
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Accept";
+}
+
 class Acceptable$NotAcceptable
         extends java.lang.Enum
         property ads.typeId "17"
@@ -15,6 +30,21 @@ class Acceptable$NotAcceptable
     static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable notAcceptable
                 property ads.attributeId "3"
                 property com.fasterxml.jackson.annotation.JsonProperty "NotAcceptable";
+}
+
+class Approved$NotApproved
+        extends java.lang.Enum
+        property ads.typeId "27"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Approved/Not Approved"
+        #de.generated
+{
+    domain {static approved, static notApproved}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Approved$NotApproved approved
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Approved";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Approved$NotApproved notApproved
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Approved";
 }
 
 class Cif
@@ -176,6 +206,21 @@ class FileMaker
                 #prototype;
     FileMaker()
                 #dataio.default;
+}
+
+class High$NotHigh
+        extends java.lang.Enum
+        property ads.typeId "25"
+        property com.fasterxml.jackson.annotation.JsonTypeName "High/Not High"
+        #de.generated
+{
+    domain {static high, static notHigh}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.High$NotHigh high
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "High";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.High$NotHigh notHigh
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not High";
 }
 
 class MedicalRecord
@@ -679,6 +724,21 @@ class PayerRequirements
                 #dataio.default;
 }
 
+class PayerType
+        extends java.lang.Enum
+        property ads.typeId "24"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Payer Type"
+        #de.generated
+{
+    domain {static billInsurance, static selfPay}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PayerType billInsurance
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Bill Insurance";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PayerType selfPay
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Self Pay";
+}
+
 class Prescription
         property ads.typeId "1"
         #de.generated
@@ -729,6 +789,24 @@ class Prescription
                 #prototype;
     Prescription()
                 #dataio.default;
+}
+
+class ReferralProductType
+        extends java.lang.Enum
+        property ads.typeId "23"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Referral Product Type"
+        #de.generated
+{
+    domain {static entre, static flexitouch, static portableEntre}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.ReferralProductType entre
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Entre";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.ReferralProductType flexitouch
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Flexitouch";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.ReferralProductType portableEntre
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Portable Entre";
 }
 
 class Required$NotRequired
