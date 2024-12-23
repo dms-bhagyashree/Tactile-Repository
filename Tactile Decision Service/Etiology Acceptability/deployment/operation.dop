@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Etiology Acceptability">
+  <name>Etiology_Acceptability</name>
+  <uuid>2e95dd5a-622b-48e1-9fcd-16d4bd075ddc</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#d52c5a71-8ced-4ea1-bab8-96e0a5c0b657"/>
+  <targetRuleProject href="../../Etiology%20Acceptability#16a0af1e-a922-4b45-842e-abae84d419cf"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

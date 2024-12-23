@@ -7,5 +7,8 @@
 		
 		the diagnosis acceptability list is "CVU" , 
 		the diet and medication evaluation required is Required , 
-		the medical records on file required is Required ;]]></definition>
+		the medical records on file required is Required,
+        
+	the SMN/LMN on file required is Required ;
+    print "test";]]></definition>
 </ilog.rules.studio.model.brl:ActionRule>

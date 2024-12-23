@@ -43,6 +43,11 @@
         </dependency>
         <dependency>
             <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+            <artifactId>prescriptionValidity</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
             <artifactId>tectileDataModel</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
@@ -99,6 +104,7 @@
             </build>
         </profile>
     </profiles>
+
 
 
 
@@ -205,6 +211,15 @@
                                 <artifactItem>
                                     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
                                     <artifactId>payerRequirements</artifactId>
+                                    <version>LATEST-SNAPSHOT</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <includes>**/*.class</includes>
+                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+                                    <artifactId>prescriptionValidity</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>

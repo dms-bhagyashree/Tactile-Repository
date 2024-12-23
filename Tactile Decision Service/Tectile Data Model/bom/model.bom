@@ -223,6 +223,21 @@ class High$NotHigh
                 property com.fasterxml.jackson.annotation.JsonProperty "Not High";
 }
 
+class Match$NotMatch
+        extends java.lang.Enum
+        property ads.typeId "28"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Match/NotMatch"
+        #de.generated
+{
+    domain {static match, static notMatch}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Match$NotMatch match
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Match";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Match$NotMatch notMatch
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Match";
+}
+
 class MedicalRecord
         property ads.typeId "3"
         #de.generated

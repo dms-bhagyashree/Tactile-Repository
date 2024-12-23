@@ -118,6 +118,11 @@ bhagyashree.tactile_medical.tactile_decision_service.data.High$NotHigh#concept.l
 bhagyashree.tactile_medical.tactile_decision_service.data.High$NotHigh.high#instance.label = High
 bhagyashree.tactile_medical.tactile_decision_service.data.High$NotHigh.notHigh#instance.label = Not High
 
+# bhagyashree.tactile_medical.tactile_decision_service.data.Match$NotMatch
+bhagyashree.tactile_medical.tactile_decision_service.data.Match$NotMatch#concept.label = Match/Not Match
+bhagyashree.tactile_medical.tactile_decision_service.data.Match$NotMatch.match#instance.label = Match
+bhagyashree.tactile_medical.tactile_decision_service.data.Match$NotMatch.notMatch#instance.label = Not Match
+
 # bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord#concept.label = medical record
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.MedicalRecord(java.lang.String,java.lang.String,java.lang.String,boolean,boolean,java.lang.String,java.lang.String,java.time.LocalDate,java.lang.String,java.lang.String,java.lang.String,java.lang.String,double,java.lang.String,java.lang.String)#phrase.navigation = a new {medical record} where {0, advanced pump recommended} {1, basic pump trial and fail reasons} {2, basic pump trial requirement} {3, contraindications} {4, contraindications clearance form} {5, diagnosis} {6, diet and medication evaluation} {7, face to face examination date} {8, face to face examination reason} {9, icd10 code} {10, lymphedemia cause} {11, progress notes} {12, stage level} {13, terms of severity} {14, visit notes}
