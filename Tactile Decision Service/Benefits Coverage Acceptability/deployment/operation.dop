@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Benefits Coverage Acceptability">
+  <name>Benefits_Coverage_Acceptability</name>
+  <uuid>dc3c45f7-8e87-4fac-bb1b-ad79a1eb3f81</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#2cc65256-8c87-45c8-86f2-4e4b84ffd3f9"/>
+  <targetRuleProject href="../../Benefits%20Coverage%20Acceptability#f3d243bd-25eb-4f74-88bf-3b923299b5c9"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

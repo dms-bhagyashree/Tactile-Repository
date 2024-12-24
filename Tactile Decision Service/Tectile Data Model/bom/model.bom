@@ -818,6 +818,21 @@ class Prescription
                 #dataio.default;
 }
 
+class Primary$NotPrimary
+        extends java.lang.Enum
+        property ads.typeId "29"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Primary/Not Primary"
+        #de.generated
+{
+    domain {static notPrimary, static primary}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Primary$NotPrimary notPrimary
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Primary";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Primary$NotPrimary primary
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Primary";
+}
+
 class ReferralProductType
         extends java.lang.Enum
         property ads.typeId "23"
@@ -955,6 +970,10 @@ class VerificationOfBenefit
     java.math.BigDecimal patientResponsibilityAmount
                 property ads.attributeId "7"
                 #update;
+    string payerInNetwork
+                property ads.attributeId "13"
+                property com.fasterxml.jackson.annotation.JsonProperty "payerInNetwork"
+                #update;
     string planDesignator
                 property ads.attributeId "8"
                 #update;
@@ -974,6 +993,7 @@ class VerificationOfBenefit
         string distributorName, 
         java.time.LocalDate effectiveDate, 
         string network, 
+        string payerInNetwork, 
         string paProcess, 
         java.math.BigDecimal paidPercentINN$OON, 
         java.math.BigDecimal patientResponsibilityAmount, 
