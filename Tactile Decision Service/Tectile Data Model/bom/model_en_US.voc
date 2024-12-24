@@ -415,10 +415,10 @@ bhagyashree.tactile_medical.tactile_decision_service.data.PayerType.selfPay#inst
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability
 bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability#concept.label = Policy Information Acceptability
-bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.PolicyInformationAcceptability(bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable,java.lang.String)#phrase.navigation = a new {Policy Information Acceptability} where {0, Acceptable/Not Acceptable} {1, Message}
-bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.acceptable$NotAcceptable#phrase.action = set the Acceptable/Not Acceptable of {this} to {Acceptable/Not Acceptable}
-bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.acceptable$NotAcceptable#phrase.clearer = clear the Acceptable/Not Acceptable of {this}
-bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.acceptable$NotAcceptable#phrase.navigation = {Acceptable/Not Acceptable} of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.PolicyInformationAcceptability(bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable,java.lang.String)#phrase.navigation = a new {Policy Information Acceptability} where {0, Policy Information Acceptability} {1, Message}
+bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.acceptable$NotAcceptable#phrase.action = set the Policy Information Acceptability of {this} to {Policy Information Acceptability}
+bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.acceptable$NotAcceptable#phrase.clearer = clear the Policy Information Acceptability of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.acceptable$NotAcceptable#phrase.navigation = {Policy Information Acceptability} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.message#phrase.action = set the Message of {this} to {Message}
 bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.message#phrase.navigation = {Message} of {this}
 

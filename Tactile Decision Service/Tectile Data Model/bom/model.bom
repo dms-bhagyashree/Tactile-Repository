@@ -842,7 +842,7 @@ class PreServiceApprovalStatus
         property com.fasterxml.jackson.annotation.JsonTypeName "Pre Service Approval Status"
         #de.generated
 {
-    domain {static approved, static hold, static denied, static partiallyApproved}
+    domain {static approved, static denied, static hold, static partiallyApproved}
     static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PreServiceApprovalStatus approved
                 property ads.attributeId "1"
                 property com.fasterxml.jackson.annotation.JsonProperty "Approved";
