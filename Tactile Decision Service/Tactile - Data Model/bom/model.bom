@@ -444,11 +444,12 @@ class Patient
                 property ads.attributeId "1"
                 property com.fasterxml.jackson.annotation.JsonProperty "3rdPartyFlag"
                 #update;
-    java.time.LocalDate dateOdPatientConsent
-                property ads.attributeId "3"
-                #update;
     java.time.LocalDate dateOfBirth
                 property ads.attributeId "4"
+                #update;
+    java.time.LocalDate dateOfPatientConsent
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "dateOfPatientConsent"
                 #update;
     string email
                 property ads.attributeId "5"
@@ -474,8 +475,9 @@ class Patient
     string memberID
                 property ads.attributeId "12"
                 #update;
-    bhagyashree.tactile_medical.tactile_decision_service.data.Order oder
+    bhagyashree.tactile_medical.tactile_decision_service.data.Order order
                 property ads.attributeId "13"
+                property com.fasterxml.jackson.annotation.JsonProperty "order"
                 #update;
     string patientAssisstanceConsiderations
                 property ads.attributeId "14"
@@ -532,8 +534,8 @@ class Patient
                 property ads.attributeId "31"
                 #update;
     Patient(boolean "3rdPartyFlag", 
-        java.time.LocalDate dateOdPatientConsent, 
         java.time.LocalDate dateOfBirth, 
+        java.time.LocalDate dateOfPatientConsent, 
         string email, 
         string fullName, 
         string gender, 
@@ -542,7 +544,7 @@ class Patient
         string insuranceNumber, 
         string measurements, 
         string memberID, 
-        bhagyashree.tactile_medical.tactile_decision_service.data.Order oder, 
+        bhagyashree.tactile_medical.tactile_decision_service.data.Order order, 
         string patientAssisstanceConsiderations, 
         string patientConsentSignature, 
         java.util.List patientMedicalHistory domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.PatientMedicalHistory, 

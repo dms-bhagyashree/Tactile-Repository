@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.ibm.rules.studio.model.decisionservice:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" ruleAppName="bhagyashree.tactile_medical.tactile_decision_service:tectileDataModel" ruleAppVersion="LATEST-SNAPSHOT" packageName="bhagyashree.tactile_medical.tactile_decision_service.data" managingXom="true">
-  <name>Tectile_Data_Model</name>
+<com.ibm.rules.studio.model.decisionservice:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" ruleAppName="bhagyashree.tactile_medical.tactile_decision_service:tactile-DataModel" ruleAppVersion="LATEST-SNAPSHOT" packageName="bhagyashree.tactile_medical.tactile_decision_service.data" managingXom="true">
+  <name>Tactile_Data_Model</name>
   <uuid>e714fcab-a53c-45cc-968f-45355897374b</uuid>
   <locales>en_US</locales>
   <versionPolicies label="Increment minor version numbers" ruleset="INCREMENT_MINOR" default="true" recurrent="true">
