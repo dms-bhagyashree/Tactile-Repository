@@ -17,7 +17,7 @@
                         <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
                     </Properties>
                     <ExpressionDefinition>
-                        <Text><![CDATA['Policy Information Acceptability' is <an Acceptable/Not Acceptable>]]></Text>
+                        <Text><![CDATA[the Acceptable/Not Acceptable of 'Policy Information Acceptability' is one of <Acceptable/Not Acceptables> ]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
                 <ConditionDefinition Id="C1">
@@ -43,7 +43,7 @@
             <Partition DefId="C0">
                 <Condition>
                     <Expression>
-                        <Param><![CDATA[Acceptable]]></Param>
+                        <Param><![CDATA[{ Acceptable }]]></Param>
                     </Expression>
                     <Partition DefId="C1">
                         <Condition>
@@ -109,6 +109,7 @@
             <Data Name="Definitions(C0)#HeaderText"><![CDATA[Policy Information Acceptability]]></Data>
             <Data Name="Definitions(C1)#HeaderText"><![CDATA[Benefits Acceptability]]></Data>
             <Data Name="Definitions(C2)#HeaderText"><![CDATA[Authorization Information Acceptability]]></Data>
+            <Data Name="Definitions(C0)[0]#HeaderText"><![CDATA[an Acceptable/Not Acceptable]]></Data>
             <Data Name="Definitions(A0)#HeaderText"><![CDATA[Benefits Coverage Acceptability]]></Data>
             <Data Name="Definitions(C1)[0]#HeaderText"><![CDATA[a number]]></Data>
         </ResourceSet>

@@ -395,6 +395,15 @@ bhagyashree.tactile_medical.tactile_decision_service.data.PayerType#concept.labe
 bhagyashree.tactile_medical.tactile_decision_service.data.PayerType.billInsurance#instance.label = Bill Insurance
 bhagyashree.tactile_medical.tactile_decision_service.data.PayerType.selfPay#instance.label = Self Pay
 
+# bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability
+bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability#concept.label = Policy Information Acceptability
+bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.PolicyInformationAcceptability(bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable,java.lang.String)#phrase.navigation = a new {Policy Information Acceptability} where {0, Acceptable/Not Acceptable} {1, Message}
+bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.acceptable$NotAcceptable#phrase.action = set the Acceptable/Not Acceptable of {this} to {Acceptable/Not Acceptable}
+bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.acceptable$NotAcceptable#phrase.clearer = clear the Acceptable/Not Acceptable of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.acceptable$NotAcceptable#phrase.navigation = {Acceptable/Not Acceptable} of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.message#phrase.action = set the Message of {this} to {Message}
+bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.message#phrase.navigation = {Message} of {this}
+
 # bhagyashree.tactile_medical.tactile_decision_service.data.Prescription
 bhagyashree.tactile_medical.tactile_decision_service.data.Prescription#concept.label = prescription
 bhagyashree.tactile_medical.tactile_decision_service.data.Prescription.Prescription(java.time.LocalDate,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean)#phrase.navigation = a new {prescription} where {0, date of birth} {1, diagnosis} {2, frequency} {3, full name} {4, location of edema} {5, lymphedemia cause} {6, npi} {7, product} {8, signature} {9, signature stamp}

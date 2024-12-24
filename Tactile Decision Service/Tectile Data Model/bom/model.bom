@@ -766,6 +766,28 @@ class PayerType
                 property com.fasterxml.jackson.annotation.JsonProperty "Self Pay";
 }
 
+class PolicyInformationAcceptability
+        property ads.typeId "31"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Policy Information Acceptability"
+        #de.generated
+{
+    bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable acceptable$NotAcceptable
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Acceptable/Not Acceptable"
+                #update;
+    string message
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Message"
+                #update;
+    PolicyInformationAcceptability(bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable acceptable$NotAcceptable, string message)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    PolicyInformationAcceptability()
+                #dataio.default;
+}
+
 class Prescription
         property ads.typeId "1"
         #de.generated

@@ -233,11 +233,11 @@
                 <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.SecondaryPlanIndicator" collection="true" name="Secondary Plan Indicator"/>
                 <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="true" name="In Network Acceptability"/>
                 <input bomType="java.time.LocalDate" collection="false" name="Date Threshold"/>
-                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Policy Information Acceptability"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability" collection="false" name="Policy Information Acceptability"/>
                 <rule defaultRule="false" href="node_18/Policy%20Information%20Acceptability.dmt" kind="DecisionTable" name="Policy Information Acceptability"/>
             </ruleset>
         </extensionElements>
-        <variable id="node_18_ii" name="Policy Information Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <variable id="node_18_ii" name="Policy Information Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability"/>
         <informationRequirement>
             <requiredInput href="#node_17"/>
         </informationRequirement>
@@ -260,7 +260,7 @@
     <decision id="node_19" name="Benefits Coverage Acceptability">
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
-                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Policy Information Acceptability"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability" collection="false" name="Policy Information Acceptability"/>
                 <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="true" name="Authorization Information Acceptability"/>
                 <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="true" name="Benefits Acceptability"/>
                 <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Benefits Coverage Acceptability"/>
