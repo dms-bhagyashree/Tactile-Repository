@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
-  <name>Authorization Information Acceptability</name>
-  <uuid>5510f1a8-b5ee-4630-b1dc-e9018d2551e2</uuid>
+  <name>Multiple Primary Plan Acceptability</name>
+  <uuid>fdb9194e-9a36-4bfe-9cba-df188efb0776</uuid>
   <locale>en_US</locale>
   <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
     <Body>
@@ -9,22 +9,18 @@
             <Property Name="UI.MediaType"><![CDATA[Web]]></Property>
             <Property Name="UI.RenderBoolean" Type="xs:boolean"><![CDATA[true]]></Property>
         </Properties>
-        <Preconditions>
-            <Text><![CDATA[definitions  
-	set  'a verification' to a verification of benefit in 'Verification of Benefits';]]></Text>
-        </Preconditions>
         <Structure>
             <ConditionDefinitions>
                 <ConditionDefinition Id="C0">
                     <ExpressionDefinition>
-                        <Text><![CDATA[the pa process of 'a verification' is one of <strings> ]]></Text>
+                        <Text><![CDATA['Primary Plan Count' is <a number> ]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
             </ConditionDefinitions>
             <ActionDefinitions>
                 <ActionDefinition Id="A0">
                     <ExpressionDefinition>
-                        <Text><![CDATA[add <an Acceptable/Not Acceptable> to decision ]]></Text>
+                        <Text><![CDATA[set decision to <an Acceptable/Not Acceptable> ]]></Text>
                     </ExpressionDefinition>
                 </ActionDefinition>
             </ActionDefinitions>
@@ -33,8 +29,7 @@
             <Partition DefId="C0">
                 <Condition>
                     <Expression>
-                        <Text><![CDATA[<an object> is one of <objects>]]></Text>
-                        <Param><![CDATA[{ "Ship Approved", "Letter/Fax by Tactile", "Percert Call by Tactile", "Ship: Pre-D", "Letter/Fax by MD/PCP" }]]></Param>
+                        <Param><![CDATA[1]]></Param>
                     </Expression>
                     <ActionSet>
                         <Action DefId="A0">
@@ -46,8 +41,8 @@
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Text><![CDATA[<an object> is not one of <objects>]]></Text>
-                        <Param><![CDATA[{ "Ship Approved", "Letter/Fax by Tactile", "Percert Call by Tactile", "Ship: Pre-D", "Letter/Fax by MD/PCP" }]]></Param>
+                        <Text><![CDATA[<a number> does not equal <a number>]]></Text>
+                        <Param><![CDATA[1]]></Param>
                     </Expression>
                     <ActionSet>
                         <Action DefId="A0">
@@ -62,12 +57,10 @@
     </Body>
     <Resources DefaultLocale="en_US">
         <ResourceSet Locale="en_US">
-            <Data Name="Definitions(C0)#HeaderText"><![CDATA[PA Process]]></Data>
-            <Data Name="Definitions(A0)#Width"><![CDATA[312]]></Data>
+            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Primary Plan Count]]></Data>
             <Data Name="Definitions(A0)[0]#HeaderText"><![CDATA[an Acceptable/Not Acceptable]]></Data>
-            <Data Name="Definitions(C0)[0]#HeaderText"><![CDATA[a string]]></Data>
-            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Authorization Information Acceptability]]></Data>
-            <Data Name="Definitions(C0)#Width"><![CDATA[679]]></Data>
+            <Data Name="Definitions(C0)[0]#HeaderText"><![CDATA[min]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Multiple Primary Plan Acceptability]]></Data>
         </ResourceSet>
     </Resources>
 </DT>

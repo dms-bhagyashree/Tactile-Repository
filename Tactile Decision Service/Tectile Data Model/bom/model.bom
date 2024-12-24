@@ -911,6 +911,27 @@ class SMNLMN
                 #dataio.default;
 }
 
+class SecondaryPlanIndicator
+        extends java.lang.Enum
+        property ads.typeId "30"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Secondary Plan Indicator"
+        #de.generated
+{
+    domain {static notSecondary$tertiary$quaternary, static quaternary, static secondary, static tertiary}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.SecondaryPlanIndicator notSecondary$tertiary$quaternary
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "NotSecondary/tertiary/quaternary";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.SecondaryPlanIndicator quaternary
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Quaternary";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.SecondaryPlanIndicator secondary
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Secondary";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.SecondaryPlanIndicator tertiary
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Tertiary";
+}
+
 class System
         property ads.typeId "21"
         property com.fasterxml.jackson.annotation.JsonTypeName "system"
@@ -970,7 +991,7 @@ class VerificationOfBenefit
     java.math.BigDecimal patientResponsibilityAmount
                 property ads.attributeId "7"
                 #update;
-    string payerInNetwork
+    boolean payerInNetwork
                 property ads.attributeId "13"
                 property com.fasterxml.jackson.annotation.JsonProperty "payerInNetwork"
                 #update;
@@ -993,10 +1014,10 @@ class VerificationOfBenefit
         string distributorName, 
         java.time.LocalDate effectiveDate, 
         string network, 
-        string payerInNetwork, 
         string paProcess, 
         java.math.BigDecimal paidPercentINN$OON, 
         java.math.BigDecimal patientResponsibilityAmount, 
+        boolean payerInNetwork, 
         string planDesignator, 
         string planType, 
         string policyNumber, 

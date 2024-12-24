@@ -58,6 +58,7 @@
     <Resources DefaultLocale="en_US">
         <ResourceSet Locale="en_US">
             <Data Name="Definitions(C0)#HeaderText"><![CDATA[High Estimated Financial Responsibility Indicator]]></Data>
+            <Data Name="Definitions(A0)#Width"><![CDATA[298]]></Data>
             <Data Name="Definitions(C0)[0]#HeaderText"><![CDATA[a High Estimated Financial Responsibility Indicator]]></Data>
             <Data Name="Definitions(A0)#HeaderText"><![CDATA[High Estimated Downpayment Amount Required]]></Data>
         </ResourceSet>

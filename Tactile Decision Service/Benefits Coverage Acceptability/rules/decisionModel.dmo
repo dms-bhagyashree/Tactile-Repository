@@ -58,10 +58,11 @@
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
                 <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit" collection="true" name="Verification of Benefits"/>
                 <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Primary$NotPrimary" collection="true" name="Primary Plan Indicator"/>
-                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="In Network Acceptability"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="true" name="In Network Acceptability"/>
+                <rule defaultRule="false" href="node_5/In%20Network%20Acceptability.dmt" kind="DecisionTable" name="In Network Acceptability"/>
             </ruleset>
         </extensionElements>
-        <variable id="node_5_ii" name="In Network Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <variable id="node_5_ii" name="In Network Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable[]"/>
         <informationRequirement>
             <requiredInput href="#node_3"/>
         </informationRequirement>
@@ -72,7 +73,7 @@
     <decision id="node_6" name="Date Threshold">
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
-                <input bomType="java.time.LocalDate" collection="false" name="Date"/>
+                <input bomType="java.time.LocalDate" collection="false" name="Dummy Date"/>
                 <output bomType="java.time.LocalDate" collection="false" name="Date Threshold"/>
                 <rule defaultRule="true" href="node_6/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
             </ruleset>
@@ -114,10 +115,11 @@
                 <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit" collection="true" name="Verification of Benefits"/>
                 <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Out of Pocket Acceptability"/>
                 <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Deductable Acceptability"/>
-                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Benefits Acceptability"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="true" name="Benefits Acceptability"/>
+                <rule defaultRule="false" href="node_9/Benefits%20Acceptability.dmt" kind="DecisionTable" name="Benefits Acceptability"/>
             </ruleset>
         </extensionElements>
-        <variable id="node_9_ii" name="Benefits Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <variable id="node_9_ii" name="Benefits Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable[]"/>
         <informationRequirement>
             <requiredInput href="#node_3"/>
         </informationRequirement>
@@ -162,13 +164,13 @@
             <requiredInput href="#node_14"/>
         </informationRequirement>
     </decision>
-    <inputData id="node_13" name="Date">
+    <inputData id="node_13" name="Dummy Date">
         <extensionElements>
             <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
-                <output bomType="java.time.LocalDate" collection="false" name="Date"/>
+                <output bomType="java.time.LocalDate" collection="false" name="Dummy Date"/>
             </initialization>
         </extensionElements>
-        <variable id="node_13_ii" name="Date" typeRef="java.time.LocalDate"/>
+        <variable id="node_13_ii" name="Dummy Date" typeRef="java.time.LocalDate"/>
     </inputData>
     <decision id="node_14" name="Primary Count">
         <extensionElements>
@@ -181,6 +183,99 @@
         <variable id="node_14_ii" name="Primary Count" typeRef="java.lang.Double[]"/>
         <informationRequirement>
             <requiredInput href="#node_4"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_15" name="Secondary Plan Indicator">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit" collection="true" name="Verification of Benefits"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.SecondaryPlanIndicator" collection="true" name="Secondary Plan Indicator"/>
+                <rule defaultRule="false" href="node_15/Secondary%20Plan%20Indicator.dmt" kind="DecisionTable" name="Secondary Plan Indicator"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_15_ii" name="Secondary Plan Indicator" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.SecondaryPlanIndicator[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_16" name="Multiple Primary Plan Acceptability">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Primary Plan Count"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Multiple Primary Plan Acceptability"/>
+                <rule defaultRule="false" href="node_16/Multiple%20Primary%20Plan%20Acceptability.dmt" kind="DecisionTable" name="Multiple Primary Plan Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_16_ii" name="Multiple Primary Plan Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_12"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_17" name="Distributor Acceptability">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit" collection="true" name="Verification of Benefits"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="true" name="Distributor Acceptability"/>
+                <rule defaultRule="false" href="node_17/Distributor%20Acceptability.dmt" kind="DecisionTable" name="Distributor Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_17_ii" name="Distributor Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_18" name="Policy Information Acceptability">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="true" name="Distributor Acceptability"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Multiple Primary Plan Acceptability"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit" collection="true" name="Verification of Benefits"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.SecondaryPlanIndicator" collection="true" name="Secondary Plan Indicator"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="true" name="In Network Acceptability"/>
+                <input bomType="java.time.LocalDate" collection="false" name="Date Threshold"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Policy Information Acceptability"/>
+                <rule defaultRule="false" href="node_18/Policy%20Information%20Acceptability.dmt" kind="DecisionTable" name="Policy Information Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_18_ii" name="Policy Information Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_17"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_16"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_15"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_19" name="Benefits Coverage Acceptability">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Policy Information Acceptability"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="true" name="Authorization Information Acceptability"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="true" name="Benefits Acceptability"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Benefits Coverage Acceptability"/>
+                <rule defaultRule="false" href="node_19/Benefits%20Coverage%20Acceptability.dmt" kind="DecisionTable" name="Benefits Coverage Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_19_ii" name="Benefits Coverage Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_18"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_9"/>
         </informationRequirement>
     </decision>
 </definitions>

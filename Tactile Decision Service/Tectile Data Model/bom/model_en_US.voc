@@ -462,6 +462,13 @@ bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.stageLevel#phra
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.termsOfSeverity#phrase.action = set the terms of severity of {this} to {terms of severity}
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.termsOfSeverity#phrase.navigation = {terms of severity} of {this}
 
+# bhagyashree.tactile_medical.tactile_decision_service.data.SecondaryPlanIndicator
+bhagyashree.tactile_medical.tactile_decision_service.data.SecondaryPlanIndicator#concept.label = Secondary Plan Indicator
+bhagyashree.tactile_medical.tactile_decision_service.data.SecondaryPlanIndicator.notSecondary$tertiary$quaternary#instance.label = Not secondary/tertiary/quaternary
+bhagyashree.tactile_medical.tactile_decision_service.data.SecondaryPlanIndicator.quaternary#instance.label = Quaternary
+bhagyashree.tactile_medical.tactile_decision_service.data.SecondaryPlanIndicator.secondary#instance.label = Secondary
+bhagyashree.tactile_medical.tactile_decision_service.data.SecondaryPlanIndicator.tertiary#instance.label = Tertiary
+
 # bhagyashree.tactile_medical.tactile_decision_service.data.System
 bhagyashree.tactile_medical.tactile_decision_service.data.System#concept.documentation = 
 bhagyashree.tactile_medical.tactile_decision_service.data.System#concept.label = system
@@ -476,7 +483,7 @@ bhagyashree.tactile_medical.tactile_decision_service.data.Valid$NotValid.valid#i
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit
 bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit#concept.label = verification of benefit
-bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.VerificationOfBenefit(java.lang.String,java.lang.String,java.time.LocalDate,java.lang.String,java.lang.String,java.lang.String,java.math.BigDecimal,java.math.BigDecimal,java.lang.String,java.lang.String,java.lang.String,java.time.LocalDate,java.time.LocalDate)#phrase.navigation = a new {verification of benefit} where {0, distributor} {1, distributor name} {2, effective date} {3, network} {4, payer in network} {5, pa process} {6, paid percent INN/OON} {7, patient responsibility amount} {8, plan designator} {9, plan type} {10, policy number} {11, renewal date} {12, term date}
+bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.VerificationOfBenefit(java.lang.String,java.lang.String,java.time.LocalDate,java.lang.String,java.lang.String,java.math.BigDecimal,java.math.BigDecimal,boolean,java.lang.String,java.lang.String,java.lang.String,java.time.LocalDate,java.time.LocalDate)#phrase.navigation = a new {verification of benefit} where {0, distributor} {1, distributor name} {2, effective date} {3, network} {4, pa process} {5, paid percent INN/OON} {6, patient responsibility amount} {7, payer in network} {8, plan designator} {9, plan type} {10, policy number} {11, renewal date} {12, term date}
 bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.distributor#phrase.action = set the distributor of {this} to {distributor}
 bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.distributor#phrase.navigation = {distributor} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.distributorName#phrase.action = set the distributor name of {this} to {distributor name}
@@ -495,8 +502,13 @@ bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.
 bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.patientResponsibilityAmount#phrase.addition_setter = add {patient responsibility amount} to the patient responsibility amount of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.patientResponsibilityAmount#phrase.navigation = {patient responsibility amount} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.patientResponsibilityAmount#phrase.subtraction_setter = subtract {patient responsibility amount} from the patient responsibility amount of {this}
-bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.payerInNetwork#phrase.action = set the payer in network of {this} to {payer in network}
-bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.payerInNetwork#phrase.navigation = {payer in network} of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.payerInNetwork#phrase.action[0] = {this} gets payer in network only if {payer in network}
+bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.payerInNetwork#phrase.action[1] = make it {payer in network} that {this} is payer in network
+bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.payerInNetwork#phrase.action[1].deprecated = true
+bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.payerInNetwork#phrase.navigation = {this} is payer in network
+bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.payerInNetwork#phrase.negative_predicate = {this} is not payer in network
+bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.payerInNetwork#phrase.negative_predicate_setter = {this} does not get payer in network
+bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.payerInNetwork#phrase.positive_predicate_setter = {this} gets payer in network
 bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.planDesignator#phrase.action = set the plan designator of {this} to {plan designator}
 bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.planDesignator#phrase.navigation = {plan designator} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.planType#phrase.action = set the plan type of {this} to {plan type}

@@ -65,12 +65,12 @@
     <modules>
         <module>.decisionservice</module>
         <module>Advanced Pump Acceptability, Diet and Medication Evaluation Acceptability</module>
+        <module>Benefits Coverage Acceptability</module>
         <module>Demo Record Validity, Girth Measurement Acceptability, Lymphedema Stage Level</module>
         <module>Diagnosis Validity</module>
         <module>Etiology Acceptability</module>
         <module>Patient Order Acceptance Status</module>
         <module>Payer Requirements</module>
-        <module>Prescription Validity</module>
         <module>Tectile Data Model</module>
     </modules>
 
