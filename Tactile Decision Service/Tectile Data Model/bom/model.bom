@@ -689,7 +689,19 @@ class PayerClassification
         property com.fasterxml.jackson.annotation.JsonTypeName "PayerClassification"
         #de.generated
 {
-    domain {static standard, static standard$, static standard$Review}
+    domain {static commercial, static medicare, static medicareAdvantage, static selfPay, static standard, static standard$, static standard$Review}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification commercial
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "Commercial";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification medicare
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "Medicare";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification medicareAdvantage
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "Medicare Advantage";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification selfPay
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "Self Pay";
     static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification standard
                 property ads.attributeId "1"
                 property com.fasterxml.jackson.annotation.JsonProperty "Standard";
