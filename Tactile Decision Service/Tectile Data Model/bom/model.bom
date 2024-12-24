@@ -32,19 +32,62 @@ class Acceptable$NotAcceptable
                 property com.fasterxml.jackson.annotation.JsonProperty "Not Acceptable";
 }
 
+class ApprovalType
+        extends java.lang.Enum
+        property ads.typeId "32"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Approval Type"
+        #de.generated
+{
+    domain {static purchase, static rent, static rentAfterReview}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalType purchase
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Purchase";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalType rent
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Rent";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalType rentAfterReview
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Rent After Review";
+}
+
+class ApprovalTypeList
+        property ads.typeId "33"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Approval Type List"
+        #de.generated
+{
+    bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalType approvalType
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Approval Type"
+                #update;
+    string message
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Message"
+                #update;
+    ApprovalTypeList(bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalType approvalType, string message)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    ApprovalTypeList()
+                #dataio.default;
+}
+
 class Approved$NotApproved
         extends java.lang.Enum
         property ads.typeId "27"
         property com.fasterxml.jackson.annotation.JsonTypeName "Approved/Not Approved"
         #de.generated
 {
-    domain {static approved, static notApproved}
+    domain {static approved, static notApproved, static requireMoreInformation}
     static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Approved$NotApproved approved
                 property ads.attributeId "1"
                 property com.fasterxml.jackson.annotation.JsonProperty "Approved";
     static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Approved$NotApproved notApproved
                 property ads.attributeId "2"
                 property com.fasterxml.jackson.annotation.JsonProperty "Not Approved";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Approved$NotApproved requireMoreInformation
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Require More Information";
 }
 
 class Cif
@@ -640,6 +683,10 @@ class Payer
     string insNumber
                 property ads.attributeId "7"
                 #update;
+    string pastClaims
+                property ads.attributeId "12"
+                property com.fasterxml.jackson.annotation.JsonProperty "pastClaims"
+                #update;
     java.util.List patient domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Patient
                 property ads.attributeId "8"
                 #update;
@@ -659,6 +706,7 @@ class Payer
         string feeSchedule, 
         bhagyashree.tactile_medical.tactile_decision_service.data.FileMaker fileMaker, 
         string insNumber, 
+        string pastClaims, 
         java.util.List patient domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Patient, 
         bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification payerClassification, 
         string payerName, 
@@ -786,6 +834,27 @@ class PolicyInformationAcceptability
                 #prototype;
     PolicyInformationAcceptability()
                 #dataio.default;
+}
+
+class PreServiceApprovalStatus
+        extends java.lang.Enum
+        property ads.typeId "34"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Pre Service Approval Status"
+        #de.generated
+{
+    domain {static approved, static hold, static denied, static partiallyApproved}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PreServiceApprovalStatus approved
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Approved";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PreServiceApprovalStatus denied
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "Denied";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PreServiceApprovalStatus hold
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Hold";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PreServiceApprovalStatus partiallyApproved
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Partially Approved";
 }
 
 class Prescription

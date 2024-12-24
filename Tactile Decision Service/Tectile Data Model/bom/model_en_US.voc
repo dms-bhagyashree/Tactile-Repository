@@ -9,10 +9,26 @@ bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptab
 bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable.acceptable#instance.label = Acceptable
 bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable.notAcceptable#instance.label = Not Acceptable
 
+# bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalType
+bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalType#concept.label = Approval Type
+bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalType.purchase#instance.label = Purchase
+bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalType.rent#instance.label = Rent
+bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalType.rentAfterReview#instance.label = Rent After Review
+
+# bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalTypeList
+bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalTypeList#concept.label = Approval Type List
+bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalTypeList.ApprovalTypeList(bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalType,java.lang.String)#phrase.navigation = a new {Approval Type List} where {0, Approval Type} {1, Message}
+bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalTypeList.approvalType#phrase.action = set the Approval Type of {this} to {Approval Type}
+bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalTypeList.approvalType#phrase.clearer = clear the Approval Type of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalTypeList.approvalType#phrase.navigation = {Approval Type} of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalTypeList.message#phrase.action = set the Message of {this} to {Message}
+bhagyashree.tactile_medical.tactile_decision_service.data.ApprovalTypeList.message#phrase.navigation = {Message} of {this}
+
 # bhagyashree.tactile_medical.tactile_decision_service.data.Approved$NotApproved
 bhagyashree.tactile_medical.tactile_decision_service.data.Approved$NotApproved#concept.label = Approved/Not Approved
 bhagyashree.tactile_medical.tactile_decision_service.data.Approved$NotApproved.approved#instance.label = Approved
 bhagyashree.tactile_medical.tactile_decision_service.data.Approved$NotApproved.notApproved#instance.label = Not Approved
+bhagyashree.tactile_medical.tactile_decision_service.data.Approved$NotApproved.requireMoreInformation#instance.label = Require More Information
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.Cif
 bhagyashree.tactile_medical.tactile_decision_service.data.Cif#concept.label = cif
@@ -326,7 +342,7 @@ bhagyashree.tactile_medical.tactile_decision_service.data.PatientTreatmentArea.u
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.Payer
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer#concept.label = payer
-bhagyashree.tactile_medical.tactile_decision_service.data.Payer.Payer(boolean,java.lang.String,java.math.BigDecimal,java.time.LocalDate,java.lang.String,bhagyashree.tactile_medical.tactile_decision_service.data.FileMaker,java.lang.String,java.util.List,bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification,java.lang.String,java.lang.String)#phrase.navigation = a new {payer} where {0, approval} {1, approval type} {2, authorization number} {3, date of service} {4, fee schedule} {5, file maker} {6, ins number} {7, patient} {8, payer classification} {9, payer name} {10, policy}
+bhagyashree.tactile_medical.tactile_decision_service.data.Payer.Payer(boolean,java.lang.String,java.math.BigDecimal,java.time.LocalDate,java.lang.String,bhagyashree.tactile_medical.tactile_decision_service.data.FileMaker,java.lang.String,java.lang.String,java.util.List,bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification,java.lang.String,java.lang.String)#phrase.navigation = a new {payer} where {0, approval} {1, approval type} {2, authorization number} {3, date of service} {4, fee schedule} {5, file maker} {6, ins number} {7, past claims} {8, patient} {9, payer classification} {10, payer name} {11, policy}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.addTo_patient(bhagyashree.tactile_medical.tactile_decision_service.data.Patient)#phrase.action = add {0} to the patients of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.approval#phrase.action[0] = {this} gets approval only if {approval}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.approval#phrase.action[1] = make it {approval} that {this} is approval
@@ -351,6 +367,8 @@ bhagyashree.tactile_medical.tactile_decision_service.data.Payer.fileMaker#phrase
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.fileMaker#phrase.navigation = {file maker} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.insNumber#phrase.action = set the ins number of {this} to {ins number}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.insNumber#phrase.navigation = {ins number} of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.Payer.pastClaims#phrase.action = set the past claims of {this} to {past claims}
+bhagyashree.tactile_medical.tactile_decision_service.data.Payer.pastClaims#phrase.navigation = {past claims} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.patient#phrase.action = set the patients of {this} to {patient}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.patient#phrase.navigation = {patient} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Payer.payerClassification#phrase.action = set the payer classification of {this} to {payer classification}
@@ -403,6 +421,13 @@ bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAccep
 bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.acceptable$NotAcceptable#phrase.navigation = {Acceptable/Not Acceptable} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.message#phrase.action = set the Message of {this} to {Message}
 bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.message#phrase.navigation = {Message} of {this}
+
+# bhagyashree.tactile_medical.tactile_decision_service.data.PreServiceApprovalStatus
+bhagyashree.tactile_medical.tactile_decision_service.data.PreServiceApprovalStatus#concept.label = Pre Service Approval Status
+bhagyashree.tactile_medical.tactile_decision_service.data.PreServiceApprovalStatus.approved#instance.label = Approved
+bhagyashree.tactile_medical.tactile_decision_service.data.PreServiceApprovalStatus.denied#instance.label = Denied
+bhagyashree.tactile_medical.tactile_decision_service.data.PreServiceApprovalStatus.hold#instance.label = Hold
+bhagyashree.tactile_medical.tactile_decision_service.data.PreServiceApprovalStatus.partiallyApproved#instance.label = Partially Approved
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.Prescription
 bhagyashree.tactile_medical.tactile_decision_service.data.Prescription#concept.label = prescription
