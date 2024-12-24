@@ -71,6 +71,7 @@
         <module>Etiology Acceptability</module>
         <module>Patient Order Acceptance Status</module>
         <module>Payer Requirements</module>
+        <module>Prescription Validity</module>
         <module>Tectile Data Model</module>
     </modules>
 

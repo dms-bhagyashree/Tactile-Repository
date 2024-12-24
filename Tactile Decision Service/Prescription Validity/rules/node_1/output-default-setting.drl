@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>output-default-setting</name>
+  <uuid>cfac1278-9076-4c16-9081-999ec4d73162</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set decision to Not Match ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

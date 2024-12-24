@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Prescription Validity">
+  <name>Prescription_Validity</name>
+  <uuid>df9243c9-33c9-4bc2-b9d0-6217aec379bb</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#82c529e5-cd04-4f4b-a771-6772cd88b029"/>
+  <targetRuleProject href="../../Prescription%20Validity#2e5cd625-f0c9-4dea-8a6c-abc0a5ab8a49"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>
