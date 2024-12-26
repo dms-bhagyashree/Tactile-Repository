@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Patient Treatment Area List">
+  <name>Patient_Treatment_Area_List</name>
+  <uuid>b232282a-1d16-416a-9380-394bbc609f3e</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#5ba07138-12dd-47b8-a9b0-3ec48d550d54"/>
+  <targetRuleProject href="../../Patient%20Treatment%20Area%20List#eac5a5c4-6d92-490c-a6ec-b03f5e4df3b5"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

@@ -8,7 +8,7 @@
     </parent>
 
     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
-    <artifactId>benefitsCoverageAcceptability</artifactId>
+    <artifactId>patientTreatmentAreaList</artifactId>
     <version>LATEST-SNAPSHOT</version>
 
     <build>
@@ -26,10 +26,10 @@
                 <configuration>
                     <deployments>
                         <deployment>
-                            <name>Benefits_Coverage_Acceptability</name>
+                            <name>Patient_Treatment_Area_List</name>
                         </deployment>
                     </deployments>
-                <packageName>bhagyashree.tactile_medical.tactile_decision_service.benefitscoverageacceptability</packageName>
+                <packageName>bhagyashree.tactile_medical.tactile_decision_service.patienttreatmentarealist</packageName>
                 </configuration>
             </plugin>
         </plugins>

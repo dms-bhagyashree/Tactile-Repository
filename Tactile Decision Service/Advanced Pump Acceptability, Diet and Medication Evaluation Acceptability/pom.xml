@@ -38,7 +38,7 @@
 <dependencies>
         <dependency>
             <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
-            <artifactId>tectileDataModel</artifactId>
+            <artifactId>tactile-DataModel</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
         <dependency>

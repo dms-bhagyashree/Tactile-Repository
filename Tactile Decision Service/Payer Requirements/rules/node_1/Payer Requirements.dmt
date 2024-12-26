@@ -9,6 +9,11 @@
             <Property Name="UI.MediaType"><![CDATA[Web]]></Property>
             <Property Name="UI.RenderBoolean" Type="xs:boolean"><![CDATA[true]]></Property>
         </Properties>
+        <Preconditions>
+            <Text><![CDATA[definitions
+ set 'patient area' to a  patient treatment area  in the patient treatment area lists computed from 
+	Patient being Patient; ]]></Text>
+        </Preconditions>
         <Structure>
             <ConditionDefinitions>
                 <ConditionDefinition Id="C0">
@@ -27,12 +32,16 @@
                 </ConditionDefinition>
                 <ConditionDefinition Id="C2">
                     <ExpressionDefinition>
-                        <Text><![CDATA[the product of the oder of Patient is <a string>]]></Text>
+                        <Text><![CDATA[the product of the order of Patient is <a string>]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
-                <ConditionDefinition Id="C3">
+                <ConditionDefinition Id="C5">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
+                    </Properties>
                     <ExpressionDefinition>
-                        <Text><![CDATA['Patient Treatment Area List' is <a string>]]></Text>
+                        <Text><![CDATA['patient area' is <a patient treatment area> ]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
             </ConditionDefinitions>
@@ -62,11 +71,10 @@
                                     <Expression>
                                         <Param><![CDATA["Flexitouch"]]></Param>
                                     </Expression>
-                                    <Partition DefId="C3">
+                                    <Partition DefId="C5">
                                         <Condition>
                                             <Expression>
-                                                <Text><![CDATA[<a string> contains <a string>]]></Text>
-                                                <Param><![CDATA["Head and Neck"]]></Param>
+                                                <Param><![CDATA[Head and Neck]]></Param>
                                             </Expression>
                                             <ActionSet>
                                                 <Action DefId="A0">
@@ -96,11 +104,11 @@
                                     <Expression>
                                         <Param><![CDATA["Flexitouch"]]></Param>
                                     </Expression>
-                                    <Partition DefId="C3">
+                                    <Partition DefId="C5">
                                         <Condition>
                                             <Expression>
-                                                <Text><![CDATA[<a string> does not contain <a string>]]></Text>
-                                                <Param><![CDATA["Head and Neck"]]></Param>
+                                                <Text><![CDATA[<an object> is not <an object>]]></Text>
+                                                <Param><![CDATA[Head and Neck]]></Param>
                                             </Expression>
                                             <ActionSet>
                                                 <Action DefId="A0">
@@ -130,11 +138,11 @@
                                     <Expression>
                                         <Param><![CDATA["Entre"]]></Param>
                                     </Expression>
-                                    <Partition DefId="C3">
+                                    <Partition DefId="C5">
                                         <Condition>
                                             <Expression>
-                                                <Text><![CDATA[<a string> contains <a string>]]></Text>
-                                                <Param><![CDATA["Lower Extemities, Upper Extremities"]]></Param>
+                                                <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                                                <Param><![CDATA[{ Lower Extremities , Upper Extremities }]]></Param>
                                             </Expression>
                                             <ActionSet>
                                                 <Action DefId="A0">
@@ -164,11 +172,11 @@
                                     <Expression>
                                         <Param><![CDATA["Entre"]]></Param>
                                     </Expression>
-                                    <Partition DefId="C3">
+                                    <Partition DefId="C5">
                                         <Condition>
                                             <Expression>
-                                                <Text><![CDATA[<a string> does not contain <a string>]]></Text>
-                                                <Param><![CDATA["Lower Extemities, Upper Extremities"]]></Param>
+                                                <Text><![CDATA[<an object> is not one of <objects>]]></Text>
+                                                <Param><![CDATA[{ Lower Extremities , Upper Extremities }]]></Param>
                                             </Expression>
                                             <ActionSet>
                                                 <Action DefId="A0">
@@ -198,11 +206,10 @@
                                     <Expression>
                                         <Param><![CDATA["Flexitouch"]]></Param>
                                     </Expression>
-                                    <Partition DefId="C3">
+                                    <Partition DefId="C5">
                                         <Condition>
                                             <Expression>
-                                                <Text><![CDATA[<a string> contains <a string>]]></Text>
-                                                <Param><![CDATA["Chest/Trunk Only"]]></Param>
+                                                <Param><![CDATA[Trunk/Chest Only]]></Param>
                                             </Expression>
                                             <ActionSet>
                                                 <Action DefId="A0">
@@ -232,11 +239,11 @@
                                     <Expression>
                                         <Param><![CDATA["Flexitouch"]]></Param>
                                     </Expression>
-                                    <Partition DefId="C3">
+                                    <Partition DefId="C5">
                                         <Condition>
                                             <Expression>
-                                                <Text><![CDATA[<a string> does not contain <a string>]]></Text>
-                                                <Param><![CDATA["Chest/Trunk Only"]]></Param>
+                                                <Text><![CDATA[<an object> is not <an object>]]></Text>
+                                                <Param><![CDATA[Trunk/Chest Only]]></Param>
                                             </Expression>
                                             <ActionSet>
                                                 <Action DefId="A0">
@@ -266,11 +273,10 @@
                                     <Expression>
                                         <Param><![CDATA["Entre"]]></Param>
                                     </Expression>
-                                    <Partition DefId="C3">
+                                    <Partition DefId="C5">
                                         <Condition>
                                             <Expression>
-                                                <Text><![CDATA[<a string> contains <a string>]]></Text>
-                                                <Param><![CDATA["Head and Neck"]]></Param>
+                                                <Param><![CDATA[Head and Neck]]></Param>
                                             </Expression>
                                             <ActionSet>
                                                 <Action DefId="A0">
@@ -300,11 +306,11 @@
                                     <Expression>
                                         <Param><![CDATA["Entre"]]></Param>
                                     </Expression>
-                                    <Partition DefId="C3">
+                                    <Partition DefId="C5">
                                         <Condition>
                                             <Expression>
-                                                <Text><![CDATA[<a string> does not contain <a string>]]></Text>
-                                                <Param><![CDATA["Head and Neck"]]></Param>
+                                                <Text><![CDATA[<an object> is not <an object>]]></Text>
+                                                <Param><![CDATA[Head and Neck]]></Param>
                                             </Expression>
                                             <ActionSet>
                                                 <Action DefId="A0">
@@ -334,11 +340,11 @@
                                     <Expression>
                                         <Param><![CDATA["Flexitouch"]]></Param>
                                     </Expression>
-                                    <Partition DefId="C3">
+                                    <Partition DefId="C5">
                                         <Condition>
                                             <Expression>
-                                                <Text><![CDATA[<a string> contains <a string>]]></Text>
-                                                <Param><![CDATA["Lower Extemities, Upper Extremities"]]></Param>
+                                                <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                                                <Param><![CDATA[{ Lower Extremities , Upper Extremities }]]></Param>
                                             </Expression>
                                             <ActionSet>
                                                 <Action DefId="A0">
@@ -368,11 +374,11 @@
                                     <Expression>
                                         <Param><![CDATA["Flexitouch"]]></Param>
                                     </Expression>
-                                    <Partition DefId="C3">
+                                    <Partition DefId="C5">
                                         <Condition>
                                             <Expression>
-                                                <Text><![CDATA[<a string> does not contain <a string>]]></Text>
-                                                <Param><![CDATA["Lower Extemities, Upper Extremities"]]></Param>
+                                                <Text><![CDATA[<an object> is not one of <objects>]]></Text>
+                                                <Param><![CDATA[{ Lower Extremities , Upper Extremities }]]></Param>
                                             </Expression>
                                             <ActionSet>
                                                 <Action DefId="A0">
@@ -402,11 +408,10 @@
                                     <Expression>
                                         <Param><![CDATA["Entre"]]></Param>
                                     </Expression>
-                                    <Partition DefId="C3">
+                                    <Partition DefId="C5">
                                         <Condition>
                                             <Expression>
-                                                <Text><![CDATA[<a string> contains <a string>]]></Text>
-                                                <Param><![CDATA["Chest/Trunk Only"]]></Param>
+                                                <Param><![CDATA[Trunk/Chest Only]]></Param>
                                             </Expression>
                                             <ActionSet>
                                                 <Action DefId="A0">
@@ -436,11 +441,11 @@
                                     <Expression>
                                         <Param><![CDATA["Entre"]]></Param>
                                     </Expression>
-                                    <Partition DefId="C3">
+                                    <Partition DefId="C5">
                                         <Condition>
                                             <Expression>
-                                                <Text><![CDATA[<a string> does not contain <a string>]]></Text>
-                                                <Param><![CDATA["Chest/Trunk Only"]]></Param>
+                                                <Text><![CDATA[<an object> is not <an object>]]></Text>
+                                                <Param><![CDATA[Trunk/Chest Only]]></Param>
                                             </Expression>
                                             <ActionSet>
                                                 <Action DefId="A0">
@@ -503,17 +508,19 @@
     </Body>
     <Resources DefaultLocale="en_US">
         <ResourceSet Locale="en_US">
-            <Data Name="Definitions(C0)#HeaderText"><![CDATA[INS Number]]></Data>
-            <Data Name="Definitions(C1)#HeaderText"><![CDATA[Payer Name]]></Data>
+            <Data Name="Definitions(C2)[0]#HeaderText"><![CDATA[a string]]></Data>
+            <Data Name="Definitions(C5)#HeaderText"><![CDATA[Patient Treatment Area List]]></Data>
             <Data Name="Definitions(A0)#Width"><![CDATA[595]]></Data>
-            <Data Name="Definitions(C3)#Width"><![CDATA[77]]></Data>
             <Data Name="Definitions(C2)#HeaderText"><![CDATA[Product]]></Data>
-            <Data Name="Definitions(C3)#HeaderText"><![CDATA[Patient Treatment Area List]]></Data>
             <Data Name="Definitions(A0)[0]#HeaderText"><![CDATA[SMN/LMN on file required]]></Data>
             <Data Name="Definitions(A0)#HeaderText"><![CDATA[Payer Requirements]]></Data>
             <Data Name="Definitions(C1)#Width"><![CDATA[105]]></Data>
+            <Data Name="Definitions(C5)#Width"><![CDATA[304]]></Data>
             <Data Name="Definitions(C0)#Width"><![CDATA[95]]></Data>
             <Data Name="Definitions(C2)#Width"><![CDATA[88]]></Data>
+            <Data Name="Definitions(C0)#HeaderText"><![CDATA[INS Number]]></Data>
+            <Data Name="Definitions(C1)#HeaderText"><![CDATA[Payer Name]]></Data>
+            <Data Name="Definitions(C5)[0]#HeaderText"><![CDATA[a patient treatment area]]></Data>
         </ResourceSet>
     </Resources>
 </DT>

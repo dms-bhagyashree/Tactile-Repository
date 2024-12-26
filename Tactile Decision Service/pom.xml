@@ -68,12 +68,13 @@
         <module>Benefits Coverage Acceptability</module>
         <module>Demo Record Validity, Girth Measurement Acceptability, Lymphedema Stage Level</module>
         <module>Diagnosis Validity</module>
+        <module>Doctor Oversight Acceptability</module>
         <module>Etiology Acceptability</module>
         <module>Patient Order Acceptance Status</module>
+        <module>Patient Treatment Area List</module>
         <module>Payer Requirements</module>
-        <module>Pre Service Acceptability</module>
         <module>Prescription Validity</module>
-        <module>Tectile Data Model</module>
+        <module>Tactile - Data Model</module>
     </modules>
 
     <build>

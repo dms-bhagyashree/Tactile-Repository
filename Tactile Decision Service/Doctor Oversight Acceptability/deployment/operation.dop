@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Doctor Oversight Acceptability">
+  <name>Doctor_Oversight_Acceptability</name>
+  <uuid>0870762d-e334-493e-88c0-f9be41a76099</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#0abfb047-2974-42d9-a91b-0ac098529136"/>
+  <targetRuleProject href="../../Doctor%20Oversight%20Acceptability#32a995ef-28c5-4827-b829-ccacaeaccb1e"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

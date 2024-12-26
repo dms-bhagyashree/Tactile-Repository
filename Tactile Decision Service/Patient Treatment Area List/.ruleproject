@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.base:RuleProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore" xmlns:ilog.rules.studio.model.bom="http://ilog.rules.studio/model/bom.ecore" xmlns:ilog.rules.studio.model.query="http://ilog.rules.studio/model/query.ecore" xmlns:ilog.rules.studio.model.xom="http://ilog.rules.studio/model/xom.ecore" buildMode="DecisionEngine" isADecisionService="true" projectKind="DecisionModel" projectVersion="2.0.0">
-  <name>Demo Record Validity, Girth Measurement Acceptability, Lymphedema Stage Level</name>
-  <uuid>a44dbcd1-ec98-4d4e-bd01-20fe81a1826f</uuid>
+  <name>Patient Treatment Area List</name>
+  <uuid>eac5a5c4-6d92-490c-a6ec-b03f5e4df3b5</uuid>
   <outputLocation>output</outputLocation>
   <categories>any</categories>
   <paths xsi:type="ilog.rules.studio.model.xom:XOMPath" pathID="XOM">
     <entries xsi:type="ilog.rules.studio.model.xom:LibraryXOMPathEntry" name="org.eclipse.jdt.launching.JRE_CONTAINER" url="file:org.eclipse.jdt.launching.JRE_CONTAINER" kind="LIBRARY"/>
   </paths>
   <paths xsi:type="ilog.rules.studio.model.bom:BOMPath" pathID="BOM">
-    <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="bhagyashree.tactile_medical.tactile_decision_service:tactile-DataModel#LATEST-SNAPSHOT" packageId="bhagyashree.tactile_medical.tactile_decision_service:tactile-DataModel" version="LATEST-SNAPSHOT"/>
-    <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="bhagyashree.tactile_medical.tactile_decision_service:payerRequirements#LATEST-SNAPSHOT" packageId="bhagyashree.tactile_medical.tactile_decision_service:payerRequirements" version="LATEST-SNAPSHOT"/>
+    <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="Tactile - Data Model" packageId="bhagyashree.tactile_medical.tactile_decision_service:tactile-DataModel" version="LATEST-SNAPSHOT"/>
   </paths>
   <modelFolders xsi:type="ilog.rules.studio.model.base:SourceFolder">
     <name>rules</name>
@@ -32,14 +31,5 @@
   <modelFolders xsi:type="com.ibm.rules.studio.model.decisionservice:OperationFolder">
     <name>deployment</name>
   </modelFolders>
-  <documentation><![CDATA[This model checks whether 
-the required demos valid for this order or not,
-Which stage level is the Lymphedema for this order?
-Is the girth measurement acceptable for this order?
-
-
-•	Girth Measurement Acceptability table is incomplete
-•	Lymphedema Stage Level table is incomplete
-•	Demo Record Validity table is incomplete
-]]></documentation>
+  <documentation><![CDATA[What treatment areas does the patient require?]]></documentation>
 </ilog.rules.studio.model.base:RuleProject>

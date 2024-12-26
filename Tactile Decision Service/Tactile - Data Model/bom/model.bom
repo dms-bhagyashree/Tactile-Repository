@@ -306,6 +306,10 @@ class MedicalRecord
     string dietAndMedicationEvaluation
                 property ads.attributeId "7"
                 #update;
+    string doctorOversight
+                property ads.attributeId "16"
+                property com.fasterxml.jackson.annotation.JsonProperty "doctorOversight"
+                #update;
     java.time.LocalDate faceToFaceExaminationDate
                 property ads.attributeId "8"
                 #update;
@@ -343,6 +347,7 @@ class MedicalRecord
         string faceToFaceExaminationReason, 
         string icd10Code, 
         string lymphedemiaCause, 
+        string doctorOversight, 
         string progressNotes, 
         double stageLevel, 
         string termsOfSeverity, 

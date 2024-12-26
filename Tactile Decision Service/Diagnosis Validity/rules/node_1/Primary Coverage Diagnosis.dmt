@@ -10,7 +10,7 @@
             <Property Name="UI.RenderBoolean" Type="xs:boolean"><![CDATA[true]]></Property>
         </Properties>
         <Preconditions>
-            <Text><![CDATA[for each document called 'patient document' , in the documents of the oder of Patient
+            <Text><![CDATA[for each document called 'patient document' , in the documents of the order of Patient
 for each medical record called 'patient medical record',in the medical records of 'patient document'
 
 definitions 

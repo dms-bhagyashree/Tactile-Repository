@@ -8,7 +8,7 @@
     <entries xsi:type="ilog.rules.studio.model.xom:LibraryXOMPathEntry" name="org.eclipse.jdt.launching.JRE_CONTAINER" url="file:org.eclipse.jdt.launching.JRE_CONTAINER" kind="LIBRARY"/>
   </paths>
   <paths xsi:type="ilog.rules.studio.model.bom:BOMPath" pathID="BOM">
-    <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="bhagyashree.tactile_medical.tactile_decision_service:tectileDataModel#LATEST-SNAPSHOT" packageId="bhagyashree.tactile_medical.tactile_decision_service:tectileDataModel" version="LATEST-SNAPSHOT"/>
+    <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="bhagyashree.tactile_medical.tactile_decision_service:tactile-DataModel#LATEST-SNAPSHOT" packageId="bhagyashree.tactile_medical.tactile_decision_service:tactile-DataModel" version="LATEST-SNAPSHOT"/>
     <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="bhagyashree.tactile_medical.tactile_decision_service:payerRequirements#LATEST-SNAPSHOT" packageId="bhagyashree.tactile_medical.tactile_decision_service:payerRequirements" version="LATEST-SNAPSHOT"/>
   </paths>
   <modelFolders xsi:type="ilog.rules.studio.model.base:SourceFolder">

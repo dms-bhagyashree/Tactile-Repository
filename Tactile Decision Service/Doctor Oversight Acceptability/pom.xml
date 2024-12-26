@@ -8,7 +8,7 @@
     </parent>
 
     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
-    <artifactId>benefitsCoverageAcceptability</artifactId>
+    <artifactId>doctorOversightAcceptability</artifactId>
     <version>LATEST-SNAPSHOT</version>
 
     <build>
@@ -26,10 +26,10 @@
                 <configuration>
                     <deployments>
                         <deployment>
-                            <name>Benefits_Coverage_Acceptability</name>
+                            <name>Doctor_Oversight_Acceptability</name>
                         </deployment>
                     </deployments>
-                <packageName>bhagyashree.tactile_medical.tactile_decision_service.benefitscoverageacceptability</packageName>
+                <packageName>bhagyashree.tactile_medical.tactile_decision_service.doctoroversightacceptability</packageName>
                 </configuration>
             </plugin>
         </plugins>

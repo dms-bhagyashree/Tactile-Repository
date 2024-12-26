@@ -33,6 +33,11 @@
         </dependency>
         <dependency>
             <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+            <artifactId>doctorOversightAcceptability</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
             <artifactId>etiologyAcceptability</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
@@ -43,12 +48,12 @@
         </dependency>
         <dependency>
             <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
-            <artifactId>payerRequirements</artifactId>
+            <artifactId>patientTreatmentAreaList</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
-            <artifactId>preServiceAcceptability</artifactId>
+            <artifactId>payerRequirements</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -58,7 +63,7 @@
         </dependency>
         <dependency>
             <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
-            <artifactId>tectileDataModel</artifactId>
+            <artifactId>tactile-DataModel</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -114,6 +119,15 @@
             </build>
         </profile>
     </profiles>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -218,6 +232,15 @@
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+                                    <artifactId>doctorOversightAcceptability</artifactId>
+                                    <version>LATEST-SNAPSHOT</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <includes>**/*.class</includes>
+                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
                                     <artifactId>etiologyAcceptability</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
@@ -236,7 +259,7 @@
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
-                                    <artifactId>payerRequirements</artifactId>
+                                    <artifactId>patientTreatmentAreaList</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
@@ -245,7 +268,7 @@
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
-                                    <artifactId>preServiceAcceptability</artifactId>
+                                    <artifactId>payerRequirements</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
@@ -263,7 +286,7 @@
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
-                                    <artifactId>tectileDataModel</artifactId>
+                                    <artifactId>tactile-DataModel</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>

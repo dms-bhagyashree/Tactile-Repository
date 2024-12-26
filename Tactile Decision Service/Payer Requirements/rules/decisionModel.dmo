@@ -11,11 +11,9 @@
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
                 <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Payer" collection="false" name="Payer"/>
-                <input bomType="java.lang.String" collection="false" name="Patient Treatment Area List"/>
                 <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Patient" collection="false" name="Patient"/>
                 <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.PayerRequirements" collection="false" name="Payer Requirements"/>
                 <rule defaultRule="false" href="node_1/Payer%20Requirements.dmt" kind="DecisionTable" name="Payer Requirements"/>
-                <rule defaultRule="true" href="node_1/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
             </ruleset>
         </extensionElements>
         <variable id="node_1_ii" name="Payer Requirements" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.PayerRequirements"/>
@@ -23,11 +21,11 @@
             <requiredInput href="#node_3"/>
         </informationRequirement>
         <informationRequirement>
-            <requiredInput href="#node_4"/>
-        </informationRequirement>
-        <informationRequirement>
             <requiredInput href="#node_5"/>
         </informationRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_6"/>
+        </knowledgeRequirement>
     </decision>
     <inputData id="node_3" name="Payer">
         <extensionElements>
@@ -37,19 +35,6 @@
         </extensionElements>
         <variable id="node_3_ii" name="Payer" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Payer"/>
     </inputData>
-    <decision id="node_4" name="Patient Treatment Area List">
-        <extensionElements>
-            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
-                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Patient" collection="false" name="Patient"/>
-                <output bomType="java.lang.String" collection="false" name="Patient Treatment Area List"/>
-                <rule defaultRule="false" href="node_4/Patient%20Treatment%20Area%20List.dmt" kind="DecisionTable" name="Patient Treatment Area List"/>
-            </ruleset>
-        </extensionElements>
-        <variable id="node_4_ii" name="Patient Treatment Area List" typeRef="java.lang.String"/>
-        <informationRequirement>
-            <requiredInput href="#node_5"/>
-        </informationRequirement>
-    </decision>
     <inputData id="node_5" name="Patient">
         <extensionElements>
             <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
@@ -58,6 +43,31 @@
         </extensionElements>
         <variable id="node_5_ii" name="Patient" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Patient"/>
     </inputData>
+    <businessKnowledgeModel id="node_6" name="Patient Treatment Area List">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="Patient Treatment Area List" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.PatientTreatmentArea[]"/>
+        <encapsulatedLogic typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.PatientTreatmentArea[]">
+            <formalParameter name="patient" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Patient"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"bhagyashree.tactile_medical.tactile_decision_service.patienttreatmentarealist.Patient_Treatment_Area_List"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(bhagyashree.tactile_medical.tactile_decision_service.data.Patient)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
 </definitions>
 </definition>
 </com.ibm.rules.studio.model.decisionmodel:DecisionModel>
