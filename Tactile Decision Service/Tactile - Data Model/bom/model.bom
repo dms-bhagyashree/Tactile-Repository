@@ -814,6 +814,28 @@ class PayerClassification
                 property com.fasterxml.jackson.annotation.JsonProperty "Standard + Review";
 }
 
+class PayerMedicalNecessityAcceptability
+        property ads.typeId "43"
+        property com.fasterxml.jackson.annotation.JsonTypeName "PayerMedicalNecessityAcceptability"
+        #de.generated
+{
+    string message
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "message"
+                #update;
+    bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable payerMedicalNecessityAcceptability
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "payerMedicalNecessityAcceptability"
+                #update;
+    PayerMedicalNecessityAcceptability(string message, bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable payerMedicalNecessityAcceptability)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    PayerMedicalNecessityAcceptability()
+                #dataio.default;
+}
+
 class PayerRequirements
         property ads.typeId "15"
         property com.fasterxml.jackson.annotation.JsonTypeName "payerRequirements"

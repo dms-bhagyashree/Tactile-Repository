@@ -399,6 +399,15 @@ bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification.st
 bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification.standard$#instance.label = Standard +
 bhagyashree.tactile_medical.tactile_decision_service.data.PayerClassification.standard$Review#instance.label = Standard + Review
 
+# bhagyashree.tactile_medical.tactile_decision_service.data.PayerMedicalNecessityAcceptability
+bhagyashree.tactile_medical.tactile_decision_service.data.PayerMedicalNecessityAcceptability#concept.label = Payer Medical Necessity Acceptability
+bhagyashree.tactile_medical.tactile_decision_service.data.PayerMedicalNecessityAcceptability.PayerMedicalNecessityAcceptability(java.lang.String,bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable)#phrase.navigation = a new {Payer Medical Necessity Acceptability} where {0, message} {1, payer medical necessity acceptability}
+bhagyashree.tactile_medical.tactile_decision_service.data.PayerMedicalNecessityAcceptability.message#phrase.action = set the message of {this} to {message}
+bhagyashree.tactile_medical.tactile_decision_service.data.PayerMedicalNecessityAcceptability.message#phrase.navigation = {message} of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.PayerMedicalNecessityAcceptability.payerMedicalNecessityAcceptability#phrase.action = set the payer medical necessity acceptability of {this} to {payer medical necessity acceptability}
+bhagyashree.tactile_medical.tactile_decision_service.data.PayerMedicalNecessityAcceptability.payerMedicalNecessityAcceptability#phrase.clearer = clear the payer medical necessity acceptability of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.PayerMedicalNecessityAcceptability.payerMedicalNecessityAcceptability#phrase.navigation = {payer medical necessity acceptability} of {this}
+
 # bhagyashree.tactile_medical.tactile_decision_service.data.PayerRequirements
 bhagyashree.tactile_medical.tactile_decision_service.data.PayerRequirements#concept.label = payer requirements
 bhagyashree.tactile_medical.tactile_decision_service.data.PayerRequirements.PayerRequirements(bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired,bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired,java.lang.String,bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired,boolean,bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired,bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired)#phrase.navigation = a new {payer requirements} where {0, SMN/LMN on file required} {1, advanced pump required} {2, diagnosis acceptability list} {3, diet and medication evaluation required} {4, face to face examination required} {5, key term of severity required} {6, medical records on file required}

@@ -43,6 +43,26 @@
         </extensionElements>
         <variable id="node_2_ii" name="Patient" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Patient"/>
     </inputData>
+    <decision id="node_4" name="Advanced Pump Recommendation Acceptability">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Payer" collection="false" name="Payer"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Patient" collection="false" name="Patient"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Advanced Pump Recommendation Acceptability"/>
+                <rule defaultRule="false" href="node_4/Advanced%20Pump%20Recommendation%20Acceptability.dmt" kind="DecisionTable" name="Advanced Pump Recommendation Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_4_ii" name="Advanced Pump Recommendation Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_3"/>
+        </knowledgeRequirement>
+    </decision>
     <businessKnowledgeModel id="node_3" name="Payer Requirements">
         <extensionElements>
             <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">

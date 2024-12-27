@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
-  <name>Diet and Medication Evaluation Acceptability</name>
-  <uuid>21131e4b-3bf9-4dff-bf03-1e229a0ca1a9</uuid>
+  <name>Advanced Pump Recommendation Acceptability</name>
+  <uuid>5e8583ca-2526-482e-ad44-be1773f1a5d6</uuid>
   <locale>en_US</locale>
   <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
     <Body>
@@ -23,14 +23,14 @@ definitions
             <ConditionDefinitions>
                 <ConditionDefinition Id="C0">
                     <Properties>
-                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[true]]></Property>
                         <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
                     </Properties>
                     <ExpressionDefinition>
                         <Text><![CDATA[the diet and medication evaluation required of 'payer req' is <a Required/Not Required> ]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
-                <ConditionDefinition Id="C2">
+                <ConditionDefinition Id="C1">
                     <Properties>
                         <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
                         <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
@@ -41,13 +41,13 @@ definitions
                 </ConditionDefinition>
                 <ConditionDefinition Id="C3">
                     <ExpressionDefinition>
-                        <Text><![CDATA[the diet and medication evaluation of 'patient medical record' is <a string> ]]></Text>
+                        <Text><![CDATA[the diet and medication evaluation of 'patient medical record' is <a string>]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
                 <ConditionDefinition Id="C4">
                     <Properties>
                         <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
-                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
                     </Properties>
                     <ExpressionDefinition>
                         <Text><![CDATA[the SMN/LMN on file required of 'payer req' is <a Required/Not Required> ]]></Text>
@@ -77,7 +77,7 @@ definitions
                         <Condition>
                             <Expression>
                                 <Text><![CDATA[<a string> contains <a string>]]></Text>
-                                <Param><![CDATA["Diet and Medication Evaluation"]]></Param>
+                                <Param><![CDATA["Advanced Pump"]]></Param>
                             </Expression>
                             <ActionSet>
                                 <Action DefId="A0">
@@ -93,7 +93,7 @@ definitions
                     <Expression>
                         <Param><![CDATA[Required]]></Param>
                     </Expression>
-                    <Partition DefId="C2">
+                    <Partition DefId="C1">
                         <Condition>
                             <Expression>
                                 <Param><![CDATA[Required]]></Param>
@@ -102,7 +102,7 @@ definitions
                                 <Condition>
                                     <Expression>
                                         <Text><![CDATA[<a string> does not contain <a string>]]></Text>
-                                        <Param><![CDATA["Diet and Medication Evaluation"]]></Param>
+                                        <Param><![CDATA["Advanced Pump"]]></Param>
                                     </Expression>
                                     <ActionSet>
                                         <Action DefId="A0">
@@ -120,7 +120,7 @@ definitions
                     <Expression>
                         <Param><![CDATA[Required]]></Param>
                     </Expression>
-                    <Partition DefId="C2">
+                    <Partition DefId="C1">
                         <Condition>
                             <Expression>
                                 <Param><![CDATA[Not Required]]></Param>
@@ -129,13 +129,13 @@ definitions
                                 <Condition>
                                     <Expression>
                                         <Text><![CDATA[<a string> does not contain <a string>]]></Text>
-                                        <Param><![CDATA["Diet and Medication Evaluation"]]></Param>
+                                        <Param><![CDATA["Advanced Pump"]]></Param>
                                     </Expression>
                                     <Partition DefId="C5">
                                         <Condition>
                                             <Expression>
-                                                <Text><![CDATA[<a string> contains <a string>]]></Text>
-                                                <Param><![CDATA["Diet and Medication Evaluation"]]></Param>
+                                                <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                                                <Param><![CDATA[{ "Advanced Pump" }]]></Param>
                                             </Expression>
                                             <ActionSet>
                                                 <Action DefId="A0">
@@ -155,7 +155,7 @@ definitions
                     <Expression>
                         <Param><![CDATA[Required]]></Param>
                     </Expression>
-                    <Partition DefId="C2">
+                    <Partition DefId="C1">
                         <Condition>
                             <Expression>
                                 <Param><![CDATA[Not Required]]></Param>
@@ -164,7 +164,7 @@ definitions
                                 <Condition>
                                     <Expression>
                                         <Text><![CDATA[<a string> does not contain <a string>]]></Text>
-                                        <Param><![CDATA["Diet and Medication Evaluation"]]></Param>
+                                        <Param><![CDATA["Advanced Pump"]]></Param>
                                     </Expression>
                                     <Partition DefId="C4">
                                         <Condition>
@@ -174,8 +174,8 @@ definitions
                                             <Partition DefId="C5">
                                                 <Condition>
                                                     <Expression>
-                                                        <Text><![CDATA[<a string> does not contain <a string>]]></Text>
-                                                        <Param><![CDATA["Diet and Medication Evaluation"]]></Param>
+                                                        <Text><![CDATA[<an object> is not one of <objects>]]></Text>
+                                                        <Param><![CDATA[{ "Advanced Pump" }]]></Param>
                                                     </Expression>
                                                     <ActionSet>
                                                         <Action DefId="A0">
@@ -211,12 +211,13 @@ definitions
     <Resources DefaultLocale="en_US">
         <ResourceSet Locale="en_US">
             <Data Name="Definitions(C0)#HeaderText"><![CDATA[Diet And Medication Evaluation Required]]></Data>
+            <Data Name="Definitions(C1)#HeaderText"><![CDATA[Medical Records On File Required]]></Data>
             <Data Name="Definitions(C4)#HeaderText"><![CDATA[SMN/LMN On File Required]]></Data>
             <Data Name="Definitions(C5)#HeaderText"><![CDATA[Diet And Medication Evaluation]]></Data>
-            <Data Name="Definitions(C2)#HeaderText"><![CDATA[Medical Records On File Required]]></Data>
-            <Data Name="Definitions(C3)#HeaderText"><![CDATA[Diet And Medication Evaluation]]></Data>
-            <Data Name="Definitions(C0)[0]#HeaderText"><![CDATA[a boolean]]></Data>
-            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Diet and Medication Evaluation Acceptability]]></Data>
+            <Data Name="Definitions(C3)#HeaderText"><![CDATA[Diet And Medication Evaluation ]]></Data>
+            <Data Name="Definitions(C0)[0]#HeaderText"><![CDATA[a payer]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Advanced Pump Recommendation Acceptability]]></Data>
+            <Data Name="Definitions(C1)[0]#HeaderText"><![CDATA[a patient]]></Data>
         </ResourceSet>
     </Resources>
 </DT>
