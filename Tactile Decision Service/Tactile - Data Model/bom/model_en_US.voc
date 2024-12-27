@@ -141,7 +141,7 @@ bhagyashree.tactile_medical.tactile_decision_service.data.Match$NotMatch.notMatc
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord#concept.label = medical record
-bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.MedicalRecord(java.lang.String,java.lang.String,java.lang.String,boolean,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.time.LocalDate,java.lang.String,java.lang.String,java.lang.String,java.lang.String,double,java.lang.String,java.lang.String)#phrase.navigation = a new {medical record} where {0, advanced pump recommended} {1, basic pump trial and fail reasons} {2, basic pump trial requirement} {3, contraindications} {4, contraindications clearance form} {5, diagnosis} {6, diet and medication evaluation} {7, doctor oversight} {8, face to face examination} {9, face to face examination date} {10, face to face examination reason} {11, icd10 code} {12, lymphedemia cause} {13, progress notes} {14, stage level} {15, terms of severity} {16, visit notes}
+bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.MedicalRecord(java.lang.String,java.lang.String,java.lang.String,boolean,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.time.LocalDate,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,double,java.lang.String,java.lang.String)#phrase.navigation = a new {medical record} where {0, advanced pump recommended} {1, basic pump trial and fail reasons} {2, basic pump trial requirement} {3, contraindications} {4, contraindications clearance form} {5, diagnosis} {6, diet and medication evaluation} {7, doctor oversight} {8, face to face examination} {9, face to face examination date} {10, face to face examination reason} {11, icd10 code} {12, location of edema} {13, lymphedemia cause} {14, progress notes} {15, stage level} {16, terms of severity} {17, visit notes}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.advancedPumpRecommended#phrase.action = set the advanced pump recommended of {this} to {advanced pump recommended}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.advancedPumpRecommended#phrase.navigation = {advanced pump recommended} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.basicPumpTrialAndFailReasons#phrase.action = set the basic pump trial and fail reasons of {this} to {basic pump trial and fail reasons}
@@ -176,6 +176,8 @@ bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.faceToFa
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.faceToFaceExaminationReason#phrase.navigation = {face to face examination reason} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.icd10Code#phrase.action = set the icd10 code of {this} to {icd10 code}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.icd10Code#phrase.navigation = {icd10 code} of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.locationOfEdema#phrase.action = set the location of edema of {this} to {location of edema}
+bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.locationOfEdema#phrase.navigation = {location of edema} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.lymphedemiaCause#phrase.action = set the lymphedemia cause of {this} to {lymphedemia cause}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.lymphedemiaCause#phrase.navigation = {lymphedemia cause} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.progressNotes#phrase.action = set the progress notes of {this} to {progress notes}
@@ -188,10 +190,6 @@ bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.termsOfS
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.termsOfSeverity#phrase.navigation = {terms of severity} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.visitNotes#phrase.action = set the visit notes of {this} to {visit notes}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.visitNotes#phrase.navigation = {visit notes} of {this}
-
-# bhagyashree.tactile_medical.tactile_decision_service.data.NewType
-bhagyashree.tactile_medical.tactile_decision_service.data.NewType#concept.label = new type
-bhagyashree.tactile_medical.tactile_decision_service.data.NewType.NewType()#phrase.navigation = a new {new type}
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.Order
 bhagyashree.tactile_medical.tactile_decision_service.data.Order#concept.label = order
@@ -609,6 +607,14 @@ bhagyashree.tactile_medical.tactile_decision_service.data.Primary$NotPrimary#con
 bhagyashree.tactile_medical.tactile_decision_service.data.Primary$NotPrimary.notPrimary#instance.label = Not Primary
 bhagyashree.tactile_medical.tactile_decision_service.data.Primary$NotPrimary.primary#instance.label = Primary
 
+# bhagyashree.tactile_medical.tactile_decision_service.data.PrimaryDiagnosis
+bhagyashree.tactile_medical.tactile_decision_service.data.PrimaryDiagnosis#concept.label = Primary Diagnosis
+bhagyashree.tactile_medical.tactile_decision_service.data.PrimaryDiagnosis.SMNChronicVenousUlcers$CVU$#instance.label = SMN Chronic Venous Ulcers (CVU)
+bhagyashree.tactile_medical.tactile_decision_service.data.PrimaryDiagnosis.SMNLymphedema#instance.label = SMN Lymphedema
+bhagyashree.tactile_medical.tactile_decision_service.data.PrimaryDiagnosis.medicalRecordsChronicVenousUlcers$CVU$#instance.label = Medical Records Chronic Venous Ulcers (CVU)
+bhagyashree.tactile_medical.tactile_decision_service.data.PrimaryDiagnosis.medicalRecordsLymphedema#instance.label = Medical Records Lymphedema
+bhagyashree.tactile_medical.tactile_decision_service.data.PrimaryDiagnosis.other#instance.label = Other
+
 # bhagyashree.tactile_medical.tactile_decision_service.data.ReferralProductType
 bhagyashree.tactile_medical.tactile_decision_service.data.ReferralProductType#concept.label = Referral Product Type
 bhagyashree.tactile_medical.tactile_decision_service.data.ReferralProductType.entre#instance.label = Entre
@@ -622,7 +628,7 @@ bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired.r
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN#concept.label = SMNLMN
-bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.SMNLMN(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,double,java.lang.String)#phrase.navigation = a new {SMNLMN} where {0, advanced pump recommended} {1, basic pump trial requirement} {2, diagnosis} {3, diet and medication evaluation} {4, lymphedemia cause} {5, notes} {6, stage level} {7, terms of severity}
+bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.SMNLMN(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,double,java.lang.String)#phrase.navigation = a new {SMNLMN} where {0, advanced pump recommended} {1, basic pump trial requirement} {2, diagnosis} {3, diet and medication evaluation} {4, location of edema} {5, lymphedemia cause} {6, notes} {7, stage level} {8, terms of severity}
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.advancedPumpRecommended#phrase.action = set the advanced pump recommended of {this} to {advanced pump recommended}
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.advancedPumpRecommended#phrase.navigation = {advanced pump recommended} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.basicPumpTrialRequirement#phrase.action = set the basic pump trial requirement of {this} to {basic pump trial requirement}
@@ -631,6 +637,8 @@ bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.diagnosis#phras
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.diagnosis#phrase.navigation = {diagnosis} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.dietAndMedicationEvaluation#phrase.action = set the diet and medication evaluation of {this} to {diet and medication evaluation}
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.dietAndMedicationEvaluation#phrase.navigation = {diet and medication evaluation} of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.locationOfEdema#phrase.action = set the location of edema of {this} to {location of edema}
+bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.locationOfEdema#phrase.navigation = {location of edema} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.lymphedemiaCause#phrase.action = set the lymphedemia cause of {this} to {lymphedemia cause}
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.lymphedemiaCause#phrase.navigation = {lymphedemia cause} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN.notes#phrase.action = set the notes of {this} to {notes}

@@ -340,6 +340,10 @@ class MedicalRecord
                 property ads.attributeId "15"
                 property com.fasterxml.jackson.annotation.JsonProperty "icd10Code"
                 #update;
+    string locationOfEdema
+                property ads.attributeId "18"
+                property com.fasterxml.jackson.annotation.JsonProperty "locationOfEdema"
+                #update;
     string lymphedemiaCause
                 property ads.attributeId "10"
                 #update;
@@ -368,6 +372,7 @@ class MedicalRecord
         java.time.LocalDate faceToFaceExaminationDate, 
         string faceToFaceExaminationReason, 
         string icd10Code, 
+        string locationOfEdema, 
         string lymphedemiaCause, 
         string progressNotes, 
         double stageLevel, 
@@ -379,19 +384,6 @@ class MedicalRecord
                 #prototype;
     MedicalRecord()
                 #dataio.default;
-}
-
-class NewType
-        property ads.typeId "35"
-        property com.fasterxml.jackson.annotation.JsonTypeName "newType"
-        #de.generated
-{
-    NewType()
-                #autoExpand
-                #beanConstructor
-                #dataio.default
-                property groups "BALA"
-                #prototype;
 }
 
 class Order
@@ -1265,6 +1257,30 @@ class Primary$NotPrimary
                 property com.fasterxml.jackson.annotation.JsonProperty "Primary";
 }
 
+class PrimaryDiagnosis
+        extends java.lang.Enum
+        property ads.typeId "42"
+        property com.fasterxml.jackson.annotation.JsonTypeName "PrimaryDiagnosis"
+        #de.generated
+{
+    domain {static SMNChronicVenousUlcers$CVU$, static SMNLymphedema, static medicalRecordsChronicVenousUlcers$CVU$, static medicalRecordsLymphedema, static other}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PrimaryDiagnosis SMNChronicVenousUlcers$CVU$
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "SMN Chronic Venous Ulcers (CVU)";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PrimaryDiagnosis SMNLymphedema
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "SMN Lymphedema";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PrimaryDiagnosis medicalRecordsChronicVenousUlcers$CVU$
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Medical Records Chronic Venous Ulcers (CVU)";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PrimaryDiagnosis medicalRecordsLymphedema
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Medical Records Lymphedema";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PrimaryDiagnosis other
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "Other";
+}
+
 class ReferralProductType
         extends java.lang.Enum
         property ads.typeId "23"
@@ -1314,6 +1330,10 @@ class SMNLMN
     string dietAndMedicationEvaluation
                 property ads.attributeId "4"
                 #update;
+    string locationOfEdema
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "locationOfEdema"
+                #update;
     string lymphedemiaCause
                 property ads.attributeId "5"
                 #update;
@@ -1331,6 +1351,7 @@ class SMNLMN
         string basicPumpTrialRequirement, 
         string diagnosis, 
         string dietAndMedicationEvaluation, 
+        string locationOfEdema, 
         string lymphedemiaCause, 
         string notes, 
         double stageLevel, 

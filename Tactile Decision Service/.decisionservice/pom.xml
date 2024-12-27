@@ -43,12 +43,22 @@
         </dependency>
         <dependency>
             <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+            <artifactId>locationOfEdemaAcceptability</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
             <artifactId>patientOrderAcceptanceStatus</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
             <artifactId>patientTreatmentAreaList</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+            <artifactId>payerMedicalNecessityAcceptability</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -186,6 +196,11 @@
 
 
 
+
+
+
+
+
 <build>
         <resources>
             <resource>
@@ -266,6 +281,15 @@
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+                                    <artifactId>locationOfEdemaAcceptability</artifactId>
+                                    <version>LATEST-SNAPSHOT</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <includes>**/*.class</includes>
+                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
                                     <artifactId>patientOrderAcceptanceStatus</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
@@ -276,6 +300,15 @@
                                 <artifactItem>
                                     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
                                     <artifactId>patientTreatmentAreaList</artifactId>
+                                    <version>LATEST-SNAPSHOT</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <includes>**/*.class</includes>
+                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+                                    <artifactId>payerMedicalNecessityAcceptability</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>

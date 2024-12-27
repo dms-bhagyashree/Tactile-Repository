@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>Location of Edema Acceptability</name>
+  <uuid>d5be3d1f-ac20-465f-8509-2c7ba812be35</uuid>
+  <locale>en_US</locale>
+  <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
+    <Body>
+        <Properties>
+            <Property Name="UI.MediaType"><![CDATA[Web]]></Property>
+            <Property Name="UI.RenderBoolean" Type="xs:boolean"><![CDATA[true]]></Property>
+        </Properties>
+        <Preconditions>
+            <Text><![CDATA[definitions
+ set 'payer req' to the payer requirements computed from 
+	Payer being Payer , 
+	Patient being Patient ;
+ set 'patient treatment areas' to all patient treatment areas in the patient treatment area lists    computed from Patient being Patient; ]]></Text>
+        </Preconditions>
+        <Structure>
+            <ConditionDefinitions>
+                <ConditionDefinition Id="C2">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[true]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA[ 'dummy payer req' is <a Required/Not Required> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C3">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the medical records on file required of 'payer req' is <a Required/Not Required> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C0">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA['Primary Coverage Diagnosis' is <a Primary Diagnosis>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C4">
+                    <ExpressionDefinition>
+                        <Text><![CDATA['patient treatment areas' contain <a patient treatment area> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C5">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the location of edema of 'Medical Record' is <a string> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C6">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the location of edema of 'SMN LMN' is <a string> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C7">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the location of edema of Prescription is <a string> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+            </ConditionDefinitions>
+            <ActionDefinitions>
+                <ActionDefinition Id="A0">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[set decision to <an Acceptable/Not Acceptable>]]></Text>
+                    </ExpressionDefinition>
+                </ActionDefinition>
+            </ActionDefinitions>
+        </Structure>
+        <Contents>
+            <Partition DefId="C2">
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Required]]></Param>
+                    </Expression>
+                    <Partition DefId="C0">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                                <Param><![CDATA[{ Medical Records Lymphedema , SMN Lymphedema }]]></Param>
+                            </Expression>
+                            <Partition DefId="C4">
+                                <Condition>
+                                    <Expression>
+                                        <Text><![CDATA[<condition>
+or <condition>]]></Text>
+                                        <Param><![CDATA['patient treatment areas' contain Upper Extremities 
+or 'patient treatment areas' contain Lower Extremities 
+or 'patient treatment areas' contain Trunk/Chest Only]]></Param>
+                                        <Param><![CDATA['patient treatment areas' contain Head and Neck]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C5">
+                                        <Condition>
+                                            <Expression>
+                                                <Text><![CDATA[<a string> contains <a string>]]></Text>
+                                                <Param><![CDATA[the location of edema of Prescription]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA[Acceptable]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Required]]></Param>
+                    </Expression>
+                    <Partition DefId="C3">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Required]]></Param>
+                            </Expression>
+                            <Partition DefId="C0">
+                                <Condition>
+                                    <Expression>
+                                        <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                                        <Param><![CDATA[{ Medical Records Lymphedema , SMN Lymphedema }]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C4">
+                                        <Condition>
+                                            <Expression>
+                                                <Text><![CDATA[<condition>
+or <condition>]]></Text>
+                                                <Param><![CDATA['patient treatment areas' contain Upper Extremities 
+or 'patient treatment areas' contain Lower Extremities 
+or 'patient treatment areas' contain Trunk/Chest Only]]></Param>
+                                                <Param><![CDATA['patient treatment areas' contain Head and Neck]]></Param>
+                                            </Expression>
+                                            <Partition DefId="C5">
+                                                <Condition>
+                                                    <Expression>
+                                                        <Text><![CDATA[<a string> does not contain <a string>]]></Text>
+                                                        <Param><![CDATA[the location of edema of Prescription]]></Param>
+                                                    </Expression>
+                                                    <ActionSet>
+                                                        <Action DefId="A0">
+                                                            <Expression>
+                                                                <Param><![CDATA[Not Acceptable]]></Param>
+                                                            </Expression>
+                                                        </Action>
+                                                    </ActionSet>
+                                                </Condition>
+                                            </Partition>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Required]]></Param>
+                    </Expression>
+                    <Partition DefId="C3">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Not Required]]></Param>
+                            </Expression>
+                            <Partition DefId="C0">
+                                <Condition>
+                                    <Expression>
+                                        <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                                        <Param><![CDATA[{ Medical Records Lymphedema , SMN Lymphedema }]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C4">
+                                        <Condition>
+                                            <Expression>
+                                                <Text><![CDATA[<condition>
+or <condition>]]></Text>
+                                                <Param><![CDATA['patient treatment areas' contain Upper Extremities 
+or 'patient treatment areas' contain Lower Extremities 
+or 'patient treatment areas' contain Trunk/Chest Only]]></Param>
+                                                <Param><![CDATA['patient treatment areas' contain Head and Neck]]></Param>
+                                            </Expression>
+                                            <Partition DefId="C5">
+                                                <Condition>
+                                                    <Expression>
+                                                        <Text><![CDATA[<a string> does not contain <a string>]]></Text>
+                                                        <Param><![CDATA[the location of edema of 'Prescription']]></Param>
+                                                    </Expression>
+                                                    <Partition DefId="C6">
+                                                        <Condition>
+                                                            <Expression>
+                                                                <Text><![CDATA[<a string> contains <a string>]]></Text>
+                                                                <Param><![CDATA[the location of edema of 'Prescription']]></Param>
+                                                            </Expression>
+                                                            <ActionSet>
+                                                                <Action DefId="A0">
+                                                                    <Expression>
+                                                                        <Param><![CDATA[Acceptable]]></Param>
+                                                                    </Expression>
+                                                                </Action>
+                                                            </ActionSet>
+                                                        </Condition>
+                                                    </Partition>
+                                                </Condition>
+                                            </Partition>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Required]]></Param>
+                    </Expression>
+                    <Partition DefId="C3">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Not Required]]></Param>
+                            </Expression>
+                            <Partition DefId="C0">
+                                <Condition>
+                                    <Expression>
+                                        <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                                        <Param><![CDATA[{ Medical Records Lymphedema , SMN Lymphedema }]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C4">
+                                        <Condition>
+                                            <Expression>
+                                                <Text><![CDATA[<condition>
+or <condition>]]></Text>
+                                                <Param><![CDATA['patient treatment areas' contain Upper Extremities 
+or 'patient treatment areas' contain Lower Extremities 
+or 'patient treatment areas' contain Trunk/Chest Only]]></Param>
+                                                <Param><![CDATA['patient treatment areas' contain Head and Neck]]></Param>
+                                            </Expression>
+                                            <Partition DefId="C5">
+                                                <Condition>
+                                                    <Expression>
+                                                        <Text><![CDATA[<a string> does not contain <a string>]]></Text>
+                                                        <Param><![CDATA[the location of edema of Prescription]]></Param>
+                                                    </Expression>
+                                                    <Partition DefId="C6">
+                                                        <Condition>
+                                                            <Expression>
+                                                                <Text><![CDATA[<a string> does not contain <a string>]]></Text>
+                                                                <Param><![CDATA[the location of edema of Prescription]]></Param>
+                                                            </Expression>
+                                                            <ActionSet>
+                                                                <Action DefId="A0">
+                                                                    <Expression>
+                                                                        <Param><![CDATA[Not Acceptable]]></Param>
+                                                                    </Expression>
+                                                                </Action>
+                                                            </ActionSet>
+                                                        </Condition>
+                                                    </Partition>
+                                                </Condition>
+                                            </Partition>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Required]]></Param>
+                    </Expression>
+                    <Partition DefId="C0">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                                <Param><![CDATA[{ Medical Records Chronic Venous Ulcers (CVU) , SMN Chronic Venous Ulcers (CVU) }]]></Param>
+                            </Expression>
+                            <Partition DefId="C4">
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA[Lower Extremities]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C5">
+                                        <Condition>
+                                            <Expression>
+                                                <Text><![CDATA[<a string> contains <a string>]]></Text>
+                                                <Param><![CDATA[the location of edema of Prescription]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA[Acceptable]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Required]]></Param>
+                    </Expression>
+                    <Partition DefId="C3">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Required]]></Param>
+                            </Expression>
+                            <Partition DefId="C0">
+                                <Condition>
+                                    <Expression>
+                                        <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                                        <Param><![CDATA[{ Medical Records Chronic Venous Ulcers (CVU) , SMN Chronic Venous Ulcers (CVU) }]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C4">
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA[Lower Extremities]]></Param>
+                                            </Expression>
+                                            <Partition DefId="C5">
+                                                <Condition>
+                                                    <Expression>
+                                                        <Text><![CDATA[<a string> does not contain <a string>]]></Text>
+                                                        <Param><![CDATA[the location of edema of Prescription]]></Param>
+                                                    </Expression>
+                                                    <ActionSet>
+                                                        <Action DefId="A0">
+                                                            <Expression>
+                                                                <Param><![CDATA[Not Acceptable]]></Param>
+                                                            </Expression>
+                                                        </Action>
+                                                    </ActionSet>
+                                                </Condition>
+                                            </Partition>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Required]]></Param>
+                    </Expression>
+                    <Partition DefId="C3">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Not Required]]></Param>
+                            </Expression>
+                            <Partition DefId="C0">
+                                <Condition>
+                                    <Expression>
+                                        <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                                        <Param><![CDATA[{ Medical Records Chronic Venous Ulcers (CVU) , SMN Chronic Venous Ulcers (CVU) }]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C4">
+                                        <Condition>
+                                            <Expression>
+                                                <Text><![CDATA[<objects> do not contain <an object>]]></Text>
+                                                <Param><![CDATA['patient treatment areas']]></Param>
+                                                <Param><![CDATA[Lower Extremities]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA[Not Acceptable]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Required]]></Param>
+                    </Expression>
+                    <Partition DefId="C0">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                                <Param><![CDATA[{ Medical Records Lymphedema , SMN Lymphedema }]]></Param>
+                            </Expression>
+                            <Partition DefId="C4">
+                                <Condition>
+                                    <Expression>
+                                        <Text><![CDATA[<condition>
+or <condition>]]></Text>
+                                        <Param><![CDATA['patient treatment areas' do not contain Upper Extremities 
+or 'patient treatment areas' do not contain Lower Extremities 
+or 'patient treatment areas' do not contain Trunk/Chest Only]]></Param>
+                                        <Param><![CDATA['patient treatment areas' do not contain Head and Neck]]></Param>
+                                    </Expression>
+                                    <ActionSet>
+                                        <Action DefId="A0">
+                                            <Expression>
+                                                <Param><![CDATA[Not Acceptable]]></Param>
+                                            </Expression>
+                                        </Action>
+                                    </ActionSet>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Not Required]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA[Acceptable]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+            </Partition>
+        </Contents>
+    </Body>
+    <Resources DefaultLocale="en_US">
+        <ResourceSet Locale="en_US">
+            <Data Name="Definitions(C6)#HeaderText"><![CDATA[Location Of Edema]]></Data>
+            <Data Name="Definitions(C7)#HeaderText"><![CDATA[Location Of Edema]]></Data>
+            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Primary Coverage Diagnosis]]></Data>
+            <Data Name="Definitions(C4)#HeaderText"><![CDATA[Patient Treatment Area List]]></Data>
+            <Data Name="Definitions(C5)#HeaderText"><![CDATA[Location Of Edema]]></Data>
+            <Data Name="Definitions(C3)#Width"><![CDATA[158]]></Data>
+            <Data Name="Definitions(C2)#HeaderText"><![CDATA[Payer Requirements]]></Data>
+            <Data Name="Definitions(C3)#HeaderText"><![CDATA[Medical Records On File Required]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Location of Edema Acceptability]]></Data>
+            <Data Name="Definitions(C4)#Width"><![CDATA[306]]></Data>
+        </ResourceSet>
+    </Resources>
+</DT>
+</definition>
+</ilog.rules.studio.model.dt:DecisionTable>

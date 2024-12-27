@@ -70,8 +70,10 @@
         <module>Demo Record Validity, Girth Measurement Acceptability, Lymphedema Stage Level</module>
         <module>Diagnosis Validity</module>
         <module>Etiology Acceptability</module>
+        <module>Location of Edema Acceptability</module>
         <module>Patient Order Acceptance Status</module>
         <module>Patient Treatment Area List</module>
+        <module>Payer Medical Necessity Acceptability</module>
         <module>Payer Requirements</module>
         <module>Place of Service Acceptability</module>
         <module>Pre Service Acceptability</module>

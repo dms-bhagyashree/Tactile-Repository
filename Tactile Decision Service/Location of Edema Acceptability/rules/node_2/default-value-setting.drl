@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>default-value-setting</name>
+  <uuid>4541665a-0882-4f7c-971c-c7aa7776ed31</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set 'Medical Record' to a new medical record ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

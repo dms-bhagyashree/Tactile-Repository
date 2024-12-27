@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Location of Edema Acceptability">
+  <name>Location_of_Edema_Acceptability</name>
+  <uuid>808b60bd-61ff-491b-be2b-5e662d9d9f47</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#c13eac51-3800-4c9b-a49e-9a163c44015c"/>
+  <targetRuleProject href="../../Location%20of%20Edema%20Acceptability#7d1d6a4f-ec97-4be8-894c-c076d622d552"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>
