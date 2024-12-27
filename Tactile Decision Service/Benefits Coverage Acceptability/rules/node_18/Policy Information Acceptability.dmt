@@ -13,7 +13,7 @@
             <Text><![CDATA[ definitions 
 	set 'a Verification' to a verification of benefit in 'Verification of Benefits' , made distinct ;
     
-set 'a Plan Indicator' to a Secondary Plan Indicator in 'Secondary Plan Indicator' , made distinct ;
+set 'a Plan Indicator' to a Secondary Plan Indicator in 'Secondary Plan Indicator', made distinct ;
 
 	set 'a Network Acceptability' to an Acceptable/Not Acceptable in 'In Network Acceptability' , made distinct ;
 set 'a Distributor Acceptability' to an Acceptable/Not Acceptable in 'Distributor Acceptability' , made distinct ;]]></Text>
@@ -85,8 +85,8 @@ set 'a Distributor Acceptability' to an Acceptable/Not Acceptable in 'Distributo
             <ActionDefinitions>
                 <ActionDefinition Id="A0">
                     <ExpressionDefinition>
-                        <Text><![CDATA[set decision to a new Policy Information Acceptability where
-      the Acceptable/Not Acceptable is <Acceptable/Not Acceptable> , 
+                        <Text><![CDATA[   set decision to a new Policy Information Acceptability where
+      the Policy Information Acceptability is <Policy Information Acceptability> , 
       the Message is <Message>]]></Text>
                     </ExpressionDefinition>
                 </ActionDefinition>
@@ -429,13 +429,14 @@ set 'a Distributor Acceptability' to an Acceptable/Not Acceptable in 'Distributo
             <Data Name="Definitions(C9)#HeaderText"><![CDATA[Plan Type]]></Data>
             <Data Name="Definitions(C2)#HeaderText"><![CDATA[In Network Acceptability]]></Data>
             <Data Name="Definitions(C3)#HeaderText"><![CDATA[Distributor Acceptability]]></Data>
-            <Data Name="Definitions(A0)[0]#HeaderText"><![CDATA[an Acceptable/Not Acceptable]]></Data>
+            <Data Name="Definitions(A0)[0]#HeaderText"><![CDATA[Policy Information Acceptability]]></Data>
             <Data Name="Definitions(C0)[0]#HeaderText"><![CDATA[an Acceptable/Not Acceptable]]></Data>
             <Data Name="Definitions(A0)#HeaderText"><![CDATA[Policy Information Acceptability]]></Data>
             <Data Name="Definitions(C1)#Width"><![CDATA[268]]></Data>
             <Data Name="Definitions(C3)[0]#HeaderText"><![CDATA[a number]]></Data>
             <Data Name="Definitions(C0)#HeaderText"><![CDATA[Multiple Primary Plan Acceptability]]></Data>
             <Data Name="Definitions(C1)#HeaderText"><![CDATA[Secondary Plan Indicator]]></Data>
+            <Data Name="Definitions(A0)[1]#HeaderText"><![CDATA[Message]]></Data>
             <Data Name="Definitions(C1)[0]#HeaderText"><![CDATA[a number]]></Data>
         </ResourceSet>
     </Resources>

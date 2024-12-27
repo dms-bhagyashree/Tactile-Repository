@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Pre Service Acceptability">
+  <name>Pre_Service_Acceptability</name>
+  <uuid>b95e5daf-e13a-4a00-bdea-481b678d23d3</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#fba79061-c6f7-4d7b-9572-8a567af5ae3a"/>
+  <targetRuleProject href="../../Pre%20Service%20Acceptability#61e4fc8b-0cd5-4707-8b0d-e1e635f77208"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

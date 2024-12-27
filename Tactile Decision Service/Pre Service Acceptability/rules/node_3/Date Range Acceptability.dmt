@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
-  <name>Benefits Coverage Acceptability</name>
-  <uuid>21aadfdb-871a-4b8b-9085-b23bc4364d5a</uuid>
+  <name>Date Range Acceptability</name>
+  <uuid>ebeef43f-6b4d-427c-9b99-e6259806eca3</uuid>
   <locale>en_US</locale>
   <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
     <Body>
@@ -17,17 +17,12 @@
                         <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
                     </Properties>
                     <ExpressionDefinition>
-                        <Text><![CDATA[the Policy Information Acceptability of 'Policy Information Acceptability' is <an Acceptable/Not Acceptable>]]></Text>
+                        <Text><![CDATA[the Approval Type of 'Approval Type' is <an Approval Type>]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
                 <ConditionDefinition Id="C1">
                     <ExpressionDefinition>
-                        <Text><![CDATA['Benefits Acceptability'  contain <an Acceptable/Not Acceptable> ]]></Text>
-                    </ExpressionDefinition>
-                </ConditionDefinition>
-                <ConditionDefinition Id="C2">
-                    <ExpressionDefinition>
-                        <Text><![CDATA['Authorization Information Acceptability' contain <an Acceptable/Not Acceptable> ]]></Text>
+                        <Text><![CDATA[the date of service of Payer is <a date>]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
             </ConditionDefinitions>
@@ -43,39 +38,33 @@
             <Partition DefId="C0">
                 <Condition>
                     <Expression>
-                        <Param><![CDATA[Acceptable]]></Param>
+                        <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                        <Param><![CDATA[{ Purchase , Rent , Rent After Review }]]></Param>
                     </Expression>
                     <Partition DefId="C1">
                         <Condition>
                             <Expression>
-                                <Param><![CDATA[Acceptable]]></Param>
+                                <Text><![CDATA[<an object> is not null]]></Text>
                             </Expression>
-                            <Partition DefId="C2">
-                                <Condition>
+                            <ActionSet>
+                                <Action DefId="A0">
                                     <Expression>
                                         <Param><![CDATA[Acceptable]]></Param>
                                     </Expression>
-                                    <ActionSet>
-                                        <Action DefId="A0">
-                                            <Expression>
-                                                <Param><![CDATA[Acceptable]]></Param>
-                                            </Expression>
-                                        </Action>
-                                    </ActionSet>
-                                </Condition>
-                            </Partition>
+                                </Action>
+                            </ActionSet>
                         </Condition>
                     </Partition>
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Text><![CDATA[<an object> is not <an object>]]></Text>
-                        <Param><![CDATA[Acceptable]]></Param>
+                        <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                        <Param><![CDATA[{ Purchase , Rent , Rent After Review }]]></Param>
                     </Expression>
-                    <Partition DefId="C2">
+                    <Partition DefId="C1">
                         <Condition>
                             <Expression>
-                                <Param><![CDATA[Not Acceptable]]></Param>
+                                <Text><![CDATA[<an object> is null]]></Text>
                             </Expression>
                             <ActionSet>
                                 <Action DefId="A0">
@@ -89,8 +78,8 @@
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Text><![CDATA[<an object> is not <an object>]]></Text>
-                        <Param><![CDATA[Acceptable]]></Param>
+                        <Text><![CDATA[<an object> is not one of <objects>]]></Text>
+                        <Param><![CDATA[{ Purchase , Rent , Rent After Review }]]></Param>
                     </Expression>
                     <ActionSet>
                         <Action DefId="A0">
@@ -105,12 +94,10 @@
     </Body>
     <Resources DefaultLocale="en_US">
         <ResourceSet Locale="en_US">
-            <Data Name="Definitions(C2)[0]#HeaderText"><![CDATA[a number]]></Data>
-            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Policy Information Acceptability]]></Data>
-            <Data Name="Definitions(C1)#HeaderText"><![CDATA[Benefits Acceptability]]></Data>
-            <Data Name="Definitions(C2)#HeaderText"><![CDATA[Authorization Information Acceptability]]></Data>
-            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Benefits Coverage Acceptability]]></Data>
-            <Data Name="Definitions(C1)[0]#HeaderText"><![CDATA[a number]]></Data>
+            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Approval Type]]></Data>
+            <Data Name="Definitions(C1)#HeaderText"><![CDATA[Date of Service]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Date Range Acceptability]]></Data>
+            <Data Name="Definitions(C0)#Width"><![CDATA[284]]></Data>
         </ResourceSet>
     </Resources>
 </DT>
