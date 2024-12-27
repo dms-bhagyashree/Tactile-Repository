@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Place of Service Acceptability">
+  <name>Place_of_Service_Acceptability</name>
+  <uuid>ff624198-1479-42b0-a4cd-a228e4fa0977</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#1174ba0d-8188-477b-b61d-867c1f4ef32c"/>
+  <targetRuleProject href="../../Place%20of%20Service%20Acceptability#61f0db2a-c6bc-416b-8290-c16a298a27b4"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

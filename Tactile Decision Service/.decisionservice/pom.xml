@@ -18,6 +18,11 @@
         </dependency>
         <dependency>
             <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+            <artifactId>basicPumpTrial0x002cConservativeTherapy0x002cDoctorOversight0x002cFaceToFace0x002cTermsOfSeverityAcceptability</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
             <artifactId>benefitsCoverageAcceptability</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
@@ -29,11 +34,6 @@
         <dependency>
             <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
             <artifactId>diagnosisValidity</artifactId>
-            <version>LATEST-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
-            <artifactId>doctorOversightAcceptability</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -54,6 +54,11 @@
         <dependency>
             <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
             <artifactId>payerRequirements</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+            <artifactId>placeOfServiceAcceptability</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -172,6 +177,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
 <build>
         <resources>
             <resource>
@@ -207,6 +221,15 @@
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+                                    <artifactId>basicPumpTrial0x002cConservativeTherapy0x002cDoctorOversight0x002cFaceToFace0x002cTermsOfSeverityAcceptability</artifactId>
+                                    <version>LATEST-SNAPSHOT</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <includes>**/*.class</includes>
+                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
                                     <artifactId>benefitsCoverageAcceptability</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
@@ -226,15 +249,6 @@
                                 <artifactItem>
                                     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
                                     <artifactId>diagnosisValidity</artifactId>
-                                    <version>LATEST-SNAPSHOT</version>
-                                    <type>jar</type>
-                                    <overWrite>false</overWrite>
-                                    <includes>**/*.class</includes>
-                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
-                                    <artifactId>doctorOversightAcceptability</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
@@ -271,6 +285,15 @@
                                 <artifactItem>
                                     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
                                     <artifactId>payerRequirements</artifactId>
+                                    <version>LATEST-SNAPSHOT</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <includes>**/*.class</includes>
+                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+                                    <artifactId>placeOfServiceAcceptability</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>

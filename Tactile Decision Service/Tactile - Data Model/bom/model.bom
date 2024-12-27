@@ -186,7 +186,7 @@ class Document
     java.util.List medicalRecords domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord
                 property ads.attributeId "3"
                 #update;
-    boolean pcfNotification
+    string pcfNotification
                 property ads.attributeId "4"
                 #update;
     java.util.List prescriptions domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Prescription
@@ -198,7 +198,7 @@ class Document
     Document(bhagyashree.tactile_medical.tactile_decision_service.data.Cif CIF, 
         bhagyashree.tactile_medical.tactile_decision_service.data.Demo demo, 
         java.util.List medicalRecords domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord, 
-        boolean pcfNotification, 
+        string pcfNotification, 
         java.util.List prescriptions domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Prescription, 
         bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN smnLMN)
                 #autoExpand
@@ -231,6 +231,21 @@ class Document
     void set_prescriptions(java.util.Collection prescriptions domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Prescription)
                 property collectionAttribute "prescriptions"
                 #update;
+}
+
+class Eligible$NotEligible
+        extends java.lang.Enum
+        property ads.typeId "40"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Eligible/NotEligible"
+        #de.generated
+{
+    domain {static eligible, static notEligible}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Eligible$NotEligible eligible
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Eligible";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Eligible$NotEligible notEligible
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Eligible";
 }
 
 class FileMaker
@@ -366,6 +381,19 @@ class MedicalRecord
                 #dataio.default;
 }
 
+class NewType
+        property ads.typeId "35"
+        property com.fasterxml.jackson.annotation.JsonTypeName "newType"
+        #de.generated
+{
+    NewType()
+                #autoExpand
+                #beanConstructor
+                #dataio.default
+                property groups "BALA"
+                #prototype;
+}
+
 class Order
         property ads.typeId "10"
         #de.generated
@@ -376,6 +404,18 @@ class Order
     java.math.BigDecimal downpaymentAmountReceived
                 property ads.attributeId "2"
                 property com.fasterxml.jackson.annotation.JsonProperty "downpaymentAmountReceived"
+                #update;
+    string facilityAddress
+                property ads.attributeId "17"
+                property com.fasterxml.jackson.annotation.JsonProperty "facilityAddress"
+                #update;
+    string facilityName
+                property ads.attributeId "16"
+                property com.fasterxml.jackson.annotation.JsonProperty "facilityName"
+                #update;
+    string facilitySkilledServices
+                property ads.attributeId "18"
+                property com.fasterxml.jackson.annotation.JsonProperty "facilitySkilledServices"
                 #update;
     string garment
                 property ads.attributeId "3"
@@ -399,7 +439,7 @@ class Order
     string product
                 property ads.attributeId "8"
                 #update;
-    boolean representativeNotification
+    string representativeNotification
                 property ads.attributeId "9"
                 #update;
     java.time.LocalDate rxDate
@@ -419,6 +459,9 @@ class Order
                 #update;
     Order(java.util.List documents domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Document, 
         java.math.BigDecimal downpaymentAmountReceived, 
+        string facilityAddress, 
+        string facilityName, 
+        string facilitySkilledServices, 
         string garment, 
         string locationOfEdema, 
         string orderType, 
@@ -426,7 +469,7 @@ class Order
         string picSignature, 
         string placeOfServiceCode, 
         string product, 
-        boolean representativeNotification, 
+        string representativeNotification, 
         java.time.LocalDate rxDate, 
         string rxFullName, 
         string rxNPI, 
@@ -842,6 +885,276 @@ class PayerType
                 property com.fasterxml.jackson.annotation.JsonProperty "Self Pay";
 }
 
+class PlaceOfServiceFacilityAddressVerification
+        property ads.typeId "39"
+        property com.fasterxml.jackson.annotation.JsonTypeName "PlaceOfServiceFacilityAddressVerification"
+        #de.generated
+{
+    string message
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "message"
+                #update;
+    bhagyashree.tactile_medical.tactile_decision_service.data.Verified$NotVerified placeOfServiceFacilityAddressVerification
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "placeOfServiceFacilityAddressVerification"
+                #update;
+    PlaceOfServiceFacilityAddressVerification(string message, bhagyashree.tactile_medical.tactile_decision_service.data.Verified$NotVerified placeOfServiceFacilityAddressVerification)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    PlaceOfServiceFacilityAddressVerification()
+                #dataio.default;
+}
+
+class PlaceOfServiceName
+        property ads.typeId "36"
+        property com.fasterxml.jackson.annotation.JsonTypeName "PlaceOfServiceName"
+        #de.generated
+{
+    string message
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "message"
+                #update;
+    bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues placeOfServiceName
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "placeOfServiceName"
+                #update;
+    PlaceOfServiceName(string message, bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues placeOfServiceName)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    PlaceOfServiceName()
+                #dataio.default;
+}
+
+class PlaceOfServiceNameValues
+        extends java.lang.Enum
+        property ads.typeId "37"
+        property com.fasterxml.jackson.annotation.JsonTypeName "PlaceOfServiceNameValues"
+        property com.ibm.rules.domainProvider.msexcel.b2xColumn "0"
+        property com.ibm.rules.domainProvider.msexcel.documentationColumn.en_US "0"
+        #com.ibm.rules.domainProvider.msexcel.hasHeader
+        property com.ibm.rules.domainProvider.msexcel.labelColumn.en_US "0"
+        property com.ibm.rules.domainProvider.msexcel.sheetIndex "0"
+        property com.ibm.rules.domainProvider.msexcel.valueColumn "0"
+        #de.generated
+        property domainProviderResource "domains/Place of Service Name.xlsx"
+{
+    domain 
+    {
+        static "ambulance-AirOrWater",
+        static "ambulance-Land",
+        static ambulatorySurgicalCenter,
+        static assistedLivingFacility,
+        static birthingCenter,
+        static communityMentalHealthCenter,
+        static comprehensiveInpatientRehabilitationFacility,
+        static comprehensiveOutpatientRehabilitationFacility,
+        static custodialCareFacility,
+        static "emergencyRoom-Hospital",
+        static end_StageRenalDiseaseTreatmentFacility,
+        static federallyQualifiedHealthCenter,
+        static groupHome,
+        static home,
+        static homelessShelter,
+        static hospice,
+        static independentClinic,
+        static independentLaboratory,
+        static indianHealthServiceFree_standingFacility,
+        static indianHealthServiceProvider_basedFacility,
+        static inpatientHospital,
+        static inpatientPsychiatricFacility,
+        static "intermediateCareFacility/IndividualsWithIntellectualDisabilities",
+        static massImmunizationCenter,
+        static militaryTreatmentFacility,
+        static mobileUnit,
+        static non_residentialOpioidTreatmentFacility,
+        static non_residentialSubstanceAbuseTreatmentFacility,
+        static nursingFacility,
+        static offCampus_OutpatientHospital,
+        static office,
+        static onCampus_OutpatientHospital,
+        static otherPlaceOfService,
+        static "outreachSite/Street",
+        static pharmacy,
+        static placeOfEmployment_Worksite,
+        static "prison/CorrectionalFacility",
+        static psychiatricFacility_PartialHospitalization,
+        static psychiatricResidentialTreatmentCenter,
+        static publicHealthClinic,
+        static residentialSubstanceAbuseTreatmentFacility,
+        static ruralHealthClinic,
+        static school,
+        static skilledNursingFacility,
+        static "telehealthProvidedInPatient'sHome",
+        static "telehealthProvidedOtherThanInPatient'sHome",
+        static temporaryLodging,
+        static tribal638Free_standingFacility,
+        static tribal638Provider_basedFacility,
+        static unassigned,
+        static urgentCareFacility,
+        static walk_inRetailHealthClinic
+    }
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues "ambulance-AirOrWater"
+                property ads.attributeId "15"
+                property com.fasterxml.jackson.annotation.JsonProperty "Ambulance - Air or Water";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues "ambulance-Land"
+                property ads.attributeId "16"
+                property com.fasterxml.jackson.annotation.JsonProperty "Ambulance - Land";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues ambulatorySurgicalCenter
+                property ads.attributeId "17"
+                property com.fasterxml.jackson.annotation.JsonProperty "Ambulatory Surgical Center";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues assistedLivingFacility
+                property ads.attributeId "13"
+                property com.fasterxml.jackson.annotation.JsonProperty "Assisted Living Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues birthingCenter
+                property ads.attributeId "18"
+                property com.fasterxml.jackson.annotation.JsonProperty "Birthing Center";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues communityMentalHealthCenter
+                property ads.attributeId "19"
+                property com.fasterxml.jackson.annotation.JsonProperty "Community Mental Health Center";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues comprehensiveInpatientRehabilitationFacility
+                property ads.attributeId "20"
+                property com.fasterxml.jackson.annotation.JsonProperty "Comprehensive Inpatient Rehabilitation Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues comprehensiveOutpatientRehabilitationFacility
+                property ads.attributeId "21"
+                property com.fasterxml.jackson.annotation.JsonProperty "Comprehensive Outpatient Rehabilitation Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues custodialCareFacility
+                property ads.attributeId "22"
+                property com.fasterxml.jackson.annotation.JsonProperty "Custodial Care Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues "emergencyRoom-Hospital"
+                property ads.attributeId "23"
+                property com.fasterxml.jackson.annotation.JsonProperty "Emergency Room - Hospital";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues end_StageRenalDiseaseTreatmentFacility
+                property ads.attributeId "24"
+                property com.fasterxml.jackson.annotation.JsonProperty "End-Stage Renal Disease Treatment Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues federallyQualifiedHealthCenter
+                property ads.attributeId "25"
+                property com.fasterxml.jackson.annotation.JsonProperty "Federally Qualified Health Center";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues groupHome
+                property ads.attributeId "26"
+                property com.fasterxml.jackson.annotation.JsonProperty "Group Home";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues home
+                property ads.attributeId "12"
+                property com.fasterxml.jackson.annotation.JsonProperty "Home";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues homelessShelter
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "Homeless Shelter";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues hospice
+                property ads.attributeId "27"
+                property com.fasterxml.jackson.annotation.JsonProperty "Hospice";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues independentClinic
+                property ads.attributeId "28"
+                property com.fasterxml.jackson.annotation.JsonProperty "Independent Clinic";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues independentLaboratory
+                property ads.attributeId "29"
+                property com.fasterxml.jackson.annotation.JsonProperty "Independent Laboratory";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues indianHealthServiceFree_standingFacility
+                property ads.attributeId "30"
+                property com.fasterxml.jackson.annotation.JsonProperty "Indian Health Service Free-standing Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues indianHealthServiceProvider_basedFacility
+                property ads.attributeId "31"
+                property com.fasterxml.jackson.annotation.JsonProperty "Indian Health Service Provider-based Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues inpatientHospital
+                property ads.attributeId "32"
+                property com.fasterxml.jackson.annotation.JsonProperty "Inpatient Hospital";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues inpatientPsychiatricFacility
+                property ads.attributeId "33"
+                property com.fasterxml.jackson.annotation.JsonProperty "Inpatient Psychiatric Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues "intermediateCareFacility/IndividualsWithIntellectualDisabilities"
+                property ads.attributeId "34"
+                property com.fasterxml.jackson.annotation.JsonProperty "Intermediate Care Facility/ Individuals with Intellectual Disabilities";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues massImmunizationCenter
+                property ads.attributeId "35"
+                property com.fasterxml.jackson.annotation.JsonProperty "Mass Immunization Center";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues militaryTreatmentFacility
+                property ads.attributeId "36"
+                property com.fasterxml.jackson.annotation.JsonProperty "Military Treatment Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues mobileUnit
+                property ads.attributeId "37"
+                property com.fasterxml.jackson.annotation.JsonProperty "Mobile Unit";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues non_residentialOpioidTreatmentFacility
+                property ads.attributeId "38"
+                property com.fasterxml.jackson.annotation.JsonProperty "Non-residential Opioid Treatment Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues non_residentialSubstanceAbuseTreatmentFacility
+                property ads.attributeId "39"
+                property com.fasterxml.jackson.annotation.JsonProperty "Non-residential Substance Abuse Treatment Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues nursingFacility
+                property ads.attributeId "40"
+                property com.fasterxml.jackson.annotation.JsonProperty "Nursing Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues offCampus_OutpatientHospital
+                property ads.attributeId "41"
+                property com.fasterxml.jackson.annotation.JsonProperty "Off Campus-Outpatient Hospital";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues office
+                property ads.attributeId "11"
+                property com.fasterxml.jackson.annotation.JsonProperty "Office";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues onCampus_OutpatientHospital
+                property ads.attributeId "42"
+                property com.fasterxml.jackson.annotation.JsonProperty "On Campus-Outpatient Hospital";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues otherPlaceOfService
+                property ads.attributeId "43"
+                property com.fasterxml.jackson.annotation.JsonProperty "Other Place of Service";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues "outreachSite/Street"
+                property ads.attributeId "44"
+                property com.fasterxml.jackson.annotation.JsonProperty "Outreach Site/ Street";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues pharmacy
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Pharmacy";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues placeOfEmployment_Worksite
+                property ads.attributeId "45"
+                property com.fasterxml.jackson.annotation.JsonProperty "Place of Employment-Worksite";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues "prison/CorrectionalFacility"
+                property ads.attributeId "46"
+                property com.fasterxml.jackson.annotation.JsonProperty "Prison/Correctional Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues psychiatricFacility_PartialHospitalization
+                property ads.attributeId "47"
+                property com.fasterxml.jackson.annotation.JsonProperty "Psychiatric Facility-Partial Hospitalization";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues psychiatricResidentialTreatmentCenter
+                property ads.attributeId "48"
+                property com.fasterxml.jackson.annotation.JsonProperty "Psychiatric Residential Treatment Center";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues publicHealthClinic
+                property ads.attributeId "49"
+                property com.fasterxml.jackson.annotation.JsonProperty "Public Health Clinic";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues residentialSubstanceAbuseTreatmentFacility
+                property ads.attributeId "50"
+                property com.fasterxml.jackson.annotation.JsonProperty "Residential Substance Abuse Treatment Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues ruralHealthClinic
+                property ads.attributeId "51"
+                property com.fasterxml.jackson.annotation.JsonProperty "Rural Health Clinic";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues school
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "School";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues skilledNursingFacility
+                property ads.attributeId "52"
+                property com.fasterxml.jackson.annotation.JsonProperty "Skilled Nursing Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues "telehealthProvidedInPatient'sHome"
+                property ads.attributeId "53"
+                property com.fasterxml.jackson.annotation.JsonProperty "Telehealth Provided in Patient's Home";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues "telehealthProvidedOtherThanInPatient'sHome"
+                property ads.attributeId "54"
+                property com.fasterxml.jackson.annotation.JsonProperty "Telehealth Provided Other than in Patient's Home";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues temporaryLodging
+                property ads.attributeId "55"
+                property com.fasterxml.jackson.annotation.JsonProperty "Temporary Lodging";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues tribal638Free_standingFacility
+                property ads.attributeId "56"
+                property com.fasterxml.jackson.annotation.JsonProperty "Tribal 638 Free-standing Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues tribal638Provider_basedFacility
+                property ads.attributeId "57"
+                property com.fasterxml.jackson.annotation.JsonProperty "Tribal 638 Provider-based Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues unassigned
+                property ads.attributeId "58"
+                property com.fasterxml.jackson.annotation.JsonProperty "Unassigned";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues urgentCareFacility
+                property ads.attributeId "59"
+                property com.fasterxml.jackson.annotation.JsonProperty "Urgent Care Facility";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues walk_inRetailHealthClinic
+                property ads.attributeId "60"
+                property com.fasterxml.jackson.annotation.JsonProperty "Walk-in Retail Health Clinic";
+}
+
 class PolicyInformationAcceptability
         property ads.typeId "31"
         property com.fasterxml.jackson.annotation.JsonTypeName "Policy Information Acceptability"
@@ -1148,5 +1461,20 @@ class VerificationOfBenefit
                 #prototype;
     VerificationOfBenefit()
                 #dataio.default;
+}
+
+class Verified$NotVerified
+        extends java.lang.Enum
+        property ads.typeId "38"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Verified/NotVerified"
+        #de.generated
+{
+    domain {static notVerified, static verified}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Verified$NotVerified notVerified
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Verified";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Verified$NotVerified verified
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Verified";
 }
 

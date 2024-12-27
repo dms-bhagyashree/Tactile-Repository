@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>Key Terms of Severity Acceptability</name>
+  <uuid>33f110d0-d16f-4735-ae98-16b31cd199b7</uuid>
+  <locale>en_US</locale>
+  <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
+    <Body>
+        <Properties>
+            <Property Name="UI.MediaType"><![CDATA[Web]]></Property>
+            <Property Name="UI.RenderBoolean" Type="xs:boolean"><![CDATA[true]]></Property>
+        </Properties>
+        <Preconditions>
+            <Text><![CDATA[definitions
+ set 'payer req' to the payer requirements computed from 
+	Payer being Payer , 
+	Patient being Patient; ]]></Text>
+        </Preconditions>
+        <Structure>
+            <ConditionDefinitions>
+                <ConditionDefinition Id="C2">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[true]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the key term of severity required of 'payer req' is <a Required/Not Required> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C0">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the terms of severity of 'Medical Record' is <a string>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+            </ConditionDefinitions>
+            <ActionDefinitions>
+                <ActionDefinition Id="A0">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[set decision to <an Acceptable/Not Acceptable>]]></Text>
+                    </ExpressionDefinition>
+                </ActionDefinition>
+            </ActionDefinitions>
+        </Structure>
+        <Contents>
+            <Partition DefId="C2">
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Required]]></Param>
+                    </Expression>
+                    <Partition DefId="C0">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<condition>
+or <condition>]]></Text>
+                                <Param><![CDATA[the terms of severity of 'Medical Record' contains "hyperkeratosis" 
+or the terms of severity of 'Medical Record' contains "hyperplasia"
+or the terms of severity of 'Medical Record' contains "hyperpigmentation"
+or the terms of severity of 'Medical Record' contains "papillomas"
+or the terms of severity of 'Medical Record' contains "skin breakdown with lymphorrhea weeping"]]></Param>
+                                <Param><![CDATA[the terms of severity of 'Medical Record' contains "elephantiasis"]]></Param>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Acceptable]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Required]]></Param>
+                    </Expression>
+                    <Partition DefId="C0">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<condition>
+and <condition>]]></Text>
+                                <Param><![CDATA[the terms of severity of 'Medical Record' does not contain "hyperkeratosis" 
+and the terms of severity of 'Medical Record' does not contain "hyperplasia" 
+and the terms of severity of 'Medical Record' does not contain "hyperpigmentation" 
+and the terms of severity of 'Medical Record' does not contain "papillomas" 
+and the terms of severity of 'Medical Record' does not contain "skin breakdown with lymphorrhea weeping"]]></Param>
+                                <Param><![CDATA[the terms of severity of 'Medical Record' does not contain "elephantiasis"]]></Param>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Not Acceptable]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Not Required]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA[Acceptable]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+            </Partition>
+        </Contents>
+    </Body>
+    <Resources DefaultLocale="en_US">
+        <ResourceSet Locale="en_US">
+            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Terms Of Severity]]></Data>
+            <Data Name="Definitions(C2)#HeaderText"><![CDATA[Key Term Of Severity Required]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Key Terms of Severity Acceptability]]></Data>
+            <Data Name="Definitions(C2)#Width"><![CDATA[247]]></Data>
+            <Data Name="Definitions(C0)#Width"><![CDATA[550]]></Data>
+        </ResourceSet>
+    </Resources>
+</DT>
+</definition>
+</ilog.rules.studio.model.dt:DecisionTable>

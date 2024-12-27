@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>1174ba0d-8188-477b-b61d-867c1f4ef32c</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Document">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Document" collection="false" name="Document"/>
+                <rule defaultRule="true" href="node_0/default-value-setting.drl" kind="BusinessRule" name="default-value-setting"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Document" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Document"/>
+    </inputData>
+    <decision id="node_1" name="Notification Acceptability">
+        <description>Is the notification acceptable for this order?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Document" collection="false" name="Document"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Order" collection="false" name="Order"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Notification Acceptability"/>
+                <rule defaultRule="false" href="node_1/Notification%20Acceptability.dmt" kind="DecisionTable" name="Notification Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Notification Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_2" name="Order">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Order" collection="false" name="Order"/>
+                <rule defaultRule="true" href="node_2/default-value-setting.drl" kind="BusinessRule" name="default-value-setting"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Order" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Order"/>
+    </inputData>
+    <decision id="node_3" name="Place of Service Name">
+        <description>What is the name of the place of service and whether facility address is required, reimbursed, or reimbursement warning</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Order" collection="false" name="Order"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceName" collection="false" name="Place of Service Name"/>
+                <rule defaultRule="false" href="node_3/Place%20of%20Service%20Name.dmt" kind="DecisionTable" name="Place of Service Name"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_3_ii" name="Place of Service Name" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceName"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_4" name="Place of Service Facility Address Verification Required">
+        <description>Is a facility address required for the place of service for this order?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Notification Acceptability"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceName" collection="false" name="Place of Service Name"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired" collection="false" name="Place of Service Facility Address Verification Required"/>
+                <rule defaultRule="false" href="node_4/Place%20of%20Service%20Facility%20Address%20Verification%20Required.dmt" kind="DecisionTable" name="Place of Service Facility Address Verification Required"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_4_ii" name="Place of Service Facility Address Verification Required" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_5" name="Place of Service Facility Address Verification">
+        <description>Is the place of service facility address verified for this order?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Order" collection="false" name="Order"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired" collection="false" name="Place of Service Facility Address Verification Required"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceFacilityAddressVerification" collection="false" name="Place of Service Facility Address Verification"/>
+                <rule defaultRule="false" href="node_5/Place%20of%20Service%20Facility%20Address%20Verification.dmt" kind="DecisionTable" name="Place of Service Facility Address Verification"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_5_ii" name="Place of Service Facility Address Verification" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceFacilityAddressVerification"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_6" name="Place Of Service Eligibility">
+        <description>Is the place of service eligible for this order?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired" collection="false" name="Place of Service Facility Address Verification Required"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceFacilityAddressVerification" collection="false" name="Place of Service Facility Address Verification"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Eligible$NotEligible" collection="false" name="Place Of Service Eligibility"/>
+                <rule defaultRule="false" href="node_6/Place%20Of%20Service%20Eligibility.dmt" kind="DecisionTable" name="Place Of Service Eligibility"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_6_ii" name="Place Of Service Eligibility" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Eligible$NotEligible"/>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_7" name="Place of Service Acceptability">
+        <description>Is the Place of Service Acceptable for this order?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Eligible$NotEligible" collection="false" name="Place Of Service Eligibility"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Place of Service Acceptability"/>
+                <rule defaultRule="false" href="node_7/Place%20of%20Service%20Acceptability.dmt" kind="DecisionTable" name="Place of Service Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_7_ii" name="Place of Service Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+    </decision>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

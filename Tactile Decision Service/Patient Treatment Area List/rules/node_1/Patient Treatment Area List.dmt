@@ -34,8 +34,10 @@ definitions
             <Partition DefId="C0">
                 <Condition>
                     <Expression>
-                        <Text><![CDATA[<a string> contains <a string>]]></Text>
-                        <Param><![CDATA["Left  Arm, Right Arm"]]></Param>
+                        <Text><![CDATA[<condition>
+or <condition>]]></Text>
+                        <Param><![CDATA[the treatment of 'cifObj' contains "Right Arm"]]></Param>
+                        <Param><![CDATA[the treatment of 'cifObj' contains "Left Arm"]]></Param>
                     </Expression>
                     <ActionSet>
                         <Action DefId="A0">
@@ -47,8 +49,10 @@ definitions
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Text><![CDATA[<a string> contains <a string>]]></Text>
-                        <Param><![CDATA["Left Leg, Right Leg"]]></Param>
+                        <Text><![CDATA[<condition>
+or <condition>]]></Text>
+                        <Param><![CDATA[the treatment of 'cifObj' contains "Right Leg"]]></Param>
+                        <Param><![CDATA[the treatment of 'cifObj' contains "Left Leg"]]></Param>
                     </Expression>
                     <ActionSet>
                         <Action DefId="A0">

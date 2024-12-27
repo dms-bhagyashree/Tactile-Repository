@@ -86,7 +86,7 @@ bhagyashree.tactile_medical.tactile_decision_service.data.Document#concept.label
 bhagyashree.tactile_medical.tactile_decision_service.data.Document.CIF#phrase.action = set the CIF of {this} to {CIF}
 bhagyashree.tactile_medical.tactile_decision_service.data.Document.CIF#phrase.clearer = clear the CIF of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Document.CIF#phrase.navigation = {CIF} of {this}
-bhagyashree.tactile_medical.tactile_decision_service.data.Document.Document(bhagyashree.tactile_medical.tactile_decision_service.data.Cif,bhagyashree.tactile_medical.tactile_decision_service.data.Demo,java.util.List,boolean,java.util.List,bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN)#phrase.navigation = a new {document} where {0, CIF} {1, demo} {2, medical record} {3, pcf notification} {4, prescription} {5, smn LMN}
+bhagyashree.tactile_medical.tactile_decision_service.data.Document.Document(bhagyashree.tactile_medical.tactile_decision_service.data.Cif,bhagyashree.tactile_medical.tactile_decision_service.data.Demo,java.util.List,java.lang.String,java.util.List,bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN)#phrase.navigation = a new {document} where {0, CIF} {1, demo} {2, medical record} {3, pcf notification} {4, prescription} {5, smn LMN}
 bhagyashree.tactile_medical.tactile_decision_service.data.Document.addTo_medicalRecords(bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord)#phrase.action = add {0} to the medical records of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Document.addTo_prescriptions(bhagyashree.tactile_medical.tactile_decision_service.data.Prescription)#phrase.action = add {0} to the prescriptions of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Document.clear_medicalRecords()#phrase.action = clear the medical records of {this}
@@ -96,13 +96,8 @@ bhagyashree.tactile_medical.tactile_decision_service.data.Document.demo#phrase.c
 bhagyashree.tactile_medical.tactile_decision_service.data.Document.demo#phrase.navigation = {demo} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Document.medicalRecords#phrase.action = set the medical records of {this} to {medical record}
 bhagyashree.tactile_medical.tactile_decision_service.data.Document.medicalRecords#phrase.navigation = {medical record} of {this}
-bhagyashree.tactile_medical.tactile_decision_service.data.Document.pcfNotification#phrase.action[0] = {this} gets pcf notification only if {pcf notification}
-bhagyashree.tactile_medical.tactile_decision_service.data.Document.pcfNotification#phrase.action[1] = make it {pcf notification} that {this} is pcf notification
-bhagyashree.tactile_medical.tactile_decision_service.data.Document.pcfNotification#phrase.action[1].deprecated = true
-bhagyashree.tactile_medical.tactile_decision_service.data.Document.pcfNotification#phrase.navigation = {this} is pcf notification
-bhagyashree.tactile_medical.tactile_decision_service.data.Document.pcfNotification#phrase.negative_predicate = {this} is not pcf notification
-bhagyashree.tactile_medical.tactile_decision_service.data.Document.pcfNotification#phrase.negative_predicate_setter = {this} does not get pcf notification
-bhagyashree.tactile_medical.tactile_decision_service.data.Document.pcfNotification#phrase.positive_predicate_setter = {this} gets pcf notification
+bhagyashree.tactile_medical.tactile_decision_service.data.Document.pcfNotification#phrase.action = set the pcf notification of {this} to {pcf notification}
+bhagyashree.tactile_medical.tactile_decision_service.data.Document.pcfNotification#phrase.navigation = {pcf notification} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Document.prescriptions#phrase.action = set the prescriptions of {this} to {prescription}
 bhagyashree.tactile_medical.tactile_decision_service.data.Document.prescriptions#phrase.navigation = {prescription} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Document.removeFrom_medicalRecords(bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord)#phrase.action = remove {0} from the medical records of {this}
@@ -110,6 +105,11 @@ bhagyashree.tactile_medical.tactile_decision_service.data.Document.removeFrom_pr
 bhagyashree.tactile_medical.tactile_decision_service.data.Document.smnLMN#phrase.action = set the smn LMN of {this} to {smn LMN}
 bhagyashree.tactile_medical.tactile_decision_service.data.Document.smnLMN#phrase.clearer = clear the smn LMN of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Document.smnLMN#phrase.navigation = {smn LMN} of {this}
+
+# bhagyashree.tactile_medical.tactile_decision_service.data.Eligible$NotEligible
+bhagyashree.tactile_medical.tactile_decision_service.data.Eligible$NotEligible#concept.label = Eligible/Not Eligible
+bhagyashree.tactile_medical.tactile_decision_service.data.Eligible$NotEligible.eligible#instance.label = Eligible
+bhagyashree.tactile_medical.tactile_decision_service.data.Eligible$NotEligible.notEligible#instance.label = Not Eligible
 
 # bhagyashree.tactile_medical.tactile_decision_service.data.FileMaker
 bhagyashree.tactile_medical.tactile_decision_service.data.FileMaker#concept.label = file maker
@@ -189,9 +189,13 @@ bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.termsOfS
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.visitNotes#phrase.action = set the visit notes of {this} to {visit notes}
 bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord.visitNotes#phrase.navigation = {visit notes} of {this}
 
+# bhagyashree.tactile_medical.tactile_decision_service.data.NewType
+bhagyashree.tactile_medical.tactile_decision_service.data.NewType#concept.label = new type
+bhagyashree.tactile_medical.tactile_decision_service.data.NewType.NewType()#phrase.navigation = a new {new type}
+
 # bhagyashree.tactile_medical.tactile_decision_service.data.Order
 bhagyashree.tactile_medical.tactile_decision_service.data.Order#concept.label = order
-bhagyashree.tactile_medical.tactile_decision_service.data.Order.Order(java.util.List,java.math.BigDecimal,java.lang.String,java.lang.String,java.lang.String,boolean,java.lang.String,java.lang.String,java.lang.String,boolean,java.time.LocalDate,java.lang.String,java.lang.String,boolean,java.lang.String)#phrase.navigation = a new {order} where {0, document} {1, downpayment amount received} {2, garment} {3, location of edema} {4, order type} {5, patient acceptance} {6, pic signature} {7, place of service code} {8, product} {9, representative notification} {10, rx date} {11, rx full name} {12, rx NPI} {13, self pay claim indicator} {14, third party source}
+bhagyashree.tactile_medical.tactile_decision_service.data.Order.Order(java.util.List,java.math.BigDecimal,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.time.LocalDate,java.lang.String,java.lang.String,boolean,java.lang.String)#phrase.navigation = a new {order} where {0, document} {1, downpayment amount received} {2, facility address} {3, facility name} {4, facility skilled services} {5, garment} {6, location of edema} {7, order type} {8, patient acceptance} {9, pic signature} {10, place of service code} {11, product} {12, representative notification} {13, rx date} {14, rx full name} {15, rx NPI} {16, self pay claim indicator} {17, third party source}
 bhagyashree.tactile_medical.tactile_decision_service.data.Order.addTo_documents(bhagyashree.tactile_medical.tactile_decision_service.data.Document)#phrase.action = add {0} to the documents of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Order.clear_documents()#phrase.action = clear the documents of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Order.documents#phrase.action = set the documents of {this} to {document}
@@ -200,6 +204,12 @@ bhagyashree.tactile_medical.tactile_decision_service.data.Order.downpaymentAmoun
 bhagyashree.tactile_medical.tactile_decision_service.data.Order.downpaymentAmountReceived#phrase.addition_setter = add {downpayment amount received} to the downpayment amount received of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Order.downpaymentAmountReceived#phrase.navigation = {downpayment amount received} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Order.downpaymentAmountReceived#phrase.subtraction_setter = subtract {downpayment amount received} from the downpayment amount received of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.Order.facilityAddress#phrase.action = set the facility address of {this} to {facility address}
+bhagyashree.tactile_medical.tactile_decision_service.data.Order.facilityAddress#phrase.navigation = {facility address} of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.Order.facilityName#phrase.action = set the facility name of {this} to {facility name}
+bhagyashree.tactile_medical.tactile_decision_service.data.Order.facilityName#phrase.navigation = {facility name} of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.Order.facilitySkilledServices#phrase.action = set the facility skilled services of {this} to {facility skilled services}
+bhagyashree.tactile_medical.tactile_decision_service.data.Order.facilitySkilledServices#phrase.navigation = {facility skilled services} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Order.garment#phrase.action = set the garment of {this} to {garment}
 bhagyashree.tactile_medical.tactile_decision_service.data.Order.garment#phrase.navigation = {garment} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Order.locationOfEdema#phrase.action = set the location of edema of {this} to {location of edema}
@@ -220,13 +230,8 @@ bhagyashree.tactile_medical.tactile_decision_service.data.Order.placeOfServiceCo
 bhagyashree.tactile_medical.tactile_decision_service.data.Order.product#phrase.action = set the product of {this} to {product}
 bhagyashree.tactile_medical.tactile_decision_service.data.Order.product#phrase.navigation = {product} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Order.removeFrom_documents(bhagyashree.tactile_medical.tactile_decision_service.data.Document)#phrase.action = remove {0} from the documents of {this}
-bhagyashree.tactile_medical.tactile_decision_service.data.Order.representativeNotification#phrase.action[0] = {this} gets representative notification only if {representative notification}
-bhagyashree.tactile_medical.tactile_decision_service.data.Order.representativeNotification#phrase.action[1] = make it {representative notification} that {this} is representative notification
-bhagyashree.tactile_medical.tactile_decision_service.data.Order.representativeNotification#phrase.action[1].deprecated = true
-bhagyashree.tactile_medical.tactile_decision_service.data.Order.representativeNotification#phrase.navigation = {this} is representative notification
-bhagyashree.tactile_medical.tactile_decision_service.data.Order.representativeNotification#phrase.negative_predicate = {this} is not representative notification
-bhagyashree.tactile_medical.tactile_decision_service.data.Order.representativeNotification#phrase.negative_predicate_setter = {this} does not get representative notification
-bhagyashree.tactile_medical.tactile_decision_service.data.Order.representativeNotification#phrase.positive_predicate_setter = {this} gets representative notification
+bhagyashree.tactile_medical.tactile_decision_service.data.Order.representativeNotification#phrase.action = set the representative notification of {this} to {representative notification}
+bhagyashree.tactile_medical.tactile_decision_service.data.Order.representativeNotification#phrase.navigation = {representative notification} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Order.rxDate#phrase.action = set the rx date of {this} to {rx date}
 bhagyashree.tactile_medical.tactile_decision_service.data.Order.rxDate#phrase.navigation = {rx date} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.Order.rxFullName#phrase.action = set the rx full name of {this} to {rx full name}
@@ -429,6 +434,131 @@ bhagyashree.tactile_medical.tactile_decision_service.data.PayerType#concept.labe
 bhagyashree.tactile_medical.tactile_decision_service.data.PayerType.billInsurance#instance.label = Bill Insurance
 bhagyashree.tactile_medical.tactile_decision_service.data.PayerType.selfPay#instance.label = Self Pay
 
+# bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceFacilityAddressVerification
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceFacilityAddressVerification#concept.label = Place of Service Facility Address Verification
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceFacilityAddressVerification.PlaceOfServiceFacilityAddressVerification(java.lang.String,bhagyashree.tactile_medical.tactile_decision_service.data.Verified$NotVerified)#phrase.navigation = a new {Place of Service Facility Address Verification} where {0, message} {1, place of service facility address verification}
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceFacilityAddressVerification.message#phrase.action = set the message of {this} to {message}
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceFacilityAddressVerification.message#phrase.navigation = {message} of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceFacilityAddressVerification.placeOfServiceFacilityAddressVerification#phrase.action = set the place of service facility address verification of {this} to {place of service facility address verification}
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceFacilityAddressVerification.placeOfServiceFacilityAddressVerification#phrase.clearer = clear the place of service facility address verification of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceFacilityAddressVerification.placeOfServiceFacilityAddressVerification#phrase.navigation = {place of service facility address verification} of {this}
+
+# bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceName
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceName#concept.label = Place of Service Name
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceName.PlaceOfServiceName(java.lang.String,bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues)#phrase.navigation = a new {Place of Service Name} where {0, message} {1, place of service name}
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceName.message#phrase.action = set the message of {this} to {message}
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceName.message#phrase.navigation = {message} of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceName.placeOfServiceName#phrase.action = set the place of service name of {this} to {place of service name}
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceName.placeOfServiceName#phrase.clearer = clear the place of service name of {this}
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceName.placeOfServiceName#phrase.navigation = {place of service name} of {this}
+
+# bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues#concept.label = Place of Service Name Values
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.ambulance-AirOrWater#instance.documentation = Ambulance - Air or Water
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.ambulance-AirOrWater#instance.label = Ambulance - Air or Water
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.ambulance-Land#instance.documentation = Ambulance - Land
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.ambulance-Land#instance.label = Ambulance - Land
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.ambulatorySurgicalCenter#instance.documentation = Ambulatory Surgical Center
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.ambulatorySurgicalCenter#instance.label = Ambulatory Surgical Center
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.assistedLivingFacility#instance.documentation = Assisted Living Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.assistedLivingFacility#instance.label = Assisted Living Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.birthingCenter#instance.documentation = Birthing Center
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.birthingCenter#instance.label = Birthing Center
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.communityMentalHealthCenter#instance.documentation = Community Mental Health Center
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.communityMentalHealthCenter#instance.label = Community Mental Health Center
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.comprehensiveInpatientRehabilitationFacility#instance.documentation = Comprehensive Inpatient Rehabilitation Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.comprehensiveInpatientRehabilitationFacility#instance.label = Comprehensive Inpatient Rehabilitation Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.comprehensiveOutpatientRehabilitationFacility#instance.documentation = Comprehensive Outpatient Rehabilitation Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.comprehensiveOutpatientRehabilitationFacility#instance.label = Comprehensive Outpatient Rehabilitation Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.custodialCareFacility#instance.documentation = Custodial Care Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.custodialCareFacility#instance.label = Custodial Care Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.emergencyRoom-Hospital#instance.documentation = Emergency Room - Hospital
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.emergencyRoom-Hospital#instance.label = Emergency Room - Hospital
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.end_StageRenalDiseaseTreatmentFacility#instance.documentation = End-Stage Renal Disease Treatment Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.end_StageRenalDiseaseTreatmentFacility#instance.label = End-Stage Renal Disease Treatment Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.federallyQualifiedHealthCenter#instance.documentation = Federally Qualified Health Center
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.federallyQualifiedHealthCenter#instance.label = Federally Qualified Health Center
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.groupHome#instance.documentation = Group Home
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.groupHome#instance.label = Group Home
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.home#instance.documentation = Home
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.home#instance.label = Home
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.homelessShelter#instance.documentation = Homeless Shelter
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.homelessShelter#instance.label = Homeless Shelter
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.hospice#instance.documentation = Hospice
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.hospice#instance.label = Hospice
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.independentClinic#instance.documentation = Independent Clinic
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.independentClinic#instance.label = Independent Clinic
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.independentLaboratory#instance.documentation = Independent Laboratory
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.independentLaboratory#instance.label = Independent Laboratory
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.indianHealthServiceFree_standingFacility#instance.documentation = Indian Health Service Free-standing Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.indianHealthServiceFree_standingFacility#instance.label = Indian Health Service Free-standing Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.indianHealthServiceProvider_basedFacility#instance.documentation = Indian Health Service Provider-based Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.indianHealthServiceProvider_basedFacility#instance.label = Indian Health Service Provider-based Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.inpatientHospital#instance.documentation = Inpatient Hospital
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.inpatientHospital#instance.label = Inpatient Hospital
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.inpatientPsychiatricFacility#instance.documentation = Inpatient Psychiatric Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.inpatientPsychiatricFacility#instance.label = Inpatient Psychiatric Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.intermediateCareFacility/IndividualsWithIntellectualDisabilities#instance.documentation = Intermediate Care Facility/ Individuals with Intellectual Disabilities
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.intermediateCareFacility/IndividualsWithIntellectualDisabilities#instance.label = Intermediate Care Facility/ Individuals with Intellectual Disabilities
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.massImmunizationCenter#instance.documentation = Mass Immunization Center
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.massImmunizationCenter#instance.label = Mass Immunization Center
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.militaryTreatmentFacility#instance.documentation = Military Treatment Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.militaryTreatmentFacility#instance.label = Military Treatment Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.mobileUnit#instance.documentation = Mobile Unit
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.mobileUnit#instance.label = Mobile Unit
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.non_residentialOpioidTreatmentFacility#instance.documentation = Non-residential Opioid Treatment Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.non_residentialOpioidTreatmentFacility#instance.label = Non-residential Opioid Treatment Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.non_residentialSubstanceAbuseTreatmentFacility#instance.documentation = Non-residential Substance Abuse Treatment Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.non_residentialSubstanceAbuseTreatmentFacility#instance.label = Non-residential Substance Abuse Treatment Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.nursingFacility#instance.documentation = Nursing Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.nursingFacility#instance.label = Nursing Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.offCampus_OutpatientHospital#instance.documentation = Off Campus-Outpatient Hospital
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.offCampus_OutpatientHospital#instance.label = Off Campus-Outpatient Hospital
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.office#instance.documentation = Office
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.office#instance.label = Office
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.onCampus_OutpatientHospital#instance.documentation = On Campus-Outpatient Hospital
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.onCampus_OutpatientHospital#instance.label = On Campus-Outpatient Hospital
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.otherPlaceOfService#instance.documentation = Other Place of Service
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.otherPlaceOfService#instance.label = Other Place of Service
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.outreachSite/Street#instance.documentation = Outreach Site/ Street
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.outreachSite/Street#instance.label = Outreach Site/ Street
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.pharmacy#instance.documentation = Pharmacy
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.pharmacy#instance.label = Pharmacy
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.placeOfEmployment_Worksite#instance.documentation = Place of Employment-Worksite
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.placeOfEmployment_Worksite#instance.label = Place of Employment-Worksite
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.prison/CorrectionalFacility#instance.documentation = Prison/Correctional Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.prison/CorrectionalFacility#instance.label = Prison/Correctional Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.psychiatricFacility_PartialHospitalization#instance.documentation = Psychiatric Facility-Partial Hospitalization
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.psychiatricFacility_PartialHospitalization#instance.label = Psychiatric Facility-Partial Hospitalization
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.psychiatricResidentialTreatmentCenter#instance.documentation = Psychiatric Residential Treatment Center
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.psychiatricResidentialTreatmentCenter#instance.label = Psychiatric Residential Treatment Center
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.publicHealthClinic#instance.documentation = Public Health Clinic
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.publicHealthClinic#instance.label = Public Health Clinic
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.residentialSubstanceAbuseTreatmentFacility#instance.documentation = Residential Substance Abuse Treatment Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.residentialSubstanceAbuseTreatmentFacility#instance.label = Residential Substance Abuse Treatment Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.ruralHealthClinic#instance.documentation = Rural Health Clinic
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.ruralHealthClinic#instance.label = Rural Health Clinic
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.school#instance.documentation = School
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.school#instance.label = School
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.skilledNursingFacility#instance.documentation = Skilled Nursing Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.skilledNursingFacility#instance.label = Skilled Nursing Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.telehealthProvidedInPatient'sHome#instance.documentation = Telehealth Provided in Patient's Home
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.telehealthProvidedInPatient'sHome#instance.label = Telehealth Provided in Patient's Home
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.telehealthProvidedOtherThanInPatient'sHome#instance.documentation = Telehealth Provided Other than in Patient's Home
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.telehealthProvidedOtherThanInPatient'sHome#instance.label = Telehealth Provided Other than in Patient's Home
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.temporaryLodging#instance.documentation = Temporary Lodging
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.temporaryLodging#instance.label = Temporary Lodging
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.tribal638Free_standingFacility#instance.documentation = Tribal 638 Free-standing Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.tribal638Free_standingFacility#instance.label = Tribal 638 Free-standing Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.tribal638Provider_basedFacility#instance.documentation = Tribal 638 Provider-based Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.tribal638Provider_basedFacility#instance.label = Tribal 638 Provider-based Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.unassigned#instance.documentation = Unassigned
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.unassigned#instance.label = Unassigned
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.urgentCareFacility#instance.documentation = Urgent Care Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.urgentCareFacility#instance.label = Urgent Care Facility
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.walk_inRetailHealthClinic#instance.documentation = Walk-in Retail Health Clinic
+bhagyashree.tactile_medical.tactile_decision_service.data.PlaceOfServiceNameValues.walk_inRetailHealthClinic#instance.label = Walk-in Retail Health Clinic
+
 # bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability
 bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability#concept.label = Policy Information Acceptability
 bhagyashree.tactile_medical.tactile_decision_service.data.PolicyInformationAcceptability.PolicyInformationAcceptability(bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable,java.lang.String)#phrase.navigation = a new {Policy Information Acceptability} where {0, Policy Information Acceptability} {1, Message}
@@ -569,3 +699,8 @@ bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.
 bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.renewalDate#phrase.navigation = {renewal date} of {this}
 bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.termDate#phrase.action = set the term date of {this} to {term date}
 bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit.termDate#phrase.navigation = {term date} of {this}
+
+# bhagyashree.tactile_medical.tactile_decision_service.data.Verified$NotVerified
+bhagyashree.tactile_medical.tactile_decision_service.data.Verified$NotVerified#concept.label = Verified/Not Verified
+bhagyashree.tactile_medical.tactile_decision_service.data.Verified$NotVerified.notVerified#instance.label = Not Verified
+bhagyashree.tactile_medical.tactile_decision_service.data.Verified$NotVerified.verified#instance.label = Verified

@@ -65,14 +65,15 @@
     <modules>
         <module>.decisionservice</module>
         <module>Advanced Pump Acceptability, Diet and Medication Evaluation Acceptability</module>
+        <module>Basic Pump Trial, Conservative Therapy, Doctor Oversight, Face to Face, Terms of Severity Acceptability</module>
         <module>Benefits Coverage Acceptability</module>
         <module>Demo Record Validity, Girth Measurement Acceptability, Lymphedema Stage Level</module>
         <module>Diagnosis Validity</module>
-        <module>Doctor Oversight Acceptability</module>
         <module>Etiology Acceptability</module>
         <module>Patient Order Acceptance Status</module>
         <module>Patient Treatment Area List</module>
         <module>Payer Requirements</module>
+        <module>Place of Service Acceptability</module>
         <module>Pre Service Acceptability</module>
         <module>Prescription Validity</module>
         <module>Tactile - Data Model</module>

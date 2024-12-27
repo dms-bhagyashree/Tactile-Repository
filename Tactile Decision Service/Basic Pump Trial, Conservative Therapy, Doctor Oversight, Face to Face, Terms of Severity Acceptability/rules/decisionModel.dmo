@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>0abfb047-2974-42d9-a91b-0ac098529136</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Payer">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Payer" collection="false" name="Payer"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Payer" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Payer"/>
+    </inputData>
+    <decision id="node_1" name="Doctor Oversight Acceptability">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Payer" collection="false" name="Payer"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord" collection="false" name="Medical Record"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Doctor Oversight Acceptability"/>
+                <rule defaultRule="false" href="node_1/Doctor%20Oversight%20Acceptability.dmt" kind="DecisionTable" name="Doctor Oversight Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Doctor Oversight Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_2" name="Medical Record">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord" collection="false" name="Medical Record"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Medical Record" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord"/>
+    </inputData>
+    <decision id="node_4" name="Key Terms of Severity Acceptability">
+        <description>Are the key terms of Severity Acceptable for this order?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Payer" collection="false" name="Payer"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord" collection="false" name="Medical Record"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Patient" collection="false" name="Patient"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Key Terms of Severity Acceptability"/>
+                <rule defaultRule="false" href="node_4/Key%20Terms%20of%20Severity%20Acceptability.dmt" kind="DecisionTable" name="Key Terms of Severity Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_4_ii" name="Key Terms of Severity Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_5"/>
+        </knowledgeRequirement>
+    </decision>
+    <inputData id="node_7" name="System">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.System" collection="false" name="System"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_7_ii" name="System" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.System"/>
+    </inputData>
+    <decision id="node_8" name="Number of Months Since Most Recent Face to Face Examination">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord" collection="false" name="Medical Record"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.System" collection="false" name="System"/>
+                <output bomType="java.lang.Double" collection="false" name="Number of Months Since Most Recent Face to Face Examination"/>
+                <rule defaultRule="false" href="node_8/Number%20of%20Months%20Since%20Most%20Recent%20Face%20to%20Face%20Examination.drl" kind="BusinessRule" name="Number of Months Since Most Recent Face to Face Examination"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_8_ii" name="Number of Months Since Most Recent Face to Face Examination" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_9" name="Face to Face Examination Acceptability">
+        <description>Is the Face to Face Examination Acceptable for this order?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Payer" collection="false" name="Payer"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord" collection="false" name="Medical Record"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Patient" collection="false" name="Patient"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Order" collection="false" name="Order"/>
+                <input bomType="java.lang.Double" collection="false" name="Number of Months Since Most Recent Face to Face Examination"/>
+                <input bomType="java.lang.String" collection="false" name="Dummy"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Face to Face Examination Acceptability"/>
+                <rule defaultRule="false" href="node_9/Face%20to%20Face%20Examination%20Acceptability.dmt" kind="DecisionTable" name="Face to Face Examination Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_9_ii" name="Face to Face Examination Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_8"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_5"/>
+        </knowledgeRequirement>
+    </decision>
+    <inputData id="node_10" name="Dummy">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.String" collection="false" name="Dummy"/>
+                <rule defaultRule="true" href="node_10/default-value-setting.drl" kind="BusinessRule" name="default-value-setting"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_10_ii" name="Dummy" typeRef="java.lang.String"/>
+    </inputData>
+    <inputData id="node_11" name="Order">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Order" collection="false" name="Order"/>
+                <rule defaultRule="true" href="node_11/default-value-setting.drl" kind="BusinessRule" name="default-value-setting"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_11_ii" name="Order" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Order"/>
+    </inputData>
+    <decision id="node_12" name="Basic Pump Trial Ruled Out Acceptability">
+        <description>Is the Basic Pump Rule-Out Trial Acceptable for this order?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Payer" collection="false" name="Payer"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord" collection="false" name="Medical Record"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired" collection="false" name="dummy payer req"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN" collection="false" name="SMN LMN"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Basic Pump Trial Ruled Out Acceptability"/>
+                <rule defaultRule="false" href="node_12/Basic%20Pump%20Trial%20Ruled%20Out%20Acceptability.dmt" kind="DecisionTable" name="Basic Pump Trial Ruled Out Acceptability"/>
+                <rule defaultRule="true" href="node_12/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_12_ii" name="Basic Pump Trial Ruled Out Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_14"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_13"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_13" name="SMN LMN">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN" collection="false" name="SMN LMN"/>
+                <rule defaultRule="true" href="node_13/default-value-setting.drl" kind="BusinessRule" name="default-value-setting"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_13_ii" name="SMN LMN" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN"/>
+    </inputData>
+    <inputData id="node_14" name="dummy payer req">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired" collection="false" name="dummy payer req"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_14_ii" name="dummy payer req" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired"/>
+    </inputData>
+    <inputData id="node_6" name="Patient">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Patient" collection="false" name="Patient"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_6_ii" name="Patient" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Patient"/>
+    </inputData>
+    <decision id="node_15" name="Basic Pump One Time Trial Acceptability">
+        <description>Is the Basic Pump One-Time Trial Acceptable for this order?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Payer" collection="false" name="Payer"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord" collection="false" name="Medical Record"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired" collection="false" name="dummy payer req"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN" collection="false" name="SMN LMN"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Basic Pump One Time Trial Acceptability"/>
+                <rule defaultRule="false" href="node_15/Basic%20Pump%20One-Time%20Trial%20Acceptability.dmt" kind="DecisionTable" name="Basic Pump One-Time Trial Acceptability"/>
+                <rule defaultRule="true" href="node_15/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_15_ii" name="Basic Pump One Time Trial Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_14"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_13"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_16" name="Basic Pump Four Week Trial Acceptability">
+        <description>Is the Basic Pump Four Week Trial Acceptable for this order?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Payer" collection="false" name="Payer"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.MedicalRecord" collection="false" name="Medical Record"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired" collection="false" name="dummy payer req"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.SMNLMN" collection="false" name="SMN LMN"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Basic Pump Four Week Trial Acceptability"/>
+                <rule defaultRule="false" href="node_16/Basic%20Pump%20Four%20Week%20Trial%20Acceptability.dmt" kind="DecisionTable" name="Basic Pump Four Week Trial Acceptability"/>
+                <rule defaultRule="true" href="node_16/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_16_ii" name="Basic Pump Four Week Trial Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_14"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_13"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_17" name="Basic Pump Trial Failure Acceptability">
+        <description>Basic Pump Trial Failure Acceptability</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Basic Pump Four Week Trial Acceptability"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Basic Pump One Time Trial Acceptability"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Basic Pump Trial Ruled Out Acceptability"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Basic Pump Trial Failure Acceptability"/>
+                <rule defaultRule="false" href="node_17/Basic%20Pump%20Trial%20Failure%20Acceptability.dmt" kind="DecisionTable" name="Basic Pump Trial Failure Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_17_ii" name="Basic Pump Trial Failure Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_16"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_15"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_12"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_18" name="Conservative Therapy Failure Acceptability">
+        <description>Is there acceptable evidence of failure for conservative therapy?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Cif" collection="false" name="CIF"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Patient" collection="false" name="Patient"/>
+                <input bomType="java.lang.String" collection="false" name="Dummy Primary Coverage Diagnosis"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Conservative Therapy Failure Acceptability"/>
+                <rule defaultRule="false" href="node_18/Conservative%20Therapy%20Failure%20Acceptability.dmt" kind="DecisionTable" name="Conservative Therapy Failure Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_18_ii" name="Conservative Therapy Failure Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_19"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_22"/>
+        </informationRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_21"/>
+        </knowledgeRequirement>
+    </decision>
+    <inputData id="node_19" name="CIF">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Cif" collection="false" name="CIF"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_19_ii" name="CIF" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Cif"/>
+    </inputData>
+    <inputData id="node_22" name="Dummy Primary Coverage Diagnosis">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.String" collection="false" name="Dummy Primary Coverage Diagnosis"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_22_ii" name="Dummy Primary Coverage Diagnosis" typeRef="java.lang.String"/>
+    </inputData>
+    <businessKnowledgeModel id="node_5" name="Payer Requirements">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="Payer Requirements" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.PayerRequirements"/>
+        <encapsulatedLogic typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.PayerRequirements">
+            <formalParameter name="payer" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Payer"/>
+            <formalParameter name="patient" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Patient"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"bhagyashree.tactile_medical.tactile_decision_service.payerrequirements.Payer_Requirements"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(bhagyashree.tactile_medical.tactile_decision_service.data.Payer,bhagyashree.tactile_medical.tactile_decision_service.data.Patient)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
+    <businessKnowledgeModel id="node_21" name="Patient Treatment Area List">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="Patient Treatment Area List" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.PatientTreatmentArea[]"/>
+        <encapsulatedLogic typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.PatientTreatmentArea[]">
+            <formalParameter name="patient" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Patient"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"bhagyashree.tactile_medical.tactile_decision_service.patienttreatmentarealist.Patient_Treatment_Area_List"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(bhagyashree.tactile_medical.tactile_decision_service.data.Patient)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

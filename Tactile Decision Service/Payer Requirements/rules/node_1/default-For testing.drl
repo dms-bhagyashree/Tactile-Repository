@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>default-For testing</name>
+  <uuid>1e31591d-3c0e-463a-88ab-96eeb9c04837</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set decision to a new payer requirements where
+		the key term of severity required is Required,
+	    face to face examination required is false ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>
