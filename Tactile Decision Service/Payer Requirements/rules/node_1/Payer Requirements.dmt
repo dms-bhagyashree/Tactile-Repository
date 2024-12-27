@@ -487,22 +487,6 @@
                         </Condition>
                     </Partition>
                 </Condition>
-                <Condition>
-                    <Expression/>
-                    <ActionSet/>
-                </Condition>
-                <Condition>
-                    <Expression/>
-                    <ActionSet/>
-                </Condition>
-                <Condition>
-                    <Expression/>
-                    <ActionSet/>
-                </Condition>
-                <Condition>
-                    <Expression/>
-                    <ActionSet/>
-                </Condition>
             </Partition>
         </Contents>
     </Body>
@@ -510,13 +494,13 @@
         <ResourceSet Locale="en_US">
             <Data Name="Definitions(C2)[0]#HeaderText"><![CDATA[a string]]></Data>
             <Data Name="Definitions(C5)#HeaderText"><![CDATA[Patient Treatment Area List]]></Data>
-            <Data Name="Definitions(A0)#Width"><![CDATA[595]]></Data>
+            <Data Name="Definitions(A0)#Width"><![CDATA[199]]></Data>
             <Data Name="Definitions(C2)#HeaderText"><![CDATA[Product]]></Data>
             <Data Name="Definitions(A0)[0]#HeaderText"><![CDATA[SMN/LMN on file required]]></Data>
             <Data Name="Definitions(A0)#HeaderText"><![CDATA[Payer Requirements]]></Data>
-            <Data Name="Definitions(C1)#Width"><![CDATA[105]]></Data>
+            <Data Name="Definitions(C1)#Width"><![CDATA[218]]></Data>
             <Data Name="Definitions(C5)#Width"><![CDATA[304]]></Data>
-            <Data Name="Definitions(C0)#Width"><![CDATA[95]]></Data>
+            <Data Name="Definitions(C0)#Width"><![CDATA[115]]></Data>
             <Data Name="Definitions(C2)#Width"><![CDATA[88]]></Data>
             <Data Name="Definitions(C0)#HeaderText"><![CDATA[INS Number]]></Data>
             <Data Name="Definitions(C1)#HeaderText"><![CDATA[Payer Name]]></Data>

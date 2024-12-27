@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
-  <name>Doctor Oversight Acceptability</name>
-  <uuid>9e111af2-4d1d-4f13-8435-72adadb047cd</uuid>
+  <name>Key Terms of Severity Acceptability</name>
+  <uuid>33f110d0-d16f-4735-ae98-16b31cd199b7</uuid>
   <locale>en_US</locale>
   <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
     <Body>
@@ -9,20 +9,26 @@
             <Property Name="UI.MediaType"><![CDATA[Web]]></Property>
             <Property Name="UI.RenderBoolean" Type="xs:boolean"><![CDATA[true]]></Property>
         </Properties>
+        <Preconditions>
+            <Text><![CDATA[definitions
+ set 'payer req' to the payer requirements computed from 
+	Payer being Payer , 
+	Patient being Patient; ]]></Text>
+        </Preconditions>
         <Structure>
             <ConditionDefinitions>
-                <ConditionDefinition Id="C0">
+                <ConditionDefinition Id="C2">
                     <Properties>
-                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[true]]></Property>
                         <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
                     </Properties>
                     <ExpressionDefinition>
-                        <Text><![CDATA[the payer classification of Payer is <a Payer Classification>]]></Text>
+                        <Text><![CDATA[the key term of severity required of 'payer req' is <a Required/Not Required> ]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
-                <ConditionDefinition Id="C2">
+                <ConditionDefinition Id="C0">
                     <ExpressionDefinition>
-                        <Text><![CDATA[the doctor oversight of 'Medical Record' is <a string> ]]></Text>
+                        <Text><![CDATA[the terms of severity of 'Medical Record' is <a string>]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
             </ConditionDefinitions>
@@ -35,15 +41,16 @@
             </ActionDefinitions>
         </Structure>
         <Contents>
-            <Partition DefId="C0">
+            <Partition DefId="C2">
                 <Condition>
                     <Expression>
-                        <Param><![CDATA[Standard + Review]]></Param>
+                        <Param><![CDATA[Required]]></Param>
                     </Expression>
-                    <Partition DefId="C2">
+                    <Partition DefId="C0">
                         <Condition>
                             <Expression>
-                                <Param><![CDATA["Signed and Dated by the Prescriber"]]></Param>
+                                <Text><![CDATA[<a string> contains <a string>]]></Text>
+                                <Param><![CDATA["hyperkeratosis, hyperplasia, hyperpigmentation, papillomas, skin breakdown with lymphorrhea weeping, elephantiasis"]]></Param>
                             </Expression>
                             <ActionSet>
                                 <Action DefId="A0">
@@ -57,12 +64,13 @@
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Param><![CDATA[Standard + Review]]></Param>
+                        <Param><![CDATA[Required]]></Param>
                     </Expression>
-                    <Partition DefId="C2">
+                    <Partition DefId="C0">
                         <Condition>
                             <Expression>
-                                <Param><![CDATA["Standard + Review"]]></Param>
+                                <Text><![CDATA[<a string> does not contain <a string>]]></Text>
+                                <Param><![CDATA["hyperkeratosis, hyperplasia, hyperpigmentation, papillomas, skin breakdown with lymphorrhea weeping, elephantiasis"]]></Param>
                             </Expression>
                             <ActionSet>
                                 <Action DefId="A0">
@@ -76,8 +84,7 @@
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Text><![CDATA[<an object> is not <an object>]]></Text>
-                        <Param><![CDATA[Standard + Review]]></Param>
+                        <Param><![CDATA[Not Required]]></Param>
                     </Expression>
                     <ActionSet>
                         <Action DefId="A0">
@@ -92,9 +99,11 @@
     </Body>
     <Resources DefaultLocale="en_US">
         <ResourceSet Locale="en_US">
-            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Payer Classification]]></Data>
-            <Data Name="Definitions(C2)#HeaderText"><![CDATA[Doctor Oversight]]></Data>
-            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Doctor Oversight Acceptability]]></Data>
+            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Terms Of Severity]]></Data>
+            <Data Name="Definitions(C2)#HeaderText"><![CDATA[Key Term Of Severity Required]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Key Terms of Severity Acceptability]]></Data>
+            <Data Name="Definitions(C2)#Width"><![CDATA[247]]></Data>
+            <Data Name="Definitions(C0)#Width"><![CDATA[550]]></Data>
         </ResourceSet>
     </Resources>
 </DT>

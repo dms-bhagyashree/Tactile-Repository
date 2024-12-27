@@ -103,8 +103,9 @@ class Cif
     string basicPumpTrialAndFailReasons
                 property ads.attributeId "3"
                 #update;
-    string compressionGarmentsBandagingElsticTaping
+    string compressionGarmentsBandagingElasticTaping
                 property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "compressionGarmentsBandagingElasticTaping"
                 #update;
     string diagnosis
                 property ads.attributeId "5"
@@ -125,7 +126,7 @@ class Cif
     Cif(string additionalTherapiesTriedAndFailedElevationWhileSleeping, 
         string additionalTherapiesTriedAndFailedExercises, 
         string basicPumpTrialAndFailReasons, 
-        string compressionGarmentsBandagingElsticTaping, 
+        string compressionGarmentsBandagingElasticTaping, 
         string diagnosis, 
         string locationOfSwelling, 
         string treatment, 
@@ -310,6 +311,10 @@ class MedicalRecord
                 property ads.attributeId "16"
                 property com.fasterxml.jackson.annotation.JsonProperty "doctorOversight"
                 #update;
+    string faceToFaceExamination
+                property ads.attributeId "17"
+                property com.fasterxml.jackson.annotation.JsonProperty "faceToFaceExamination"
+                #update;
     java.time.LocalDate faceToFaceExaminationDate
                 property ads.attributeId "8"
                 #update;
@@ -343,11 +348,12 @@ class MedicalRecord
         boolean contraindicationsClearanceForm, 
         string diagnosis, 
         string dietAndMedicationEvaluation, 
+        string doctorOversight, 
+        string faceToFaceExamination, 
         java.time.LocalDate faceToFaceExaminationDate, 
         string faceToFaceExaminationReason, 
         string icd10Code, 
         string lymphedemiaCause, 
-        string doctorOversight, 
         string progressNotes, 
         double stageLevel, 
         string termsOfSeverity, 
@@ -373,6 +379,10 @@ class Order
                 #update;
     string garment
                 property ads.attributeId "3"
+                #update;
+    string locationOfEdema
+                property ads.attributeId "15"
+                property com.fasterxml.jackson.annotation.JsonProperty "locationOfEdema"
                 #update;
     string orderType
                 property ads.attributeId "4"
@@ -410,6 +420,7 @@ class Order
     Order(java.util.List documents domain 0,* class bhagyashree.tactile_medical.tactile_decision_service.data.Document, 
         java.math.BigDecimal downpaymentAmountReceived, 
         string garment, 
+        string locationOfEdema, 
         string orderType, 
         boolean patientAcceptance, 
         string picSignature, 
@@ -789,6 +800,14 @@ class PayerRequirements
                 property ads.attributeId "4"
                 property com.fasterxml.jackson.annotation.JsonProperty "dietAndMedicationEvaluationRequired"
                 #update;
+    boolean faceToFaceExaminationRequired
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "faceToFaceExaminationRequired"
+                #update;
+    bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired keyTermOfSeverityRequired
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "keyTermOfSeverityRequired"
+                #update;
     bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired medicalRecordsOnFileRequired
                 property ads.attributeId "2"
                 property com.fasterxml.jackson.annotation.JsonProperty "medicalRecordsOnFileRequired"
@@ -797,6 +816,8 @@ class PayerRequirements
         bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired advancedPumpRequired, 
         string diagnosisAcceptabilityList, 
         bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired dietAndMedicationEvaluationRequired, 
+        boolean faceToFaceExaminationRequired, 
+        bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired keyTermOfSeverityRequired, 
         bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired medicalRecordsOnFileRequired)
                 #autoExpand
                 #beanConstructor
