@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>ad3e95bb-66c9-4973-82a9-dcc1c06d0340</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Patient">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Patient" collection="false" name="Patient"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Patient" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Patient"/>
+    </inputData>
+    <decision id="node_1" name="Patient and Insurance Information Complete">
+        <description>Is the patient and insurance information complete for this order?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Patient" collection="false" name="Patient"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Complete$NotComplete" collection="false" name="Patient and Insurance Information Complete"/>
+                <rule defaultRule="false" href="node_1/Patient%20and%20Insurance%20Information%20Complete.dmt" kind="DecisionTable" name="Patient and Insurance Information Complete"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Patient and Insurance Information Complete" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Complete$NotComplete"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_2" name="Send Verification of Benefits Request">
+        <description>Is the minimum information available to run verification of benefits for this patient?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Complete$NotComplete" collection="false" name="Patient and Insurance Information Complete"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.SendVerificationOfBenefitsRequest" collection="false" name="Send Verification of Benefits Request"/>
+                <rule defaultRule="false" href="node_2/Send%20Verification%20of%20Benefits%20Request.dmt" kind="DecisionTable" name="Send Verification of Benefits Request"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_2_ii" name="Send Verification of Benefits Request" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.SendVerificationOfBenefitsRequest"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+    </decision>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Medicare Decisions">
+  <name>Medicare_Decisions</name>
+  <uuid>2468b9df-1028-4b5d-b11c-9bb929e322f6</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#0e1c5d2f-2d39-4ad9-96cb-bece50cb8199"/>
+  <targetRuleProject href="../../Medicare%20Decisions#121126c3-1195-42f5-b4f5-28b97036359b"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

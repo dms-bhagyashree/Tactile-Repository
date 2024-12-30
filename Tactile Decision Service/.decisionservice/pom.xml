@@ -28,6 +28,11 @@
         </dependency>
         <dependency>
             <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+            <artifactId>commercialLikelihoodToReceivePayment-Context</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
             <artifactId>demoRecordValidity0x002cGirthMeasurementAcceptability0x002cLymphedemaStageLevel</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
@@ -48,7 +53,7 @@
         </dependency>
         <dependency>
             <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
-            <artifactId>medicareLiklihoodToReceivePayment-Context</artifactId>
+            <artifactId>medicareDecisions</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -59,6 +64,11 @@
         <dependency>
             <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
             <artifactId>patientTreatmentAreaList</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+            <artifactId>payerMedicalCriteriaAcceptability</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -89,6 +99,11 @@
         <dependency>
             <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
             <artifactId>tactile-DataModel</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+            <artifactId>verificationOfBenefits</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -218,6 +233,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <build>
         <resources>
             <resource>
@@ -271,6 +298,15 @@
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+                                    <artifactId>commercialLikelihoodToReceivePayment-Context</artifactId>
+                                    <version>LATEST-SNAPSHOT</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <includes>**/*.class</includes>
+                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
                                     <artifactId>demoRecordValidity0x002cGirthMeasurementAcceptability0x002cLymphedemaStageLevel</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
@@ -307,7 +343,7 @@
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
-                                    <artifactId>medicareLiklihoodToReceivePayment-Context</artifactId>
+                                    <artifactId>medicareDecisions</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
@@ -326,6 +362,15 @@
                                 <artifactItem>
                                     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
                                     <artifactId>patientTreatmentAreaList</artifactId>
+                                    <version>LATEST-SNAPSHOT</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <includes>**/*.class</includes>
+                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+                                    <artifactId>payerMedicalCriteriaAcceptability</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
@@ -380,6 +425,15 @@
                                 <artifactItem>
                                     <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
                                     <artifactId>tactile-DataModel</artifactId>
+                                    <version>LATEST-SNAPSHOT</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <includes>**/*.class</includes>
+                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>bhagyashree.tactile_medical.tactile_decision_service</groupId>
+                                    <artifactId>verificationOfBenefits</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>

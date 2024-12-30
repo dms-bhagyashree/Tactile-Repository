@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Verification of Benefits">
+  <name>Verification_of_Benefits</name>
+  <uuid>2fc222d8-ec6c-4bb0-a93b-31eb307e515a</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#ad3e95bb-66c9-4973-82a9-dcc1c06d0340"/>
+  <targetRuleProject href="../../Verification%20of%20Benefits#d2c5c0ab-750a-49c4-9799-1547f49d4358"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

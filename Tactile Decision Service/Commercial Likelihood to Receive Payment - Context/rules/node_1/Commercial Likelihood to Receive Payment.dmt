@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>Commercial Likelihood to Receive Payment</name>
+  <uuid>e6d5466e-d3e8-4a78-831d-21c5b968fccd</uuid>
+  <locale>en_US</locale>
+  <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
+    <Body>
+        <Properties>
+            <Property Name="UI.MediaType"><![CDATA[Web]]></Property>
+            <Property Name="UI.RenderBoolean" Type="xs:boolean"><![CDATA[true]]></Property>
+        </Properties>
+        <Preconditions>
+            <Text><![CDATA[definitions
+ set 'payer med necessity acceptability' to the payer medical necessity acceptability computed from 
+	Payer being 'Payer' , 
+	CIF being 'CIF' , 
+	Order being 'Order' , 
+	Patient being 'Patient' , 
+	System being 'System' , 
+	Prescription being 'Prescription' , 
+	Demo being 'Demo' , 
+	Medical Record being 'Medical Record' , 
+	SMN LMN being 'SMN LMN' , 
+	dummy payer req being 'Dummy payer requirement' , 
+	Dummy Primary Coverage Diagnosis being 'Dummy Primary Coverage Diagnosis' , 
+	Dummy Location of Edema being 'Dummy Location Of Edema' ;
+ set 'prescription validity' to the prescription validity computed from 
+	Payer being 'Payer' , 
+	CIF being 'CIF' , 
+	Order being 'Order' , 
+	Patient being 'Patient' , 
+	Prescription being 'Prescription' , 
+	Dummy Data being 'Dummy Location Of Edema' ; 
+ set 'benefit coverage acceptability' to the benefits coverage acceptability computed from 
+	Payer being 'Payer' , 
+	Dummy Data being 'Dummy data' , 
+	Dummy Date being 'Dummy Date' , 
+	Verification of Benefits being 'Verification Of Benefits' ;
+ set 'patient order acceptance' to the patient order acceptance status computed from 
+	Order being Order , 
+	Verification of Benefits being the first element in 'Verification Of Benefits' ;
+ set 'pre-service acceptability' to the pre service acceptability computed from 
+	Payer being Payer , 
+	Patient being Patient , 
+	Film Maker being 'File Maker'; 
+ set 'place of serice acceptability' to the place of service acceptability computed from 
+	Document being Document , 
+	Order being Order ;]]></Text>
+        </Preconditions>
+        <Structure>
+            <ConditionDefinitions>
+                <ConditionDefinition Id="C7">
+                    <ExpressionDefinition>
+                        <Text><![CDATA['patient order acceptance' is <an Accept/Not Accept> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C1">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA['prescription validity' is <a Valid/Not Valid> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C2">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA[Benefits Coverage Acceptability of 'benefit coverage acceptability' is <an Acceptable/Not Acceptable> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C9">
+                    <ExpressionDefinition>
+                        <Text/>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C8">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the payer medical necessity acceptability of 'payer med necessity acceptability' is <an Acceptable/Not Acceptable> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C5">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA['place of serice acceptability' is <an Acceptable/Not Acceptable> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+            </ConditionDefinitions>
+            <ActionDefinitions>
+                <ActionDefinition Id="A0">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[set 'decision' to <an Acceptable/Not Acceptable>]]></Text>
+                    </ExpressionDefinition>
+                </ActionDefinition>
+            </ActionDefinitions>
+        </Structure>
+        <Contents>
+            <Partition DefId="C7">
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Accept]]></Param>
+                    </Expression>
+                    <Partition DefId="C1">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Valid]]></Param>
+                            </Expression>
+                            <Partition DefId="C2">
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA[Acceptable]]></Param>
+                                    </Expression>
+                                    <ActionSet>
+                                        <Action DefId="A0">
+                                            <Expression>
+                                                <Param><![CDATA[Acceptable]]></Param>
+                                            </Expression>
+                                        </Action>
+                                    </ActionSet>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Not Accept]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA[Not Acceptable]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C1">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Not Valid]]></Param>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Not Acceptable]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C2">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Not Acceptable]]></Param>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Not Acceptable]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA[Not Acceptable]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C8">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Not Acceptable]]></Param>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Not Acceptable]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C5">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Not Acceptable]]></Param>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Not Acceptable]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+            </Partition>
+        </Contents>
+    </Body>
+    <Resources DefaultLocale="en_US">
+        <ResourceSet Locale="en_US">
+            <Data Name="Definitions(C7)#HeaderText"><![CDATA[Patient Order Acceptance]]></Data>
+            <Data Name="Definitions(C2)[0]#HeaderText"><![CDATA[a patient]]></Data>
+            <Data Name="Definitions(C1)#HeaderText"><![CDATA[Prescription Validity]]></Data>
+            <Data Name="Definitions(C8)#HeaderText"><![CDATA[Payer Medical Necessity Acceptability]]></Data>
+            <Data Name="Definitions(C5)#HeaderText"><![CDATA[Place Of Service Acceptability]]></Data>
+            <Data Name="Definitions(C2)#HeaderText"><![CDATA[Benefits Coverage Acceptability]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Commercial Likelihood to Receive Payment]]></Data>
+            <Data Name="Definitions(C1)[0]#HeaderText"><![CDATA[a payer]]></Data>
+            <Data Name="Definitions(C5)[0]#HeaderText"><![CDATA[a SMNLMN]]></Data>
+        </ResourceSet>
+    </Resources>
+</DT>
+</definition>
+</ilog.rules.studio.model.dt:DecisionTable>

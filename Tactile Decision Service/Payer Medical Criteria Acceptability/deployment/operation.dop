@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Payer Medical Criteria Acceptability">
+  <name>Payer_Medical_Criteria_Acceptability</name>
+  <uuid>c80e6b45-a872-4e3f-ad61-e5360d13ef15</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#97ed6601-4720-4e52-98d1-534c137ad48d"/>
+  <targetRuleProject href="../../Payer%20Medical%20Criteria%20Acceptability#d74d68cf-a903-4972-aa2d-8eebc12ab4fc"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

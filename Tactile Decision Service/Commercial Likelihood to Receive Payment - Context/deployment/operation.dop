@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Commercial Likelihood to Receive Payment - Context">
+  <name>Commercial_Likelihood_to_Receive_Payment_Context</name>
+  <uuid>c413b868-0891-48b7-943f-7e98f0b6a4d2</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#4e3706e8-246c-466f-89d9-4a0365425844"/>
+  <targetRuleProject href="../../Commercial%20Likelihood%20to%20Receive%20Payment%20-%20Context#a65d550a-747e-4172-87a9-e142726d3736"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

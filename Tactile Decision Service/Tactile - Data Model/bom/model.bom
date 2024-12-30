@@ -140,6 +140,21 @@ class Cif
                 #dataio.default;
 }
 
+class Complete$NotComplete
+        extends java.lang.Enum
+        property ads.typeId "44"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Complete/NotComplete"
+        #de.generated
+{
+    domain {static complete, static notComplete}
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Complete$NotComplete complete
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Complete";
+    static final readonly bhagyashree.tactile_medical.tactile_decision_service.data.Complete$NotComplete notComplete
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Complete";
+}
+
 class Demo
         property ads.typeId "9"
         #de.generated
@@ -1412,6 +1427,28 @@ class SecondaryPlanIndicator
                 property com.fasterxml.jackson.annotation.JsonProperty "Tertiary";
 }
 
+class SendVerificationOfBenefitsRequest
+        property ads.typeId "45"
+        property com.fasterxml.jackson.annotation.JsonTypeName "SendVerificationOfBenefitsRequest"
+        #de.generated
+{
+    string message
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "message"
+                #update;
+    string sendVerificationOfBenefitsRequest
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "sendVerificationOfBenefitsRequest"
+                #update;
+    SendVerificationOfBenefitsRequest(string message, string sendVerificationOfBenefitsRequest)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    SendVerificationOfBenefitsRequest()
+                #dataio.default;
+}
+
 class System
         property ads.typeId "21"
         property com.fasterxml.jackson.annotation.JsonTypeName "system"
@@ -1475,6 +1512,10 @@ class VerificationOfBenefit
                 property ads.attributeId "13"
                 property com.fasterxml.jackson.annotation.JsonProperty "payerInNetwork"
                 #update;
+    string payerName
+                property ads.attributeId "14"
+                property com.fasterxml.jackson.annotation.JsonProperty "payerName"
+                #update;
     string planDesignator
                 property ads.attributeId "8"
                 #update;
@@ -1498,6 +1539,7 @@ class VerificationOfBenefit
         java.math.BigDecimal paidPercentINN$OON, 
         java.math.BigDecimal patientResponsibilityAmount, 
         boolean payerInNetwork, 
+        string payerName, 
         string planDesignator, 
         string planType, 
         string policyNumber, 

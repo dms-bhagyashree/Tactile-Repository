@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>Patient and Insurance Information Complete</name>
+  <uuid>eaa9a86e-ca37-4bd4-a703-15125811fb7e</uuid>
+  <locale>en_US</locale>
+  <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
+    <Body>
+        <Properties>
+            <Property Name="UI.MediaType"><![CDATA[Web]]></Property>
+            <Property Name="UI.RenderBoolean" Type="xs:boolean"><![CDATA[true]]></Property>
+        </Properties>
+        <Structure>
+            <ConditionDefinitions>
+                <ConditionDefinition Id="C0">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the full name of Patient is <a string>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C1">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the date of birth of Patient is <a date>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C2">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the gender of Patient is <a string>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C3">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the street address of Patient is <a string>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C4">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the zipcode of Patient is <a string>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C5">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the state of Patient is <a string>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C6">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the policy number of Patient is <a string>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C7">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the policy holder name of Patient is <a string>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C8">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the relationship to policy holder of Patient is <a string>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C9">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the policy holder address of Patient is <a string>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+            </ConditionDefinitions>
+            <ActionDefinitions>
+                <ActionDefinition Id="A0">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[set decision to <a Complete/Not Complete> ]]></Text>
+                    </ExpressionDefinition>
+                </ActionDefinition>
+            </ActionDefinitions>
+        </Structure>
+        <Contents>
+            <Partition DefId="C0">
+                <Condition>
+                    <Expression>
+                        <Text><![CDATA[<an object> is not null]]></Text>
+                    </Expression>
+                    <Partition DefId="C1">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<an object> is not null]]></Text>
+                            </Expression>
+                            <Partition DefId="C2">
+                                <Condition>
+                                    <Expression>
+                                        <Text><![CDATA[<an object> is not null]]></Text>
+                                    </Expression>
+                                    <Partition DefId="C3">
+                                        <Condition>
+                                            <Expression>
+                                                <Text><![CDATA[<an object> is not null]]></Text>
+                                            </Expression>
+                                            <Partition DefId="C4">
+                                                <Condition>
+                                                    <Expression>
+                                                        <Text><![CDATA[<an object> is not null]]></Text>
+                                                    </Expression>
+                                                    <Partition DefId="C5">
+                                                        <Condition>
+                                                            <Expression>
+                                                                <Text><![CDATA[<an object> is not null]]></Text>
+                                                            </Expression>
+                                                            <Partition DefId="C6">
+                                                                <Condition>
+                                                                    <Expression>
+                                                                        <Text><![CDATA[<an object> is not null]]></Text>
+                                                                    </Expression>
+                                                                    <Partition DefId="C7">
+                                                                        <Condition>
+                                                                            <Expression>
+                                                                                <Text><![CDATA[<an object> is not null]]></Text>
+                                                                            </Expression>
+                                                                            <Partition DefId="C8">
+                                                                                <Condition>
+                                                                                    <Expression>
+                                                                                        <Text><![CDATA[<an object> is not null]]></Text>
+                                                                                    </Expression>
+                                                                                    <Partition DefId="C9">
+                                                                                        <Condition>
+                                                                                            <Expression>
+                                                                                                <Text><![CDATA[<an object> is not null]]></Text>
+                                                                                            </Expression>
+                                                                                            <ActionSet>
+                                                                                                <Action DefId="A0">
+                                                                                                    <Expression>
+                                                                                                        <Param><![CDATA[Complete]]></Param>
+                                                                                                    </Expression>
+                                                                                                </Action>
+                                                                                            </ActionSet>
+                                                                                        </Condition>
+                                                                                    </Partition>
+                                                                                </Condition>
+                                                                            </Partition>
+                                                                        </Condition>
+                                                                    </Partition>
+                                                                </Condition>
+                                                            </Partition>
+                                                        </Condition>
+                                                    </Partition>
+                                                </Condition>
+                                            </Partition>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Text><![CDATA[<an object> is null]]></Text>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA[Not Complete]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C1">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<an object> is null]]></Text>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Not Complete]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C2">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<an object> is null]]></Text>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Not Complete]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C3">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<an object> is null]]></Text>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Not Complete]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C4">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<an object> is null]]></Text>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Not Complete]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C5">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<an object> is null]]></Text>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Not Complete]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C6">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<an object> is null]]></Text>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Not Complete]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C7">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<an object> is null]]></Text>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Not Complete]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C7">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<an object> is null]]></Text>
+                            </Expression>
+                            <Partition DefId="C8">
+                                <Condition>
+                                    <Expression>
+                                        <Text><![CDATA[<an object> is null]]></Text>
+                                    </Expression>
+                                    <ActionSet>
+                                        <Action DefId="A0">
+                                            <Expression>
+                                                <Param><![CDATA[Not Complete]]></Param>
+                                            </Expression>
+                                        </Action>
+                                    </ActionSet>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C9">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<an object> is null]]></Text>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Not Complete]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+            </Partition>
+        </Contents>
+    </Body>
+    <Resources DefaultLocale="en_US">
+        <ResourceSet Locale="en_US">
+            <Data Name="Definitions(C6)#HeaderText"><![CDATA[Policy Number]]></Data>
+            <Data Name="Definitions(C7)#HeaderText"><![CDATA[Policy Holder Name]]></Data>
+            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Full Name]]></Data>
+            <Data Name="Definitions(C1)#HeaderText"><![CDATA[Date Of Birth]]></Data>
+            <Data Name="Definitions(C4)#HeaderText"><![CDATA[Zipcode]]></Data>
+            <Data Name="Definitions(C5)#HeaderText"><![CDATA[State]]></Data>
+            <Data Name="Definitions(C8)#HeaderText"><![CDATA[Relationship To Policy Holder]]></Data>
+            <Data Name="Definitions(C9)#HeaderText"><![CDATA[Policy Holder Address]]></Data>
+            <Data Name="Definitions(C2)#HeaderText"><![CDATA[Gender]]></Data>
+            <Data Name="Definitions(C3)#HeaderText"><![CDATA[Street Address]]></Data>
+            <Data Name="Definitions(A0)[0]#HeaderText"><![CDATA[a string]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Patient and Insurance Information Complete]]></Data>
+        </ResourceSet>
+    </Resources>
+</DT>
+</definition>
+</ilog.rules.studio.model.dt:DecisionTable>
