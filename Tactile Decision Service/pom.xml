@@ -71,6 +71,7 @@
         <module>Diagnosis Validity</module>
         <module>Etiology Acceptability</module>
         <module>Location of Edema Acceptability</module>
+        <module>Medicare Liklihood to Receive payment - Context</module>
         <module>Patient Order Acceptance Status</module>
         <module>Patient Treatment Area List</module>
         <module>Payer Medical Necessity Acceptability</module>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Payer Medical Necessity Acceptability">
+  <name>Payer_Medical_Necessity_Acceptability</name>
+  <uuid>16c9d3ac-4c88-40ec-b6ef-195b2e3490b4</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#d9671149-93d6-4d32-b5f6-8aa34a309981"/>
+  <targetRuleProject href="../../Payer%20Medical%20Necessity%20Acceptability#6b7a508f-8a0c-4ec9-871d-263896754a4a"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

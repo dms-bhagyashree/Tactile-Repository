@@ -6,5 +6,9 @@
   <definition><![CDATA[set decision to a new payer requirements where
 		the key term of severity required is Required,
 	    face to face examination required is false ,
-        the medical records on file required is Not Required ;]]></definition>
+        the medical records on file required is Not Required,
+        the advanced pump required is Required ,
+        the diet and medication evaluation required is Required,
+        the girth measurements over time required is Not Required 
+       ;]]></definition>
 </ilog.rules.studio.model.brl:ActionRule>

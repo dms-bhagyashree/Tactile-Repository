@@ -861,6 +861,10 @@ class PayerRequirements
                 property ads.attributeId "7"
                 property com.fasterxml.jackson.annotation.JsonProperty "faceToFaceExaminationRequired"
                 #update;
+    bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired girthMeasurementsOverTimeRequired
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "girthMeasurementsOverTimeRequired"
+                #update;
     bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired keyTermOfSeverityRequired
                 property ads.attributeId "6"
                 property com.fasterxml.jackson.annotation.JsonProperty "keyTermOfSeverityRequired"
@@ -874,6 +878,7 @@ class PayerRequirements
         string diagnosisAcceptabilityList, 
         bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired dietAndMedicationEvaluationRequired, 
         boolean faceToFaceExaminationRequired, 
+        bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired girthMeasurementsOverTimeRequired, 
         bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired keyTermOfSeverityRequired, 
         bhagyashree.tactile_medical.tactile_decision_service.data.Required$NotRequired medicalRecordsOnFileRequired)
                 #autoExpand
