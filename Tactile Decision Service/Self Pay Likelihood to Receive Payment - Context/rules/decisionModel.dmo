@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>11fd58c6-1183-47ff-91e6-35f47ad435f9</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <decision id="node_1" name="Self Pay Receiving Payment Acceptability">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="Dummy Data"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Cif" collection="false" name="CIF"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Patient" collection="false" name="Patient"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Prescription" collection="false" name="Prescription"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Order" collection="false" name="Order"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit" collection="false" name="Verification Of Benefit"/>
+                <input bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Payer" collection="false" name="Payer"/>
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable" collection="false" name="Self Pay Receiving Payment Acceptability"/>
+                <rule defaultRule="false" href="node_1/Self%20Pay%20Receiving%20Payment%20Acceptability.dmt" kind="DecisionTable" name="Self Pay Receiving Payment Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Self Pay Receiving Payment Acceptability" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_8"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_9"/>
+        </informationRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_2"/>
+        </knowledgeRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_3"/>
+        </knowledgeRequirement>
+    </decision>
+    <inputData id="node_4" name="Dummy Data">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.String" collection="false" name="Dummy Data"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_4_ii" name="Dummy Data" typeRef="java.lang.String"/>
+    </inputData>
+    <inputData id="node_5" name="CIF">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Cif" collection="false" name="CIF"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_5_ii" name="CIF" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Cif"/>
+    </inputData>
+    <inputData id="node_6" name="Patient">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Patient" collection="false" name="Patient"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_6_ii" name="Patient" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Patient"/>
+    </inputData>
+    <inputData id="node_7" name="Prescription">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Prescription" collection="false" name="Prescription"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_7_ii" name="Prescription" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Prescription"/>
+    </inputData>
+    <inputData id="node_8" name="Order">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Order" collection="false" name="Order"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_8_ii" name="Order" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Order"/>
+    </inputData>
+    <inputData id="node_9" name="Payer">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.Payer" collection="false" name="Payer"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_9_ii" name="Payer" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Payer"/>
+    </inputData>
+    <inputData id="node_10" name="Verification Of Benefit">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit" collection="false" name="Verification Of Benefit"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_10_ii" name="Verification Of Benefit" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit"/>
+    </inputData>
+    <businessKnowledgeModel id="node_2" name="Prescription Validity">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="Prescription Validity" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Valid$NotValid"/>
+        <encapsulatedLogic typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Valid$NotValid">
+            <formalParameter name="prescription" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Prescription"/>
+            <formalParameter name="patient" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Patient"/>
+            <formalParameter name="CIF" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Cif"/>
+            <formalParameter name="dummyData" typeRef="java.lang.String"/>
+            <formalParameter name="order" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Order"/>
+            <formalParameter name="payer" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Payer"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"bhagyashree.tactile_medical.tactile_decision_service.prescriptionvalidity.Prescription_Validity"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(bhagyashree.tactile_medical.tactile_decision_service.data.Prescription,bhagyashree.tactile_medical.tactile_decision_service.data.Patient,bhagyashree.tactile_medical.tactile_decision_service.data.Cif,java.lang.String,bhagyashree.tactile_medical.tactile_decision_service.data.Order,bhagyashree.tactile_medical.tactile_decision_service.data.Payer)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
+    <businessKnowledgeModel id="node_3" name="Patient Order Acceptance Status">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="Patient Order Acceptance Status" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Accept$NotAccept"/>
+        <encapsulatedLogic typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Accept$NotAccept">
+            <formalParameter name="verificationOfBenefits" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit"/>
+            <formalParameter name="order" typeRef="bhagyashree.tactile_medical.tactile_decision_service.data.Order"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"bhagyashree.tactile_medical.tactile_decision_service.patientorderacceptancestatus.Patient_Order_Acceptance_Status"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(bhagyashree.tactile_medical.tactile_decision_service.data.VerificationOfBenefit,bhagyashree.tactile_medical.tactile_decision_service.data.Order)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

@@ -81,6 +81,7 @@
         <module>Place of Service Acceptability</module>
         <module>Pre Service Acceptability</module>
         <module>Prescription Validity</module>
+        <module>Self Pay Likelihood to Receive Payment - Context</module>
         <module>Tactile - Data Model</module>
         <module>Verification of Benefits</module>
     </modules>

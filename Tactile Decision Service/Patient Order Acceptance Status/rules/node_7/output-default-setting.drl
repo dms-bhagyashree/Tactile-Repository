@@ -3,5 +3,5 @@
   <name>output-default-setting</name>
   <uuid>9212c11d-7839-4812-a0ed-7c3bb6d64f62</uuid>
   <locale>en_US</locale>
-  <definition><![CDATA[set decision to the patient responsibility amount of 'Verification of Benefits' ;]]></definition>
+  <definition><![CDATA[set decision to the patient responsibility amount of  'Verification of Benefits' ;]]></definition>
 </ilog.rules.studio.model.brl:ActionRule>
